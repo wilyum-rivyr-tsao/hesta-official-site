@@ -125,7 +125,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="mx-[140px] mb-[300px] flex items-center justify-center">
+      <div className="mx-[140px] -mt-[100px] mb-[200px] flex items-center justify-center">
         <div className="w-[364px]">
           <h1 className="text-center font-harmony text-[48px] font-semibold">应用场景</h1>
           <h2 className="mt-8 font-harmony text-[20px] font-semibold">设备监测预警</h2>
@@ -135,7 +135,7 @@ function Index() {
           {/* <RoundedPagination className="mt-8" /> */}
         </div>
         <div className="w-[900px]">
-          {/* <Image src="/imgs/customer_user/Group1580.png" alt={''} width={900} height={800} /> */}
+          <Image src="/imgs/customer_user/Group1580.png" alt={''} width={900} height={800} />
         </div>
 
         {/* <div className="flex justify-center">
