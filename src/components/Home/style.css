@@ -1,0 +1,79 @@
+.grow-width {
+  width: 0;
+  background-color: blue; /* Adjust background color as needed */
+  animation: grow 1s forwards; /* 2s is the duration of the animation */
+}
+
+.shrink-width {
+  width: 0;
+  background-color: blue; /* Adjust background color as needed */
+  animation: shrink 1s forwards; /* 2s is the duration of the animation */
+}
+
+.normal-img {
+  width: 39vw;
+  zindex: 0;
+  filter: grayscale(100%);
+}
+
+@keyframes grow {
+  from {
+    width: 39vw;
+    zindex: 0;
+    filter: grayscale(100%);
+  }
+
+  to {
+    width: 62vw;
+    zindex: 20;
+    filter: grayscale(0);
+  }
+}
+
+@keyframes shrink {
+  from {
+    width: 62vw;
+    zindex: 20;
+    filter: grayscale(0);
+  }
+  to {
+    width: 39vw;
+    zindex: 0;
+    filter: grayscale(100%);
+  }
+}
+
+.shake10 {
+  animation: shake 10s ease-in-out infinite !important;
+}
+.shake11 {
+  animation: shake 11s ease-in-out infinite !important;
+}
+.shake12 {
+  animation: shake 12s ease-in-out infinite !important;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(-20px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateY(20px);
+  }
+}
+
+.previewjump {
+}
+.preview1jump {
+}

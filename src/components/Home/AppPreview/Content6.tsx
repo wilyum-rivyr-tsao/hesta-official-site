@@ -1,0 +1,80 @@
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import Image from 'next/image';
+
+function Content4({
+  delay = 1,
+  className,
+  charPos = 'bottom',
+}: {
+  delay?: number;
+  className?: string;
+  charPos?: string;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  return (
+    <div className={`${className} relative`} ref={ref}>
+      <motion.div
+        animate={
+          isInView
+            ? {
+                x: 0,
+                opacity: 1,
+                scale: 1,
+              }
+            : {
+                opacity: 0,
+                x: -2000,
+              }
+        }
+        transition={{
+          duration: 0.5,
+          delay,
+          ease: 'easeOut',
+        }}
+        initial={{ x: 2000, opacity: 0 }}
+      >
+        <Image
+          src="/imgs/Group1600.png"
+          alt={''}
+          width={5000}
+          height={5000}
+          className={`h-[400px] w-[1200px]`}
+        />
+      </motion.div>
+      <motion.div
+        animate={
+          isInView
+            ? {
+                x: 0,
+                opacity: 1,
+                scale: 1,
+              }
+            : {
+                opacity: 0,
+                x: -2000,
+              }
+        }
+        transition={{
+          duration: 0.5,
+          delay: delay + 1,
+          ease: 'easeOut',
+        }}
+        initial={{ x: 2000, opacity: 0 }}
+        className={`absolute ${charPos === 'bottom' ? 'top-[150px] sm-screen:top-[120px]' : '-top-[150px]'} `}
+      >
+        <Image
+          src="/imgs/slide6chart2.png"
+          alt={''}
+          width={1420}
+          height={900}
+          className={`h-[325px] w-[395px]`}
+        />
+      </motion.div>
+    </div>
+  );
+}
+
+export default Content4;

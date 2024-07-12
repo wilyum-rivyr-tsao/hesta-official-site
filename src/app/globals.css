@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'HarmonyOS_Sans_SC';
+  src: url('/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Thin.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HarmonyOS_Sans_SC';
+  src: url('/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HarmonyOS_Sans_SC';
+  src: url('/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HarmonyOS_Sans_SC';
+  src: url('/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HarmonyOS_Sans_SC';
+  src: url('/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HarmonyOS_Sans_SC';
+  src: url('/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Black.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Impact';
+  src: url('/fonts/Impact-Font/impact.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Akrobat';
+  src: url('/fonts/Akrobat/Akrobat-Black.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body,
+p,
+div,
+span,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+i {
+  color: #383b43;
+}
+html,
+body {
+  /* overscroll-behavior: none; */
+}
+
+.op-input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #000; /* Change this to your desired border color */
+  border-radius: 0px; /* Optional: for rounded corners */
+  outline: none;
+  cursor: pointer;
+}
+
+.op-input[type='checkbox']:checked {
+  background-color: #000;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.op-input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 4px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.button-hover:hover {
+  span {
+    color: white;
+  }
+}

@@ -1,0 +1,11 @@
+.embossed-text {
+  position: relative;
+}
+.embossed-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0.1em;
+  left: 0.1em;
+  color: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
