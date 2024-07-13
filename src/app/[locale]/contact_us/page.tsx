@@ -109,7 +109,7 @@ const ContactForm = () => {
           </div>
           <div className="my-[80px] w-full border-b border-[#383b4358]"></div>
           <h1 className="font-harmony text-[30px] font-bold">可以通过以下方式联系我们</h1>
-          <div className="mt-10 flex w-full justify-between">
+          <div className="mt-10 flex w-full justify-evenly">
             {/* <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
               <Image
                 src="/imgs/icon_contact.png"
