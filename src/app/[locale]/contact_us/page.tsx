@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 
 import { Alert, Button } from '@material-tailwind/react';
 import Image from 'next/image';
+import { CDN } from '@/constants';
 
 const ContactForm = () => {
   const submit = () => {
@@ -40,13 +41,13 @@ const ContactForm = () => {
         <p className="font-harmony text-[#fff]">{submitMsg}</p>
       </Alert>
       <Image
-        src="/imgs/bg_sayhi.png"
+        src={`${CDN}/imgs/bg_sayhi.png`}
         className="h-[600px] w-[1150px]"
         width={4000}
         height={4000}
         alt=""
       />
-      <div className="-mt-[290px] flex min-h-[900px] w-[100vw] justify-center rounded-t-[100px] bg-[#F9FAFC]">
+      <div className="-mt-[290px] flex min-h-[900px] w-[100vw] min-w-[1440px] justify-center rounded-t-[100px] bg-[#F9FAFC]">
         <div className="w-[900px] pb-[200px]">
           <div className="form mt-[90px]">
             <div className="mb-4 grid grid-cols-2 gap-4">
@@ -109,7 +110,7 @@ const ContactForm = () => {
           <div className="my-[80px] w-full border-b border-[#383b4358]"></div>
           <h1 className="font-harmony text-[30px] font-bold">可以通过以下方式联系我们</h1>
           <div className="mt-10 flex w-full justify-between">
-            <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
+            {/* <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
               <Image
                 src="/imgs/icon_contact.png"
                 width={140}
@@ -120,10 +121,10 @@ const ContactForm = () => {
 
               <h4 className="mt-[52px] font-harmony font-bold">联系电话</h4>
               <p className="mt-[10px] font-harmony font-thin">400-0913-777</p>
-            </div>
+            </div> */}
             <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
               <Image
-                src="/imgs/icon_email.png"
+                src={`${CDN}/imgs/icon_email.png`}
                 width={140}
                 height={140}
                 className="h-[70px] w-[70px]"
@@ -135,7 +136,7 @@ const ContactForm = () => {
             </div>
             <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
               <Image
-                src="/imgs/icon_address.png"
+                src={`${CDN}/imgs/icon_address.png`}
                 width={140}
                 height={140}
                 className="h-[70px] w-[70px]"

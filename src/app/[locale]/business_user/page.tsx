@@ -15,6 +15,7 @@ import Content4 from '@/components/Home/AppPreview/Content4';
 import Content6 from '@/components/Home/AppPreview/Content6';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { CDN } from '@/constants';
 
 const slides = [
   {
@@ -181,7 +182,7 @@ function Index() {
             }}
           >
             <Image
-              src="/imgs/business_user/icon_prev.png"
+              src={`${CDN}/imgs/business_user/icon_prev.png`}
               alt=""
               width={77}
               height={5}
@@ -198,7 +199,7 @@ function Index() {
             <h4 className="mr-4 font-impact text-[50px]">0{slidePages[1]}</h4>
 
             <Image
-              src="/imgs/business_user/icon_next.png"
+              src={`${CDN}/imgs/business_user/icon_next.png`}
               alt=""
               width={77}
               height={5}
@@ -297,7 +298,7 @@ function Index() {
                     width={427}
                     height={290}
                     className="absolute h-[20.1389vw] w-[29vw]"
-                    src="/imgs/business_user/jixie.png"
+                    src={`${CDN}/imgs/business_user/jixie.png`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -323,7 +324,7 @@ function Index() {
                     width={427}
                     height={290}
                     className="h-[20.1389vw] w-[29.6528vw]"
-                    src="/imgs/business_user/geipaishui.png"
+                    src={`${CDN}/imgs/business_user/geipaishui.png`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -349,7 +350,7 @@ function Index() {
                     width={280}
                     height={290}
                     className="h-[20.1389vw] w-[19.4444vw] shrink-0"
-                    src="/imgs/business_user/nenghao.jpg"
+                    src={`${CDN}/imgs/business_user/nenghao.jpg`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -375,7 +376,7 @@ function Index() {
                     width={306}
                     height={290}
                     className="h-[20.1389vw] w-[21.25vw]"
-                    src="/imgs/business_user/tongnuan.png"
+                    src={`${CDN}/imgs/business_user/tongnuan.png`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -400,7 +401,7 @@ function Index() {
                     width={370}
                     height={290}
                     className="h-[20.1389vw] w-[25.6944vw] shrink-0"
-                    src="/imgs/business_user/huanjing.png"
+                    src={`${CDN}/imgs/business_user/huanjing.png`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -424,7 +425,7 @@ function Index() {
                     width={561}
                     height={290}
                     className="h-[20.1389vw] w-[38.9583vw] shrink-0"
-                    src="/imgs/business_user/lvhua.png"
+                    src={`${CDN}/imgs/business_user/lvhua.png`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -448,7 +449,7 @@ function Index() {
                     width={509}
                     height={290}
                     className="h-[20.1389vw] w-[35.3472vw] shrink-0"
-                    src="/imgs/business_user/zhaoming.png"
+                    src={`${CDN}/imgs/business_user/zhaoming.png`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -497,7 +498,7 @@ function Index() {
                     width={496}
                     height={290}
                     className="absolute h-[20.1389vw] w-[32vw]"
-                    src="/imgs/business_user/dianti.jpg"
+                    src={`${CDN}/imgs/business_user/dianti.jpg`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -520,7 +521,7 @@ function Index() {
                     width={474}
                     height={290}
                     className="h-[20.1389vw] w-[34vw]"
-                    src="/imgs/business_user/fabu.jpg"
+                    src={`${CDN}/imgs/business_user/fabu.jpg`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -543,7 +544,7 @@ function Index() {
                     width={470}
                     height={290}
                     className="h-[20.1389vw] w-[34vw]"
-                    src="/imgs/business_user/tingche.jpg"
+                    src={`${CDN}/imgs/business_user/tingche.jpg`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -568,7 +569,7 @@ function Index() {
                     width={370}
                     height={290}
                     className="h-[20.1389vw] w-[25vw]"
-                    src="/imgs/business_user/menjin.jpg"
+                    src={`${CDN}/imgs/business_user/menjin.jpg`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -591,7 +592,7 @@ function Index() {
                     width={370}
                     height={290}
                     className="h-[20.1389vw] w-[25vw]"
-                    src="/imgs/business_user/shipin.jpg"
+                    src={`${CDN}/imgs/business_user/shipin.jpg`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -614,7 +615,7 @@ function Index() {
                     width={370}
                     height={290}
                     className="h-[20.1389vw] w-[25vw]"
-                    src="/imgs/business_user/huojing.jpg"
+                    src={`${CDN}/imgs/business_user/huojing.jpg`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -637,7 +638,7 @@ function Index() {
                     width={370}
                     height={290}
                     className="h-[20.1389vw] w-[25vw]"
-                    src="/imgs/business_user/ruqin.jpg"
+                    src={`${CDN}/imgs/business_user/ruqin.jpg`}
                     alt=""
                   />
                   <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">

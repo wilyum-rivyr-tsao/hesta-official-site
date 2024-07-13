@@ -5,6 +5,7 @@ import { debounce } from 'lodash';
 import React, { useEffect, useRef, useState } from 'react';
 import 'animate.css';
 import { motion } from 'framer-motion';
+import { CDN } from '@/constants';
 
 function DragScroll(props: any) {
   const scrollContent = useRef<HTMLDivElement | null>(null);
@@ -115,7 +116,8 @@ function DragScroll(props: any) {
             className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-[url('/imgs/card2.png')] bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
-              className='-mt-[80px] h-[140px] w-[200px] bg-[url("/imgs/3dicon_platform.png")] bg-cover bg-center bg-no-repeat'
+              style={{ backgroundImage: `url(${CDN}/imgs/3dicon_platform.png)` }}
+              className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
               animate={
                 hover === 1
                   ? {
@@ -157,7 +159,8 @@ function DragScroll(props: any) {
                     }
                   : {}
               }
-              className='-mt-[80px] h-[140px] w-[200px] bg-[url("/imgs/3dicon_intelligence.png")] bg-cover bg-center bg-no-repeat'
+              style={{ backgroundImage: `url("/imgs/3dicon_intelligence.png")` }}
+              className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">一键智能</h3>
             <p className="mt-[20px] font-harmony text-[14px] font-thin">
@@ -193,7 +196,8 @@ function DragScroll(props: any) {
                     }
                   : {}
               }
-              className='-mt-[80px] h-[140px] w-[200px] bg-[url("/imgs/3dicon_interaction.png")] bg-cover bg-center bg-no-repeat'
+              style={{ backgroundImage: `url("/imgs/3dicon_interaction.png")` }}
+              className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">3D交互体验</h3>
             <p className="mt-[20px] font-harmony text-[14px] font-thin">
@@ -228,7 +232,10 @@ function DragScroll(props: any) {
                     }
                   : {}
               }
-              className='-mt-[80px] h-[140px] w-[200px] bg-[url("/imgs/3dicon_customization.png")] bg-cover bg-center bg-no-repeat'
+              style={{
+                backgroundImage: `url("${CDN}/imgs/3dicon_customization.png")`,
+              }}
+              className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">定制化人工智能服务</h3>
             <p className="mt-[20px] font-harmony text-[14px] font-thin">
@@ -264,7 +271,7 @@ function DragScroll(props: any) {
                     }
                   : {}
               }
-              className='-mt-[80px] h-[140px] w-[200px] bg-[url("/imgs/3dicon_life.png")] bg-cover bg-center bg-no-repeat'
+              className={`-mt-[80px] h-[140px] w-[200px] bg-[url("/imgs/3dicon_life.png")] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">智慧生活</h3>
             <p className="mt-[20px] font-harmony text-[14px] font-thin">

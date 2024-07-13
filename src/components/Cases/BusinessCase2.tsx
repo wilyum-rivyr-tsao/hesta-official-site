@@ -1,3 +1,4 @@
+import { CDN } from '@/constants';
 import SlideUpModal from '../Basic/SlideUpModal';
 import LeftMenu from './LeftMenu';
 import Image from 'next/image';
@@ -14,7 +15,7 @@ function BusinessCase1({ close }: any) {
               在现代高端生活中，豪华别墅不仅是奢华的居住空间，更是智能化生活的象征。对于管理面积达1095平方米的豪华别墅而言，传统的物业管理方式已难以满足业主对高效、便捷和智能化的需求。Hesta凭借其先进技术和全面服务，成功将这座豪华别墅带入智能管理的新纪元，大幅提升了物业管理的质量和效率。
             </p>
             <Image
-              src="/imgs/case/Frame105.jpg"
+              src={`${CDN}/imgs/case/Frame105.jpg`}
               alt=""
               className="mt-14 h-[34.7222vw] w-[58.125vw]"
               width={1600}
@@ -41,7 +42,7 @@ function BusinessCase1({ close }: any) {
             </div>
 
             <Image
-              src="/imgs/case/case2p2.jpg"
+              src={`${CDN}/imgs/case/case2p2.jpg`}
               alt=""
               className="mt-14 h-[34.7222vw] w-[58.125vw]"
               width={1600}

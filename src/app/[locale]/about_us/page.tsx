@@ -11,6 +11,7 @@ import './style.css';
 import { useEffect, useRef, useState } from 'react';
 import IncreaseNumberAnimation from '@/components/Basic/IncreaseNumberAnimation';
 import { motion, useInView } from 'framer-motion';
+import { CDN } from '@/constants';
 
 function isCenterIndex(array: any[], index: number): boolean {
   const length = array.length;
@@ -88,7 +89,7 @@ function AboutUs() {
     <>
       <Image src={firstImg} objectFit="cover" alt={''} />
       <BackgroundImage
-        src="/imgs/about_us/Group1595.png"
+        src={`${CDN}/imgs/about_us/Group1595.png`}
         alt=""
         className="h-[70vw] min-h-[1200px] w-full"
       >
@@ -172,14 +173,14 @@ function AboutUs() {
         </div>
 
         <Image
-          src="/imgs/about_us/fb.png"
+          src={`${CDN}/imgs/about_us/fb.png`}
           width={451}
           height={440}
           alt=""
           className="absolute -top-[30px] left-[25vw]"
         />
         <Image
-          src="/imgs/about_us/fb1.png"
+          src={`${CDN}/imgs/about_us/fb1.png`}
           width={240}
           height={234}
           alt=""
@@ -211,7 +212,7 @@ function AboutUs() {
               exit={{ y: 1000, opacity: 0 }}
             >
               <BackgroundImage
-                src="/imgs/about_us/Group1591.png"
+                src={`${CDN}/imgs/about_us/Group1591.png`}
                 alt=""
                 className="-m-[15px] h-[401px] w-[374px]"
               >
@@ -245,7 +246,7 @@ function AboutUs() {
               exit={{ y: 1000, opacity: 0 }}
             >
               <BackgroundImage
-                src="/imgs/about_us/Group1592.png"
+                src={`${CDN}/imgs/about_us/Group1592.png`}
                 alt=""
                 className="-m-[15px] h-[401px] w-[374px]"
               >
@@ -279,7 +280,7 @@ function AboutUs() {
               exit={{ y: 1000, opacity: 0 }}
             >
               <BackgroundImage
-                src="/imgs/about_us/Group1593.png"
+                src={`${CDN}/imgs/about_us/Group1593.png`}
                 alt=""
                 className="-m-[15px] h-[401px] w-[374px]"
               >
@@ -296,7 +297,7 @@ function AboutUs() {
       </div>
       <BackgroundImage
         className="mt-[113px] h-[34.7222vw] min-h-[520px] w-full"
-        src="/imgs/about_us/banner_xuanze.png"
+        src={`${CDN}/imgs/about_us/banner_xuanze.png`}
       >
         <div className="ml-[9.7222vw] h-[34.7222vw] min-h-[500px] w-[33.6111vw] min-w-[520px] bg-white bg-opacity-60 px-10 pt-[118px] font-harmony backdrop-blur-md">
           <h3 className="mb-[30px] font-harmony text-[30px] font-black">选择悉瞰</h3>

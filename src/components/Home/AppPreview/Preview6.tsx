@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Link from 'next/link';
 import ReadMoreBtn from '@/components/Basic/ReadMoreBtn';
+import { CDN } from '@/constants';
 
 function Preview2({
   showing,
@@ -79,7 +80,7 @@ function Preview2({
           initial={{ opacity: 0 }}
         >
           <Image
-            src="/imgs/frame06.png"
+            src={`${CDN}/imgs/frame06.png`}
             alt={''}
             width={2000}
             height={800}

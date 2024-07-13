@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import ReadMoreBtn from '@/components/Basic/ReadMoreBtn';
 import Image from 'next/image';
+import { CDN } from '@/constants';
 
 function Preview(props: any) {
   const { className, showing } = props;
@@ -79,7 +80,7 @@ function Preview(props: any) {
       ></motion.div> */}
       <div className="flex w-full shrink-0 items-center justify-center">
         <Image
-          src="/imgs/screen3half.png"
+          src={`${CDN}/imgs/screen3half.png`}
           className="mt-20 h-[643px] w-[1462px]"
           alt={''}
           width={4000}

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 import { forwardRef, Ref } from 'react';
+import { CDN } from '@/constants';
 
 interface Props {
   className?: string;
@@ -19,6 +20,7 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
   const showTerms2 = () => {
     dispatch({ type: 'showTerms2', payload: !state.showTerms2 });
   };
+  console.log('CDN', CDN);
   return (
     <div
       className={`h-[62.5vw] bg-[url('/imgs/bg_end.png')] bg-cover bg-center bg-no-repeat px-[9.7222vw] ${className} relative flex flex-col items-center justify-center`}
@@ -27,7 +29,7 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
       <div className="flex w-full items-center justify-between">
         <div>
           <Image
-            src="/imgs/logo.png"
+            src={`${CDN}/imgs/logo.png`}
             width="148"
             height="46"
             alt={'logo'}
@@ -40,7 +42,9 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
             洞悉地产科技 瞰见智慧未来
           </h2>
           <Link href="/contact_us">
-            <div className='button-hover mt-[4.1667vw] flex h-[3.75vw] w-[10.6944vw] items-center bg-[url("/imgs/btnarr.png")] bg-cover bg-center bg-no-repeat hover:bg-[url("/imgs/btnarr_active.png")]'>
+            <div
+              className={`button-hover mt-[4.1667vw] flex h-[3.75vw] w-[10.6944vw] items-center bg-[url("/imgs/btnarr.png")] bg-cover bg-center bg-no-repeat hover:bg-[url("/imgs/btnarr_active.png")]`}
+            >
               <span className="-mt-2 ml-[0.5556vw] font-harmony text-[1.1111vw] font-thin hover:text-white">
                 {t('Contact us')}
               </span>

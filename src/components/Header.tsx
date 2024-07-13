@@ -1,4 +1,5 @@
 'use client';
+import { CDN } from '@/constants';
 import { usePopupContext } from '@/context/PopupContext';
 import Image from 'next/image';
 
@@ -14,7 +15,7 @@ function Header(props: any) {
         className={`absolute top-[31px] z-30 flex w-full items-center justify-between px-10 ${className} min-w-[1400px] select-none`}
         {...restProps}
       >
-        <Image src="/imgs/logo.png" width="158" height="46" alt={'logo'} />
+        <Image src={`${CDN}/imgs/logo.png`} width="158" height="46" alt={'logo'} />
         {!state.showMenu && (
           <div onClick={expand} className="flex cursor-pointer items-center">
             <Image

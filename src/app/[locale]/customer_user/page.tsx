@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import RoundedPagination from '@/components/Basic/RoundedPagination';
 import { useState } from 'react';
+import { CDN } from '@/constants';
 
 const appSlides = [
   {
@@ -135,7 +136,12 @@ function Index() {
           {/* <RoundedPagination className="mt-8" /> */}
         </div>
         <div className="w-[900px]">
-          <Image src="/imgs/customer_user/Group1580.png" alt={''} width={900} height={800} />
+          <Image
+            src={`${CDN}/imgs/customer_user/Group1580.png`}
+            alt={''}
+            width={900}
+            height={800}
+          />
         </div>
 
         {/* <div className="flex justify-center">

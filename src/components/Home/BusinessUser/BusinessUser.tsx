@@ -2,6 +2,7 @@ import { forwardRef, Ref, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import BackgroundImage from '@/components/Basic/BackgroundImage';
+import { CDN } from '@/constants';
 
 const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   const { page, ...restProps } = props;
@@ -19,7 +20,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
       >
         <div className={`flex h-[100vh] min-h-[700px] w-full`}>
           <Image
-            src="/imgs/ill_square1.png"
+            src={`${CDN}/imgs/ill_square1.png`}
             alt=""
             width={310}
             height={310}
@@ -28,21 +29,21 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
           />
 
           <Image
-            src="/imgs/ill_square2.png"
+            src={`${CDN}/imgs/ill_square2.png`}
             alt=""
             width={360}
             height={360}
             className={`animate__animated animate__slower absolute left-[54.1667%] top-[22%] h-[360px] w-[360px] ${page === 2 ? '' : ''} ${initAnimate ? 'animate__fadeIn' : 'shake11'}`}
           />
           <Image
-            src="/imgs/ill_square3.png"
+            src={`${CDN}/imgs/ill_square3.png`}
             alt=""
             width={120}
             height={120}
             className={`animate__animated animate__slower absolute left-[20.1389%] top-[60%] h-[120px] w-[120px] ${page === 2 ? '' : ''} ${initAnimate ? 'animate__fadeIn' : 'shake11'}`}
           />
           <Image
-            src="/imgs/ill_circle.png"
+            src={`${CDN}/imgs/ill_circle.png`}
             alt=""
             width={186}
             height={186}

@@ -1,3 +1,4 @@
+import { CDN } from '@/constants';
 import Link from 'next/link';
 import { useState } from 'react';
 

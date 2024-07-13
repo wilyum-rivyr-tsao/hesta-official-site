@@ -1,1 +1,1 @@
-export const CDN = process.env.NEXT_PUBLIC_CDN;
+export const CDN = 'http://xikan.tech';
