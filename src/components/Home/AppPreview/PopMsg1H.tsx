@@ -55,7 +55,7 @@ function PopMsg1(props?: any) {
         initial={{ opacity: 0, x: 200 }}
       >
         <div
-          style={{ backgroundImage: `url("/imgs/${icon}")` }}
+          style={{ backgroundImage: `url("${CDN}/imgs/${icon}")` }}
           className={`h-[80px] bg-cover bg-center bg-no-repeat px-5 pt-6`}
         >
           <h3 className="font-harmony text-[18px] font-bold">{title}</h3>

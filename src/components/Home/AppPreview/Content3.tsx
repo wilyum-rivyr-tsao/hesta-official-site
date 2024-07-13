@@ -27,7 +27,7 @@ function Content3({ delay = 0, className }: any) {
         initial={{ x: 2000, opacity: 0 }}
       >
         <Image
-          src="/imgs/previewContent3a.png"
+          src={`${CDN}/imgs/previewContent3a.png`}
           alt={''}
           width={413}
           height={800}
@@ -90,7 +90,7 @@ function Content3({ delay = 0, className }: any) {
         className="shrink-0"
       >
         <Image
-          src="/imgs/previewContent3c.png"
+          src={`${CDN}/imgs/previewContent3c.png`}
           alt={''}
           width={193}
           height={800}

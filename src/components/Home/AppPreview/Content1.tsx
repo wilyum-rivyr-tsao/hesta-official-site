@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import PopMsg1 from './PopMsg1';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { CDN } from '@/constants';
 
 function Content1(props: any) {
   const ref = useRef(null);
@@ -29,7 +30,7 @@ function Content1(props: any) {
         initial={{ opacity: 0 }}
       >
         <Image
-          src="/imgs/ill_house2.png"
+          src={`${CDN}/imgs/ill_house2.png`}
           alt={''}
           width={2300}
           height={1400}

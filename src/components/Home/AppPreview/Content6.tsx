@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+import { CDN } from '@/constants';
 
 function Content4({
   delay = 1,
@@ -37,7 +38,7 @@ function Content4({
         initial={{ x: 2000, opacity: 0 }}
       >
         <Image
-          src="/imgs/Group1600.png"
+          src={`${CDN}/imgs/Group1600.png`}
           alt={''}
           width={5000}
           height={5000}
@@ -66,7 +67,7 @@ function Content4({
         className={`absolute ${charPos === 'bottom' ? 'top-[150px] sm-screen:top-[120px]' : '-top-[150px]'} `}
       >
         <Image
-          src="/imgs/slide6chart2.png"
+          src={`${CDN}/imgs/slide6chart2.png`}
           alt={''}
           width={1420}
           height={900}

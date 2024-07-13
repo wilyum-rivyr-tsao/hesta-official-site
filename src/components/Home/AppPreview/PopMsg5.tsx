@@ -59,7 +59,8 @@ function PopMsg1(props: any) {
         initial={{ opacity: 0, x: 200 }}
       >
         <div
-          className={`h-[80px] bg-[url("/imgs/bg_system.png")] bg-cover bg-center bg-no-repeat px-5 pt-6`}
+          style={{ backgroundImage: `url("${CDN}/imgs/bg_system.png")` }}
+          className={`h-[80px] bg-cover bg-center bg-no-repeat px-5 pt-6`}
         >
           <h3 className="font-harmony text-[18px] font-bold">检测到有毒气体</h3>
           <p className="font-harmony font-thin text-[#939397]">厨房1</p>
