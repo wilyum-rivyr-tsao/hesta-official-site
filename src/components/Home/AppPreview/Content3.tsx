@@ -17,10 +17,7 @@ function Content3({ delay = 0, className }: any) {
                 opacity: 1,
                 scale: 1,
               }
-            : {
-                opacity: 0,
-                x: -2000,
-              }
+            : {}
         }
         transition={{
           duration: 0.5,
@@ -45,10 +42,7 @@ function Content3({ delay = 0, className }: any) {
                 opacity: 1,
                 scale: 1,
               }
-            : {
-                opacity: 0,
-                x: -2000,
-              }
+            : {}
         }
         transition={{
           duration: 0.5,
@@ -66,13 +60,15 @@ function Content3({ delay = 0, className }: any) {
           className={`animate__animated ml-4 h-[386px] w-[452px] opacity-90 sm-screen:h-[290px] sm-screen:w-[341px]`}
         /> */}
         <div className="ml-4 rounded-sm bg-white opacity-90">
-          <video
-            className={`h-[386px] w-[452px] opacity-90 sm-screen:h-[290px] sm-screen:w-[341px]`}
-            autoPlay
-            muted
-            src={` /video/jiemian.mp4`}
-            loop
-          />
+          {isInView && (
+            <video
+              className={`h-[386px] w-[452px] opacity-90 sm-screen:h-[290px] sm-screen:w-[341px]`}
+              autoPlay
+              muted
+              src={` /video/jiemian.mp4`}
+              loop
+            />
+          )}
         </div>
       </motion.div>
       <motion.div
@@ -83,10 +79,7 @@ function Content3({ delay = 0, className }: any) {
                 opacity: 1,
                 scale: 1,
               }
-            : {
-                opacity: 0,
-                x: -2000,
-              }
+            : {}
         }
         transition={{
           duration: 0.5,

@@ -36,7 +36,7 @@ function Home() {
   const screen6 = useRef<HTMLDivElement>(null);
 
   const [scrollDisabled, setScrollDisabled] = useState(false);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [deltaY, setdeltaY] = useState(0);
 
   const scrollContent = (event: any) => {
@@ -93,7 +93,7 @@ function Home() {
           return (
             <ReactFullpage.Wrapper>
               <div className="section">
-                <Screen1 nextPage={nextPageClick} />
+                <Screen1 nextPage={nextPageClick} page={page} />
               </div>
 
               <div className="section">

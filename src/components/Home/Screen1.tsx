@@ -2,31 +2,33 @@ import React, { useState, useRef, useEffect, ForwardedRef } from 'react';
 import Link from 'next/link';
 import ScrollDownButton from '../Basic/ScrollDownBtn';
 import Header from '../Header';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import 'animate.css';
 import { CDN } from '@/constants';
 
 const Screen1 = (props: any) => {
-  const { nextPage, screen2, ...restProps } = props;
+  const { nextPage, screen2, page, ...restProps } = props;
   const [playFirstVideo, setPlayFirstVideo] = useState(true);
   const firstVideoRef = useRef<HTMLVideoElement>(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
     // Function to play the second video when the first video ends
     const handleFirstVideoEnd = () => {
       console.log('endddd');
       setPlayFirstVideo(false); // Set playFirstVideo to false when the first video ends
-      if (firstVideoRef.current) {
-        firstVideoRef.current.play(); // Play the second video
-      }
+      // if (firstVideoRef.current) {
+      //   firstVideoRef.current.play(); // Play the second video
+      // }
     };
 
     // Clean-up function to remove event listener
-    const cleanup = () => {
-      if (firstVideoRef.current) {
-        firstVideoRef.current.removeEventListener('ended', handleFirstVideoEnd);
-      }
-    };
+    // const cleanup = () => {
+    //   if (firstVideoRef.current) {
+    //     firstVideoRef.current.removeEventListener('ended', handleFirstVideoEnd);
+    //   }
+    // };
 
     // Add event listener to handle the end of the first video
     if (playFirstVideo && firstVideoRef.current) {
@@ -34,31 +36,39 @@ const Screen1 = (props: any) => {
     }
 
     // Clean-up the event listener on component unmount or when playFirstVideo changes
-    return cleanup;
+    // return cleanup;
   }, [playFirstVideo]);
 
+  useEffect(() => {
+    console.log('page', page);
+  }, [page]);
+
   return (
-    <motion.div {...restProps}>
+    <motion.div {...restProps} ref={ref}>
       <Header />
       <div className="relative h-screen min-h-[700px] w-full overflow-hidden">
         {/* First video */}
+        {page === 0 && (
+          <>
+            <video
+              className={`animate_animated absolute left-0 top-0 z-0 h-full w-full object-cover ${playFirstVideo ? 'visible' : 'animate__fadeOut invisible'}`}
+              autoPlay
+              muted
+              src={`${CDN}/video/home1.mp4`}
+              ref={firstVideoRef}
+            />
+            {/* Second video */}
 
-        <video
-          className={`animate_animated absolute left-0 top-0 z-0 h-full w-full object-cover ${playFirstVideo ? 'visible' : 'animate__fadeOut invisible'}`}
-          autoPlay
-          muted
-          src={`${CDN}/video/home1.mp4`}
-          ref={firstVideoRef}
-        />
-        {/* Second video */}
+            <video
+              className={`animate_animated absolute left-0 top-0 z-0 h-full w-full object-cover ${!playFirstVideo ? 'animate__fadeIn visible' : 'invisible'}`}
+              autoPlay
+              muted
+              loop
+              src={`${CDN}/video/homeloop.mp4`}
+            />
+          </>
+        )}
 
-        <video
-          className={`animate_animated absolute left-0 top-0 z-0 h-full w-full object-cover ${!playFirstVideo ? 'animate__fadeIn visible' : 'invisible'}`}
-          autoPlay
-          muted
-          loop
-          src={`${CDN}/video/homeloop.mp4`}
-        />
         {/* Image fallback or additional content */}
         {/* <div className="absolute left-0 top-0 z-0 h-full w-full bg-[url('/imgs/bg_home.webp')] bg-cover bg-center"> */}
         {/* Optional: Add a background image if desired */}
