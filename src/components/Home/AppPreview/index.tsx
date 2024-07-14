@@ -203,16 +203,24 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
       case 3:
         return {
           backgroundImage: "url('/imgs/bg_conduit.png')",
-          backgroundPositionY: '211px',
+          // backgroundPositionY: '211px',
+          // backgroundPositionX: 'center',
+          // backgroundSize: 'contain',
+
           backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          height: '80vh',
+          backgroundRepeat: 'no-repeat',
+          width: '100%',
         };
       case 4:
         return {
           backgroundImage: "url('/imgs/bg_computer.png')",
-          backgroundPositionY: '200px',
-          backgroundPositionX: '-150px',
-          // backgroundPosition: 'center',
-          backgroundSize: '120%',
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          height: '80vh',
+          backgroundRepeat: 'no-repeat',
+          width: '100%',
         };
 
       case 6:
@@ -226,47 +234,32 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   // const [slideUpState, slideUpDispatch] = useReducer(slideUpReducer, initialState);
 
   return (
-    <div ref={ref}>
-      <div
-        className={`relative flex h-[100vh] min-h-[700px] w-full justify-center overflow-hidden`}
-        ref={componentRef}
-        id="target"
-      >
-        <div className="mt-[34px] flex flex-col items-center bg-no-repeat" style={containerStyle()}>
-          {/* ${slideUpState.page ? 'animate__fadeInDown visible' : 'invisible'} animate__animated */}
-          <div className={`relative z-[9999] flex flex-col items-center justify-center`}>
+    <div ref={ref} className="h-[100vh] w-full overflow-hidden">
+      <div className="mt-[34px] flex w-full flex-col items-center bg-no-repeat">
+        <div className={`relative z-[9999] flex w-full flex-col items-center justify-center`}>
+          <div
+            className={`relative z-[99] flex w-[521px] cursor-pointer select-none justify-between font-impact`}
+          >
             <div
-              className={`relative z-[99] flex w-[521px] cursor-pointer select-none justify-between font-impact`}
+              className="mt-[55px] -rotate-[32deg] text-[50px] font-bold text-[#e1e2e6]"
+              onClick={() => nextPage('prev')}
             >
-              <div
-                className="mt-[55px] -rotate-[32deg] text-[50px] font-bold text-[#e1e2e6]"
-                onClick={() => nextPage('prev')}
-              >
-                {curPages[0]}
-              </div>
-              <div className="text-[50px] font-bold text-[#383B43]">{curPages[1]}</div>
-              <div
-                className="mt-[55px] rotate-[32deg] text-[50px] font-bold text-[#e1e2e6]"
-                onClick={() => nextPage('next')}
-              >
-                {curPages[2]}
-              </div>
+              {curPages[0]}
             </div>
-            <div className="-mt-[70px] flex h-[113px] w-[605px] items-center justify-center bg-[url('/imgs/turntable.png')] bg-cover bg-center bg-no-repeat"></div>
+            <div className="text-[50px] font-bold text-[#383B43]">{curPages[1]}</div>
+            <div
+              className="mt-[55px] rotate-[32deg] text-[50px] font-bold text-[#e1e2e6]"
+              onClick={() => nextPage('next')}
+            >
+              {curPages[2]}
+            </div>
           </div>
-
-          <Preview page={page} />
-          {/* {page === 2 && <Preview2 showing={page === 2} showState={slideUpState} />}
-          {page === 3 && <Preview3 showState={slideUpState} />}
-          {page === 4 && <Preview4 showState={slideUpState} />}
-          {page === 5 && <Preview5 showing={page === 5} showState={slideUpState} />}
-          {page === 6 && <Preview6 showing={page === 6} showState={slideUpState} />} */}
+          <div className="-mt-[70px] flex h-[113px] w-[605px] items-center justify-center bg-[url('/imgs/turntable.png')] bg-cover bg-center bg-no-repeat"></div>
         </div>
-        <div
-          className="absolute z-50 mt-[20vh] h-[60vh] w-[70vw]"
-          onMouseEnter={mouseEnter}
-          onMouseLeave={mouseLeave}
-        ></div>
+
+        <div style={containerStyle()}>
+          <Preview page={page} />
+        </div>
       </div>
     </div>
   );

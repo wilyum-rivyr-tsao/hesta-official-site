@@ -43,7 +43,7 @@ function Preview(props: any) {
 
   return (
     <div
-      className="relative flex h-[675px] flex-col items-center justify-start sm-screen:h-[505px]"
+      className="relative flex h-[675px] flex-col items-center justify-start sm-screen:h-[505px] 3xl:h-[800px]"
       ref={ref}
     >
       <div className={`z-50 -mt-[100px] flex flex-col items-center justify-center`}>
@@ -119,7 +119,11 @@ function Preview(props: any) {
       )}
 
       {page === 6 && (
-        <Content6 delay={0} className="mt-[52px] flex justify-center sm-screen:-mt-[50px]" />
+        <Content6
+          delay={0}
+          className="mt-[52px] flex justify-center sm-screen:-mt-[50px]"
+          showing={page === 6}
+        />
       )}
 
       <ReadMoreBtn className="absolute bottom-[10px] z-[999999]" href="/business_user" />

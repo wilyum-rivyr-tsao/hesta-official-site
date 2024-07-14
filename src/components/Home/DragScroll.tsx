@@ -90,7 +90,7 @@ function DragScroll(props: any) {
     >
       {showing && (
         <div
-          className={`no-scrollbar flex justify-start overflow-x-auto px-[100px] pt-[10vw]`}
+          className={`no-scrollbar flex justify-start overflow-x-auto px-[100px] pt-[160px]`}
           ref={scrollContent}
           onMouseDown={onMouseDown}
           style={{ cursor: isDragging ? 'grabbing' : 'grab' }}

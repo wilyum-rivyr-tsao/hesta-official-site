@@ -7,13 +7,16 @@ function Content4({
   delay = 1,
   className,
   charPos = 'bottom',
+  showing = false,
 }: {
   delay?: number;
   className?: string;
   charPos?: string;
+  showing: boolean;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  // const isInView = useInView(ref);
+  const isInView = showing;
 
   return (
     <div className={`${className} relative`} ref={ref}>

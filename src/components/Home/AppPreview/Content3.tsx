@@ -65,7 +65,7 @@ function Content3({ delay = 0, className }: any) {
               className={`h-[386px] w-[452px] opacity-90 sm-screen:h-[290px] sm-screen:w-[341px]`}
               autoPlay
               muted
-              src={` /video/jiemian.mp4`}
+              src={`/video/jiemian.mp4`}
               loop
             />
           )}

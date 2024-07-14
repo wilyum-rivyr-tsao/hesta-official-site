@@ -31,6 +31,7 @@ function Case() {
 
   const [current, setcurrent] = useState('all');
   const [hoverIndex, setHoverIndex] = useState(0);
+  const [hoverType, setHoverType] = useState('');
 
   return (
     <div>
@@ -59,9 +60,11 @@ function Case() {
                 onClick={() => {
                   setcurrent('customer');
                 }}
+                onMouseEnter={() => setHoverType('customer')}
+                onMouseLeave={() => setHoverType('')}
               >
                 <Image
-                  src={`${CDN}/imgs/case/icon_dwelling.png`}
+                  src={`/imgs/case/${current === 'customer' || hoverType === 'customer' ? 'icon_dwelling_active.png' : 'icon_dwelling.png'}`}
                   alt=""
                   width={16}
                   height={16}
@@ -74,9 +77,11 @@ function Case() {
                 onClick={() => {
                   setcurrent('business');
                 }}
+                onMouseEnter={() => setHoverType('business')}
+                onMouseLeave={() => setHoverType('')}
               >
                 <Image
-                  src={`${CDN}/imgs/case/icon_business.png`}
+                  src={`/imgs/case/${current === 'business' || hoverType === 'business' ? 'icon_business_active.png' : 'icon_business.png'}`}
                   alt=""
                   width={16}
                   height={16}
@@ -188,7 +193,7 @@ function Case() {
                     className="sm-screen:min-h-[435px] sm-screen:min-w-[580px]"
                   >
                     <Image
-                      src={`${CDN}imgs/case/Frame51-2.png`}
+                      src={`${CDN}/imgs/case/Frame51-2.png`}
                       alt=""
                       width={1000}
                       height={800}
