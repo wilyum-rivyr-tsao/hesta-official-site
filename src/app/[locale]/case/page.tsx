@@ -125,7 +125,7 @@ function Case() {
                     className="sm-screen:min-h-[435px] sm-screen:min-w-[580px]"
                   >
                     <Image
-                      src={`${CDN}/imgs/case/Frame51.png`}
+                      src={`${CDN}/imgs/case/Frame105.png`}
                       alt=""
                       width={1000}
                       height={800}
@@ -193,7 +193,7 @@ function Case() {
                     className="sm-screen:min-h-[435px] sm-screen:min-w-[580px]"
                   >
                     <Image
-                      src={`${CDN}/imgs/case/Frame51-2.png`}
+                      src={`${CDN}/imgs/case/Frame105.jpg`}
                       alt=""
                       width={1000}
                       height={800}

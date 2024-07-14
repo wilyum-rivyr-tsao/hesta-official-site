@@ -113,7 +113,8 @@ function DragScroll(props: any) {
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-[url('/imgs/card2.png')] bg-contain bg-center bg-no-repeat px-[40px]`}
+            style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               style={{ backgroundImage: `url(${CDN}/imgs/3dicon_platform.png)` }}
@@ -149,7 +150,8 @@ function DragScroll(props: any) {
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-[url('/imgs/card2.png')] bg-contain bg-center bg-no-repeat px-[40px]`}
+            style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               animate={
@@ -186,7 +188,8 @@ function DragScroll(props: any) {
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-[url('/imgs/card2.png')] bg-contain bg-center bg-no-repeat px-[40px]`}
+            style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               animate={
@@ -196,7 +199,7 @@ function DragScroll(props: any) {
                     }
                   : {}
               }
-              style={{ backgroundImage: `url("/imgs/3dicon_interaction.png")` }}
+              style={{ backgroundImage: `url("${CDN}/imgs/3dicon_interaction.png")` }}
               className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">3D交互体验</h3>
@@ -222,7 +225,8 @@ function DragScroll(props: any) {
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-[url('/imgs/card2.png')] bg-contain bg-center bg-no-repeat px-[40px]`}
+            style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               animate={
@@ -261,7 +265,8 @@ function DragScroll(props: any) {
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-[url('/imgs/card2.png')] bg-contain bg-center bg-no-repeat px-[40px]`}
+            style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               animate={
