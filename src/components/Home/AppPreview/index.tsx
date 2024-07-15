@@ -68,7 +68,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   const pages = ['01', '02', '03', '04', '05', '06'];
   const [curPages, setCurPages] = useState(['06', '01', '02']);
   const { componentRef, componentTop, rect } = useIsScrolledIntoView();
-  // const [scrollDisabled, setScrollDisabled] = useState(false);
+  const [scrollDisabled, setScrollDisabled] = useState(false);
   // const [scrollPosition, setScrollPosition] = useState(0);
   const homeContext: any = useContext(HomeContext);
 
@@ -82,7 +82,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
         let nextPage = page;
         if (e.deltaY > 0 && page < 6) {
           nextPage = page + 1;
-          console.log('nextPage', nextPage);
+          console.log('nextPag---', nextPage);
           // if (nextPage > 6) {
           //   enableScroll();
           //   return;
@@ -258,7 +258,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
         </div>
 
         <div style={containerStyle()}>
-          <Preview page={page} />
+          <Preview page={page} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} />
         </div>
       </div>
     </div>

@@ -68,6 +68,7 @@ function Home() {
   const [fullpageApi, setfullpageApi] = useState<any>(null);
 
   useEffect(() => {
+    console.log('scrollDisabled', scrollDisabled);
     fullpageApi?.setAllowScrolling(!scrollDisabled);
   }, [scrollDisabled, fullpageApi]);
 

@@ -37,14 +37,16 @@ const content = [
   },
 ];
 function Preview(props: any) {
-  const { className, page } = props;
+  const { className, page, onMouseEnter, onMouseLeave } = props;
   const ref = useRef(null);
   const isInView = useInView(ref);
 
   return (
     <div
-      className="relative flex h-[675px] flex-col items-center justify-start sm-screen:h-[505px] 3xl:h-[800px]"
+      className="relative flex h-[675px] flex-col items-center justify-start sm-screen:h-[505px] 3xl:h-[700px]"
       ref={ref}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <div className={`z-50 -mt-[100px] flex flex-col items-center justify-center`}>
         <motion.span
