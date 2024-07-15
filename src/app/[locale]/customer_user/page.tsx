@@ -1,25 +1,47 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import ContentLayout from '@/components/ContentLayout';
-import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import RoundedPagination from '@/components/Basic/RoundedPagination';
 import { useState } from 'react';
 import { CDN } from '@/constants';
+import { Tooltip } from 'react-tooltip';
 
 const appSlides = [
   {
     page: 1,
-    img: '/imgs/appui1.png',
+    img: `${CDN}/imgs/customer_user/appui1.png`,
     title: '3D扫描',
     desc: 'Hesta 处于创新前沿，利用先进的空间计算算法，通过 APPLE Vision Pro 将扫描后的 3D 模型转化为沉浸式体验。这项技术让用户直接与房屋、物联网设备和人工智能助手互动。无论是定制家居设计还是虚拟探索，Hesta 都提供前所未有的未来体验，引领下一代数字交互。',
   },
   {
     page: 2,
-    img: '/imgs/appui2.png',
+    img: `${CDN}/imgs/customer_user/appui2.png`,
     title: '全面掌控',
     desc: '用户可以随时随地编辑自己的房屋和智能设备，随意布置房间和设备位置，将自己已有的智能设备一键迁移添加到Hesta，并通过Hesta添加新购置的智能设备。',
+  },
+  {
+    page: 3,
+    img: `${CDN}/imgs/customer_user/appui3.png`,
+    title: 'AI 渲染',
+    desc: '基于尖端的3D模型和先进的捕捉技术，Hesta可以将您对房屋的愿景转化为现实。从等距轴测3D渲染到照片渲染的视图，我们的 AI 渲染功能提供无限的想象力，将您的房屋可视化。',
+  },
+  {
+    page: 4,
+    img: `${CDN}/imgs/customer_user/appui4.png`,
+    title: '一键智能化',
+    desc: '通过捕获的空间数据和收集的知识图谱，Hesta可以为现有公寓或待建房屋提供智能化计划。通过我们的智能化功能，轻松地将物业带入全新时代。在不同平台之间广泛的物联网设备兼容能力，使我们能够通过成本最小化，最大限度地为用户提供智能化优势。',
+  },
+  {
+    page: 5,
+    img: `${CDN}/imgs/customer_user/appui5.png`,
+    title: '多房屋管理',
+    desc: '支持创建多个房屋并无缝切换，帮助你轻松管理多个物业，确保你时刻对自己的资产了如指掌，掌控每一处房产的动态和细节。',
+  },
+  {
+    page: 6,
+    img: `${CDN}/imgs/customer_user/appui6.png`,
+    title: '个性化AI助手',
+    desc: '每个用户都可以通过个性化人工智能助手的帮助，随时随地解决任何与房屋相关的疑问或日常生活问题。这名助手由Hesta使用特定于该物业的数据以及用户习惯进行训练，每个助手都是独 一无二的。',
   },
 ];
 function Index() {
@@ -183,8 +205,8 @@ function Index() {
         <div className="flex w-full items-end justify-between rounded-[100px] rounded-b bg-[#F9FAFC] px-[9.7222vw] pb-[173px] pt-[160px]">
           <div>
             <RoundedPagination
-              goto={(page) => setappSlide(appSlides[page - 1])}
-              totalPage={2}
+              goto={(page: number) => setappSlide(appSlides[page - 1])}
+              totalPage={appSlides.length}
               page={appSlide.page}
             />
             <h4 className="mt-14 font-impact text-[48px] font-black">HESTA APP</h4>
@@ -203,7 +225,25 @@ function Index() {
 
       <div className="flex h-[62.5vw] min-h-[900px] flex-col items-center justify-center bg-[#F9FAFC] pb-[200px]">
         <div className="flex h-[660px] w-[1320px] flex-col items-center justify-center rounded-3xl bg-[#F0F2F7] pt-[100px]">
+          <Tooltip
+            anchorSelect="#app_ios"
+            data-tooltip-place="bottom"
+            style={{
+              backgroundColor: '#fff',
+              borderRadius: '20px',
+              boxShadow: '1px 1px 10px #00000060',
+            }}
+          >
+            <Image
+              src={`/imgs/customer_user/qrcode.jpg`}
+              alt="apple"
+              width={209}
+              height={66}
+              className="cursor-pointer"
+            />
+          </Tooltip>
           <Image
+            id="app_ios"
             src={`/imgs/customer_user/Group1530.png`}
             alt="apple"
             width={209}

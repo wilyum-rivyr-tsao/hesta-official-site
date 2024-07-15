@@ -1,10 +1,69 @@
 'use client';
 // pages/contact.js
 import React, { useRef, useState } from 'react';
-
-import { Alert, Button } from '@material-tailwind/react';
+import { Alert } from '@material-tailwind/react';
 import Image from 'next/image';
 import { CDN } from '@/constants';
+
+import Select, { StylesConfig } from 'react-select';
+
+const colourStyles: StylesConfig<any> = {
+  control: (styles) => ({
+    ...styles,
+    height: '79px',
+    width: '100%',
+    border: '1px solid #383b43',
+    backgroundColor: 'white',
+    // paddingLeft: '1.5rem',
+    // paddingRight: '1.5rem',
+    fontFamily: 'harmony',
+    fontSize: '16px',
+    color: '#383b43',
+    borderRadius: 0,
+    outline: 'none',
+  }),
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    // const color = chroma(data.color);
+    return {
+      ...styles,
+    };
+  },
+  menu: (styles) => ({
+    ...styles,
+    maxWidth: '177px',
+    border: '1px solid #fff',
+    marginTop: 0,
+  }),
+  input: (styles) => ({ ...styles, background: '' }),
+  placeholder: (styles) => ({ ...styles }),
+  singleValue: (styles, { data }) => ({ ...styles, background: '' }),
+  indicatorsContainer: (styles) => ({
+    ...styles,
+  }),
+  indicatorSeparator: (styles) => ({
+    display: 'none',
+  }),
+};
+
+const optionsPropertyType = [
+  { value: '商业地产', label: '商业地产' },
+  { value: '住宅', label: '住宅' },
+];
+
+const optionsPropertyCate = [
+  { value: '办公楼', label: '办公楼' },
+  { value: '酒店', label: '酒店' },
+  { value: '商场', label: '商场' },
+];
+
+const optionsResidentialType = [
+  { value: '平层', label: '平层' },
+  { value: '别墅', label: '别墅' },
+];
+const optionsRenovationStage = [
+  { value: '前装', label: '前装' },
+  { value: '后装', label: '后装' },
+];
 
 const ContactForm = () => {
   const submit = () => {
@@ -19,6 +78,12 @@ const ContactForm = () => {
       setOpen(false);
     }, 1000);
   };
+
+  const [propertyType, setpropertyType] = useState('');
+  const [propertyCate, setpropertyCate] = useState('');
+
+  const [residentialType, setResidentialType] = useState('');
+  const [renovationStage, setRenovationStage] = useState('');
 
   const agreeRef = useRef(null);
 
@@ -68,18 +133,69 @@ const ContactForm = () => {
                 className="h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none"
                 placeholder="所在城市"
               />
-              <input
+              {/* <input
                 type="text"
                 className="h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none"
                 placeholder="地产类别"
+              /> */}
+              <Select
+                options={optionsPropertyType}
+                styles={colourStyles}
+                placeholder="地产类别"
+                value={propertyType}
+                onChange={(option) => {
+                  setpropertyType(option.value);
+                  console.log('Selected option:', option);
+                }}
               />
             </div>
 
-            <input
-              type="text"
-              className="mt-4 h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none"
-              placeholder="地产类型"
-            />
+            {propertyType === '住宅' && (
+              <div className="mt-4">
+                <input
+                  type="text"
+                  className="h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none"
+                  placeholder="房屋面积"
+                />
+
+                <div className="mt-4 grid grid-cols-2 gap-4">
+                  <Select
+                    options={optionsResidentialType}
+                    styles={colourStyles}
+                    placeholder="房屋类型"
+                    value={residentialType}
+                    onChange={(option) => {
+                      setResidentialType(option.value);
+                      console.log('Selected option:', option);
+                    }}
+                  />
+                  <Select
+                    options={optionsRenovationStage}
+                    styles={colourStyles}
+                    placeholder="装修阶段"
+                    value={renovationStage}
+                    onChange={(option) => {
+                      setRenovationStage(option.value);
+                      console.log('Selected option:', option);
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+            {propertyType !== '住宅' && (
+              <div className="mt-4">
+                <Select
+                  options={optionsPropertyCate}
+                  styles={colourStyles}
+                  placeholder="地产类型"
+                  value={propertyCate}
+                  onChange={(option) => {
+                    setpropertyCate(option.value);
+                    console.log('Selected option:', option);
+                  }}
+                />
+              </div>
+            )}
 
             <div className="mt-8 flex items-center">
               <input

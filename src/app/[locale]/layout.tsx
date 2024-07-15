@@ -6,7 +6,7 @@ import { ReactNode } from 'react';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { PopupProvider } from '@/context/PopupContext';
 import { ThemeProvider } from '@/components/material-tailwind';
-import Script from 'next/script';
+import 'react-tooltip/dist/react-tooltip.css';
 
 export const metadata: Metadata = {
   title: 'Hesta',
