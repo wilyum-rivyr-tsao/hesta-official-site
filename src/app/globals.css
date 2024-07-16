@@ -117,6 +117,7 @@ body {
   transform: rotate(45deg);
 }
 .button-hover:hover {
+  color: white;
   span {
     color: white;
   }
