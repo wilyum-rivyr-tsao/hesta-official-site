@@ -34,7 +34,7 @@ function Content4({
               }
         }
         transition={{
-          duration: 0.5,
+          duration: 0.2,
           delay,
           ease: 'easeOut',
         }}
@@ -62,8 +62,8 @@ function Content4({
               }
         }
         transition={{
-          duration: 0.5,
-          delay: delay + 1,
+          duration: 0.2,
+          delay: delay + 0.2,
           ease: 'easeOut',
         }}
         initial={{ x: 2000, opacity: 0 }}

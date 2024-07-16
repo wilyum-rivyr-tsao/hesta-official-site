@@ -79,8 +79,7 @@ function Cases(props: any) {
               : {}
           }
           transition={{
-            duration: 0.3,
-            delay: 0.5,
+            duration: 0.1,
             ease: 'easeOut',
           }}
           initial={{ y: 1000, opacity: 0 }}
@@ -110,8 +109,8 @@ function Cases(props: any) {
               : {}
           }
           transition={{
-            duration: 0.3,
-            delay: 0.3,
+            duration: 0.2,
+            delay: 0.1,
             ease: 'easeOut',
           }}
           initial={{ y: 1000, opacity: 0 }}

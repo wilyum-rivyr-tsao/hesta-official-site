@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useRef } from 'react';
 
 function PopMsg1(props?: any) {
-  const { className, title, time, desc, icon, target } = props;
+  const { className, title, time, desc, icon, target, delay = 0.5 } = props;
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
@@ -48,7 +48,7 @@ function PopMsg1(props?: any) {
         }
         transition={{
           duration: 0.5,
-          delay: 1.5,
+          delay,
           ease: 'easeOut',
         }}
         initial={{ opacity: 0, x: 200 }}

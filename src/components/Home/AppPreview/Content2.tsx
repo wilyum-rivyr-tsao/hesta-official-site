@@ -23,7 +23,7 @@ function Content2({ delay = 1, className = '' }: { className?: string; delay?: n
             }
       }
       transition={{
-        duration: 0.5,
+        duration: 0.2,
         delay,
         ease: 'easeOut',
       }}

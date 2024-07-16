@@ -46,7 +46,10 @@ const Screen1 = (props: any) => {
   return (
     <motion.div {...restProps} ref={ref}>
       <Header />
-      <div className="relative h-screen min-h-[700px] w-full overflow-hidden">
+      <div
+        className="relative h-screen min-h-[700px] w-full overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url("${CDN}/imgs/bg_home.webp")` }}
+      >
         {/* First video */}
         {page === 0 && (
           <>

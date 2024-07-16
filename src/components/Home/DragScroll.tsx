@@ -108,8 +108,8 @@ function DragScroll(props: any) {
                 : {}
             }
             transition={{
-              duration: 0.5,
-              delay: 0.5,
+              duration: 0.2,
+              delay: 0,
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
@@ -145,8 +145,8 @@ function DragScroll(props: any) {
                 : {}
             }
             transition={{
-              duration: 0.8,
-              delay: 0.5,
+              duration: 0.2,
+              delay: 0.2,
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
@@ -183,8 +183,8 @@ function DragScroll(props: any) {
                 : {}
             }
             transition={{
-              duration: 1.1,
-              delay: 0.5,
+              duration: 0.2,
+              delay: 0.4,
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
@@ -220,8 +220,8 @@ function DragScroll(props: any) {
                 : {}
             }
             transition={{
-              duration: 1.4,
-              delay: 0.5,
+              duration: 0.2,
+              delay: 0.6,
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
@@ -260,8 +260,8 @@ function DragScroll(props: any) {
                 : {}
             }
             transition={{
-              duration: 1.7,
-              delay: 0.5,
+              duration: 0.2,
+              delay: 0.8,
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}

@@ -20,7 +20,7 @@ function Content3({ delay = 0, className }: any) {
             : {}
         }
         transition={{
-          duration: 0.5,
+          duration: 0.2,
           delay,
           ease: 'easeOut',
         }}
@@ -45,7 +45,7 @@ function Content3({ delay = 0, className }: any) {
             : {}
         }
         transition={{
-          duration: 0.5,
+          duration: 0.2,
           delay: delay + 0.5,
           ease: 'easeOut',
         }}
@@ -82,7 +82,7 @@ function Content3({ delay = 0, className }: any) {
             : {}
         }
         transition={{
-          duration: 0.5,
+          duration: 0.2,
           delay: delay + 1,
           ease: 'easeOut',
         }}

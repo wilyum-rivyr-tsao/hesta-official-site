@@ -21,18 +21,14 @@ function Index(props: any, ref: Ref<HTMLDivElement>) {
               ? {
                   y: 0,
                   opacity: 1,
-                  scale: 1,
                 }
-              : {
-                  opacity: 0,
-                  y: 100,
-                }
+              : {}
           }
           transition={{
-            duration: 1,
+            duration: 0.1,
             ease: 'easeOut',
           }}
-          initial={{ y: 300, opacity: 0 }}
+          initial={{ y: -30, scale: '10%' }}
         >
           住宅用户创新优势
         </motion.h2>
@@ -51,8 +47,8 @@ function Index(props: any, ref: Ref<HTMLDivElement>) {
                 : {}
             }
             transition={{
-              duration: 1,
-              delay: 0.5,
+              duration: 0.2,
+              delay: 0.2,
               ease: 'easeOut',
             }}
             initial={{ y: 300, opacity: 0 }}
