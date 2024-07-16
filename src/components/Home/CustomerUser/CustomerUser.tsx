@@ -28,7 +28,7 @@ function Index(props: any, ref: Ref<HTMLDivElement>) {
             duration: 0.1,
             ease: 'easeOut',
           }}
-          initial={{ y: -30, scale: '10%' }}
+          initial={{ y: -30 }}
         >
           住宅用户创新优势
         </motion.h2>
