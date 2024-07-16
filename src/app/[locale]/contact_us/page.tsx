@@ -14,29 +14,41 @@ const colourStyles: StylesConfig<any> = {
     width: '100%',
     border: '1px solid #383b43',
     backgroundColor: 'white',
-    // paddingLeft: '1.5rem',
-    // paddingRight: '1.5rem',
     fontFamily: 'harmony',
     fontSize: '16px',
     color: '#383b43',
     borderRadius: 0,
     outline: 'none',
   }),
-  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-    // const color = chroma(data.color);
+  /* option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     return {
       ...styles,
+      background: 'none',
+      padding: '15px 0',
+    };
+  }, */
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    return {
+      ...styles,
+      backgroundColor: undefined,
+      // color: isDisabled ? '#ccc' : isSelected ? 'white' : 'black',
+      ':active': {
+        ...styles[':active'],
+        backgroundColor: undefined,
+      },
     };
   },
   menu: (styles) => ({
     ...styles,
     maxWidth: '177px',
-    border: '1px solid #fff',
-    marginTop: 0,
+    border: '2px solid #fff',
+    marginTop: '5px',
+    right: '0',
+    padding: '15px 10px',
+    boxShadow: '1px 1px 10px #00000030',
   }),
   input: (styles) => ({ ...styles, background: '' }),
   placeholder: (styles) => ({ ...styles }),
-  singleValue: (styles, { data }) => ({ ...styles, background: '' }),
   indicatorsContainer: (styles) => ({
     ...styles,
   }),
