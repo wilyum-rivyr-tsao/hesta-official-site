@@ -8,10 +8,8 @@ function ReadMore(props: any) {
   return (
     <Link
       href={href}
-      style={{
-        backgroundImage: `url("${CDN}/imgs/btnarr.png")`,
-      }}
-      className={`flex h-[54px] w-[154px] items-center bg-cover bg-center bg-no-repeat hover:bg-[url("/imgs/btnarr_active.png")] ${className} hover:text-white`}
+      style={{}}
+      className={`flex h-[54px] w-[154px] items-center bg-[url("/imgs/btnarr.png")] bg-cover bg-center bg-no-repeat hover:bg-[url("/imgs/btnarr_active.png")] ${className} hover-button hover:text-white`}
       onMouseEnter={() => sethover(true)}
       onMouseLeave={() => sethover(false)}
     >

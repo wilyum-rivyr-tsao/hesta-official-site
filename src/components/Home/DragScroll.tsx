@@ -85,12 +85,12 @@ function DragScroll(props: any) {
 
   return (
     <div
-      className="relative mt-[20px] flex h-[539px] w-full shrink-0 select-none justify-center overflow-hidden"
+      className="relative mt-[20px] flex w-full shrink-0 select-none justify-center overflow-hidden"
       ref={componentRef}
     >
       {showing && (
         <div
-          className={`no-scrollbar flex justify-start overflow-x-auto px-[100px] pt-[160px]`}
+          className={`no-scrollbar flex justify-start overflow-x-auto px-[100px] pt-[80px]`}
           ref={scrollContent}
           onMouseDown={onMouseDown}
           style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
@@ -114,11 +114,11 @@ function DragScroll(props: any) {
             }}
             initial={{ y: 1000, opacity: 0 }}
             style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+            className={`mr-2 flex h-[420px] w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               style={{ backgroundImage: `url(${CDN}/imgs/3dicon_platform.png)` }}
-              className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
+              className={`-mt-[60px] h-[220px] w-[288px] bg-cover bg-center bg-no-repeat`}
               animate={
                 hover === 1
                   ? {
@@ -146,12 +146,12 @@ function DragScroll(props: any) {
             }
             transition={{
               duration: 0.2,
-              delay: 0.2,
+              delay: 0.1,
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
             style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+            className={`mr-2 flex h-[420px] w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               animate={
@@ -162,7 +162,7 @@ function DragScroll(props: any) {
                   : {}
               }
               style={{ backgroundImage: `url("${CDN}/imgs/3dicon_intelligence.png")` }}
-              className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
+              className={`-mt-[60px] h-[220px] w-[288px] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">一键智能</h3>
             <p className="mt-[20px] font-harmony text-[14px] font-thin">
@@ -184,12 +184,12 @@ function DragScroll(props: any) {
             }
             transition={{
               duration: 0.2,
-              delay: 0.4,
+              delay: 0.2,
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
             style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+            className={`mr-2 flex h-[420px] w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               animate={
@@ -200,7 +200,7 @@ function DragScroll(props: any) {
                   : {}
               }
               style={{ backgroundImage: `url("${CDN}/imgs/3dicon_interaction.png")` }}
-              className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
+              className={`-mt-[60px] h-[220px] w-[288px] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">3D交互体验</h3>
             <p className="mt-[20px] font-harmony text-[14px] font-thin">
@@ -221,12 +221,12 @@ function DragScroll(props: any) {
             }
             transition={{
               duration: 0.2,
-              delay: 0.6,
+              delay: 0.3,
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
             style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+            className={`mr-2 flex h-[420px] w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               animate={
@@ -239,7 +239,7 @@ function DragScroll(props: any) {
               style={{
                 backgroundImage: `url("${CDN}/imgs/3dicon_customization.png")`,
               }}
-              className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
+              className={`-mt-[60px] h-[220px] w-[288px] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">定制化人工智能服务</h3>
             <p className="mt-[20px] font-harmony text-[14px] font-thin">
@@ -261,12 +261,12 @@ function DragScroll(props: any) {
             }
             transition={{
               duration: 0.2,
-              delay: 0.8,
+              delay: 0.4,
               ease: 'easeOut',
             }}
             initial={{ y: 1000, opacity: 0 }}
             style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
-            className={`mr-2 flex h-[350px] w-[350px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+            className={`mr-2 flex h-[420px] w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               animate={
@@ -276,7 +276,7 @@ function DragScroll(props: any) {
                     }
                   : {}
               }
-              className={`-mt-[80px] h-[140px] w-[200px] bg-[url("/imgs/3dicon_life.png")] bg-cover bg-center bg-no-repeat`}
+              className={`-mt-[60px] h-[220px] w-[288px] bg-[url("/imgs/3dicon_life.png")] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">智慧生活</h3>
             <p className="mt-[20px] font-harmony text-[14px] font-thin">

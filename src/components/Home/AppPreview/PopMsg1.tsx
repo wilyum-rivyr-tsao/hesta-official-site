@@ -35,7 +35,7 @@ function PopMsg1(props?: any) {
         />
       </motion.div>
       <motion.div
-        className={`${target === 'business' && '-mt-[110px]'} ml-4 h-[170px] w-[345px] rounded-lg bg-white bg-opacity-60 backdrop-blur-lg`}
+        className={`${target === 'business' && '-mt-[110px]'} ml-4 h-[170px] w-[345px] rounded-lg bg-white bg-opacity-80 backdrop-blur-lg`}
         animate={
           isInView
             ? {
@@ -58,10 +58,12 @@ function PopMsg1(props?: any) {
           className={`h-[80px] bg-cover bg-center bg-no-repeat px-5 pt-6`}
           style={{ backgroundImage: `url('/imgs/${icon}')` }}
         >
-          <h3 className="font-harmony text-[18px] font-bold">{title}</h3>
-          <p className="font-harmony font-thin text-[#939397]">{time}</p>
+          <h3 className="font-harmony text-[18px] font-[600]">{title}</h3>
+          <p className="font-harmony font-thin text-[#959598]">{time}</p>
         </div>
-        <div className="mt-[30px] px-5 font-harmony text-xs font-thin text-[#383B43]">{desc}</div>
+        <div className="mt-[20px] px-5 font-harmony text-[14px] font-thin leading-[25px] text-[#383B43]">
+          {desc}
+        </div>
       </motion.div>
     </div>
   );

@@ -56,13 +56,13 @@ const Menu = () => {
   }, [current, pathname]);
 
   return (
-    <div className="absolute left-0 top-0 z-[99999] h-[100vh] w-full select-none">
+    <div className="absolute left-0 top-0 z-[99999] h-[100vh] w-full select-none" onClick={expand}>
       <div className="absolute right-0 top-0">
         {/* <div className="absolute right-0 top-0 h-[100vh] w-[50vw] bg-white bg-opacity-75 blur-xl"></div> */}
-        <div className="absolute right-0 top-0 z-50 h-[100vh] w-[50vw] bg-[url('/imgs/menu_bg.png')] bg-cover bg-center bg-no-repeat">
+        <div className="absolute right-0 top-0 z-50 h-[100vh] w-[40vw] border-l border-white bg-[#ffffff86] backdrop-blur-md">
           <div
             onClick={expand}
-            className="absolute right-10 top-8 flex cursor-pointer items-center"
+            className="absolute right-[54px] top-[36px] flex cursor-pointer items-center"
           >
             <Image
               src={`/imgs/${state.showMenu ? 'icon_menu_close' : 'icon_menu'}.png`}
@@ -74,59 +74,63 @@ const Menu = () => {
           </div>
 
           <div
-            className="flex h-full flex-col items-center justify-between px-[17.8472vw] py-[9.0278vw] font-harmony"
-            onClick={() => dispatch({ type: 'showMenu', payload: false })}
+            className="flex h-full flex-col items-center justify-between py-[130px] font-harmony"
+            // onClick={() => dispatch({ type: 'showMenu', payload: false })}
           >
-            <Link className="mb-3 flex flex-col items-center" href="/">
+            <Link className="flex flex-col items-center" href="/">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'home' && 'text-[#383b4365]'}`}
+                className={`ml-2 text-[32px] font-bold ${current === 'home' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 首页
               </span>
               <span className="ml-2 text-[20px] font-light">HOME</span>
               <span className="rotate-[24deg] text-[30px] font-thin">/</span>
             </Link>
-            <Link href="/business_user" className="mb-3 flex flex-col items-center">
+            <Link href="/business_user" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'business_user' && 'text-[#383b4365]'}`}
+                className={`ml-2 text-[32px] font-bold ${current === 'business_user' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 商业
               </span>
               <span className="ml-2 text-[20px] font-light">BUSINESS</span>
               <span className="rotate-[24deg] text-[30px] font-thin">/</span>
             </Link>
-            <Link href="/customer_user" className="mb-3 flex flex-col items-center">
+            <Link href="/customer_user" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'customer_user' && 'text-[#383b4365]'}`}
+                className={`ml-2 text-[32px] font-bold ${current === 'customer_user' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 住宅
               </span>
               <span className="ml-2 text-[20px] font-light">RESIDENCE</span>
               <span className="rotate-[24deg] text-[30px] font-thin">/</span>
             </Link>
-            <Link href="/case" className="mb-3 flex flex-col items-center">
+            <Link href="/case" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'case' && 'text-[#383b4365]'}`}
+                className={`ml-2 text-[32px] font-bold ${current === 'case' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 案例
               </span>
               <span className="ml-2 text-[20px] font-light">CASE</span>
               <span className="rotate-[24deg] text-[30px] font-thin">/</span>
             </Link>
-            <Link href="/about_us" className="mb-3 flex flex-col items-center">
+            <Link href="/about_us" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'about_us' && 'text-[#383b4365]'}`}
+                className={`ml-2 text-[32px] font-bold ${current === 'about_us' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 关于
               </span>
               <span className="ml-2 text-[20px] font-light">ABOUT</span>
               <span className="rotate-[24deg] text-[30px] font-thin">/</span>
             </Link>
-            {/* <Link href="/contact_us" className="mb-3 flex flex-col items-center">
-            <span className="ml-2 text-[32px] font-bold">联系我们</span>
-            <span className="ml-2 text-[20px] font-light">HOME</span>
-            <span className="rotate-[24deg] text-[30px] font-thin">/</span>
-          </Link> */}
+            <Link href="/contact_us" className="flex flex-col items-center">
+              <span
+                className={`ml-2 text-[32px] font-bold ${current === 'cotact_us' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
+              >
+                联系我们
+              </span>
+              <span className="ml-2 text-[20px] font-light">CONTACT</span>
+              {/* <span className="rotate-[24deg] text-[30px] font-thin">/</span> */}
+            </Link>
           </div>
         </div>
       </div>

@@ -234,21 +234,21 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   // const [slideUpState, slideUpDispatch] = useReducer(slideUpReducer, initialState);
 
   return (
-    <div ref={ref} className="h-[100vh] w-full overflow-hidden">
-      <div className="mt-[34px] flex w-full flex-col items-center bg-no-repeat">
+    <div ref={ref} className="h-[100vh] w-full overflow-x-hidden">
+      <div className="flex w-full flex-col items-center bg-no-repeat">
         <div className={`relative z-[9999] flex w-full flex-col items-center justify-center`}>
           <div
-            className={`relative z-[99] flex w-[521px] cursor-pointer select-none justify-between font-impact`}
+            className={`relative z-[99] flex w-[521px] cursor-pointer select-none justify-between font-akrobat`}
           >
             <div
-              className="mt-[55px] -rotate-[32deg] text-[50px] font-bold text-[#e1e2e6]"
+              className="mt-[55px] -rotate-[32deg] font-akrobat text-[50px] text-[#E0E2E6]"
               onClick={() => nextPage('prev')}
             >
               {curPages[0]}
             </div>
-            <div className="text-[50px] font-bold text-[#383B43]">{curPages[1]}</div>
+            <div className="font-akrobat text-[50px] text-[#383B43]">{curPages[1]}</div>
             <div
-              className="mt-[55px] rotate-[32deg] text-[50px] font-bold text-[#e1e2e6]"
+              className="mt-[55px] rotate-[32deg] text-[50px] font-bold text-[#E0E2E6]"
               onClick={() => nextPage('next')}
             >
               {curPages[2]}

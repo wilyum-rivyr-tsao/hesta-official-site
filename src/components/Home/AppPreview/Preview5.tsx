@@ -87,7 +87,7 @@ function Preview(props: any) {
           height={4000}
         />
       </div>
-      <ReadMoreBtn className="absolute bottom-[50px]" href="/business_user" />
+      <ReadMoreBtn className="absolute bottom-[10px]" href="/business_user" />
     </div>
   );
 }

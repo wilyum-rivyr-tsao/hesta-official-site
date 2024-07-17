@@ -83,7 +83,7 @@ const Screen1 = (props: any) => {
             <motion.h2
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{
-                duration: 0.5,
+                duration: 0.3,
                 delay: 4,
                 ease: 'easeOut',
               }}
@@ -96,7 +96,7 @@ const Screen1 = (props: any) => {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.5,
-                delay: 4.5,
+                delay: 4.1,
                 ease: 'easeOut',
               }}
               initial={{ y: -50, opacity: 0 }}
@@ -108,7 +108,7 @@ const Screen1 = (props: any) => {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.5,
-                delay: 5,
+                delay: 4.3,
                 ease: 'easeOut',
               }}
               initial={{ y: -50, opacity: 0 }}

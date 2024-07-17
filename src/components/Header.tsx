@@ -13,7 +13,7 @@ function Header(props: any) {
   return (
     <>
       <div
-        className={`fixed top-[31px] z-[9999] flex w-full items-center justify-between ${className} left-0 min-w-[1400px] select-none`}
+        className={`fixed top-[31px] z-[999999999999] flex w-full items-center justify-between ${className} left-0 min-w-[1400px] select-none`}
         {...restProps}
       >
         <Link href="/" className="ml-20 flex">

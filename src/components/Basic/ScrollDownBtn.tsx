@@ -1,6 +1,7 @@
 // components/ScrollDownButton.tsx
 'use client'; // This directive indicates that the component is a client-side component
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { RefObject, useEffect, useState } from 'react';
 
@@ -19,7 +20,17 @@ const ScrollDownButton = (props: {
   };
 
   return (
-    <div onClick={handleScroll} className={`${className}`}>
+    <motion.div
+      onClick={handleScroll}
+      className={`${className} shake10`}
+      animate={{ y: 0, opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.3,
+        delay: 4.6,
+        ease: 'easeOut',
+      }}
+      initial={{ y: -50, opacity: 0 }}
+    >
       <Image
         src="/imgs/icon_guidearrow.png"
         alt={''}
@@ -27,7 +38,7 @@ const ScrollDownButton = (props: {
         height={70}
         // style={{ width: '3.0556vw', height: '3.0556vw' }}
       />
-    </div>
+    </motion.div>
   );
 };
 
