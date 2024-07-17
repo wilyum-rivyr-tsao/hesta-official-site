@@ -1,12 +1,10 @@
 .grow-width {
   width: 0;
-  background-color: blue; /* Adjust background color as needed */
   animation: grow 1s forwards; /* 2s is the duration of the animation */
 }
 
 .shrink-width {
   width: 0;
-  background-color: blue; /* Adjust background color as needed */
   animation: shrink 1s forwards; /* 2s is the duration of the animation */
 }
 

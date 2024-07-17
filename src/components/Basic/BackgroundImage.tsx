@@ -7,6 +7,8 @@ interface BackgroundImageProps {
   alt?: string;
   className?: string;
   contentClass?: string;
+  quality?: number;
+  priority?: boolean;
 }
 
 const BackgroundImage: React.FC<BackgroundImageProps> = ({
@@ -15,6 +17,8 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
   alt,
   className,
   contentClass,
+  quality = 100,
+  priority = false,
 }) => {
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -23,8 +27,9 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
         alt={alt ?? ''}
         fill
         style={{ objectFit: 'cover' }}
-        quality={100} // Adjust the quality as needed
+        quality={quality} // Adjust the quality as needed
         className="absolute inset-0 z-0"
+        priority={priority}
       />
       <div className={`relative z-10 ${contentClass}`}>{children}</div>
     </div>

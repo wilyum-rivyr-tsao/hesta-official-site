@@ -4,7 +4,7 @@ import ContentLayout from '@/components/ContentLayout';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import firstImg from '/public/imgs/about_us/first.png';
+// import firstImg from '/public/imgs/about_us/first.png';
 import BackgroundImage from '@/components/Basic/BackgroundImage';
 import RoundedPagination from '@/components/Basic/RoundedPagination';
 import './style.css';
@@ -87,11 +87,21 @@ function AboutUs() {
 
   return (
     <>
-      <Image src={firstImg} objectFit="cover" alt={''} />
+      <Image
+        src={`${CDN}/imgs/about_us/first.png`}
+        objectFit="cover"
+        alt={''}
+        priority
+        width={2000}
+        height={2000}
+      />
+
       <BackgroundImage
         src={`${CDN}/imgs/about_us/Group1595.png`}
         alt=""
         className="h-[70vw] min-h-[1200px] w-full"
+        quality={70}
+        priority={true}
       >
         <div className="flex w-full flex-col items-center justify-center">
           <h3 className="mb-[40px] mt-[90px] font-harmony text-[40px] font-black">品牌故事</h3>
@@ -215,6 +225,7 @@ function AboutUs() {
                 src={`${CDN}/imgs/about_us/Group1591.png`}
                 alt=""
                 className="-m-[15px] h-[401px] w-[374px]"
+                quality={50}
               >
                 <div className="mt-[200px] flex h-[401px] px-[80px]">
                   <div className="mb-20 flex flex-col font-harmony">

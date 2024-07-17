@@ -52,13 +52,6 @@ function Content3({ delay = 0, className }: any) {
         initial={{ x: 2000, opacity: 0 }}
         className=""
       >
-        {/* <Image
-          src="/imgs/previewContent3b.png"
-          alt={''}
-          width={452}
-          height={800}
-          className={`animate__animated ml-4 h-[386px] w-[452px] opacity-90 sm-screen:h-[290px] sm-screen:w-[341px]`}
-        /> */}
         <div className="ml-4 rounded-sm bg-white opacity-90">
           {isInView && (
             <video

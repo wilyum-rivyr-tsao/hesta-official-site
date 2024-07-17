@@ -1,3 +1,4 @@
+import { CDN } from '@/constants';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
@@ -26,7 +27,7 @@ function PopMsg1(props?: any) {
         initial={{ opacity: 0 }}
       >
         <Image
-          src="/imgs/circle.png"
+          src={`${CDN}/imgs/circle.png`}
           height={46}
           width={46}
           style={{ width: '2vw', height: '2vw' }}

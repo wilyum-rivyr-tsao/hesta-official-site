@@ -161,7 +161,7 @@ function DragScroll(props: any) {
                     }
                   : {}
               }
-              style={{ backgroundImage: `url("/imgs/3dicon_intelligence.png")` }}
+              style={{ backgroundImage: `url("${CDN}/imgs/3dicon_intelligence.png")` }}
               className={`-mt-[80px] h-[140px] w-[200px] bg-cover bg-center bg-no-repeat`}
             ></motion.div>
             <h3 className="mt-[17px] font-harmony text-[20px] font-bold">一键智能</h3>

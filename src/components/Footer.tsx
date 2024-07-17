@@ -23,7 +23,8 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
   console.log('CDN', CDN);
   return (
     <div
-      className={`h-[62.5vw] bg-[url('/imgs/bg_end.png')] bg-cover bg-center bg-no-repeat px-[9.7222vw] ${className} relative flex flex-col items-center justify-center`}
+      style={{ backgroundImage: `url('${CDN}/imgs/bg_end.png')` }}
+      className={`h-[62.5vw] bg-cover bg-center bg-no-repeat px-[9.7222vw] ${className} relative flex flex-col items-center justify-center`}
       ref={ref}
     >
       <div className="flex w-full items-center justify-between">

@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+import { CDN } from '@/constants';
 
 function Content4({ delay = 1, className }: { delay?: number; className?: string }) {
   const ref = useRef(null);
@@ -30,7 +31,7 @@ function Content4({ delay = 1, className }: { delay?: number; className?: string
       className={className}
     >
       <Image
-        src="/imgs/bg_computer.png"
+        src={`${CDN}/imgs/bg_computer.png`}
         alt={''}
         width={5000}
         height={5000}
