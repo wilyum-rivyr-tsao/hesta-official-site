@@ -67,7 +67,7 @@ function Content4({
           ease: 'easeOut',
         }}
         initial={{ x: 2000, opacity: 0 }}
-        className={`absolute ${charPos === 'bottom' ? 'top-[150px] sm-screen:top-[120px]' : '-top-[150px]'} `}
+        className={`absolute ${charPos === 'bottom' ? 'top-[150px]' : '-top-[150px]'} `}
       >
         <Image
           src={`${CDN}/imgs/slide6chart2.png`}

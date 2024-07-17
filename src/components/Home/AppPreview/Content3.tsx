@@ -31,7 +31,7 @@ function Content3({ delay = 0, className }: any) {
           alt={''}
           width={413}
           height={800}
-          className={`animate__animated h-[386px] w-[413px] opacity-90 sm-screen:h-[290px] sm-screen:w-[311px]`}
+          className={`animate__animated h-[386px] w-[413px] opacity-90`}
         />
       </motion.div>
       <motion.div
@@ -55,7 +55,7 @@ function Content3({ delay = 0, className }: any) {
         <div className="ml-4 rounded-sm bg-white opacity-90">
           {isInView && (
             <video
-              className={`h-[386px] w-[452px] opacity-90 sm-screen:h-[290px] sm-screen:w-[341px]`}
+              className={`h-[386px] w-[452px] opacity-90`}
               autoPlay
               muted
               src={`/video/jiemian.mp4`}
@@ -87,7 +87,7 @@ function Content3({ delay = 0, className }: any) {
           alt={''}
           width={193}
           height={800}
-          className={`-mb-10 -ml-4 h-[233px] w-[230px] opacity-90 sm-screen:h-[175px] sm-screen:w-[195px]`}
+          className={`-mb-10 -ml-4 h-[233px] w-[230px] opacity-90`}
         />
       </motion.div>
     </div>

@@ -20,6 +20,7 @@ import debouce from 'lodash/debounce';
 import { useAnimation, motion, AnimatePresence, useAnimate } from 'framer-motion';
 import { throttle } from 'lodash';
 import ReactFullpage from '@fullpage/react-fullpage'; // will return static version on server and "live" version on client
+import Header from '../Header';
 
 export const HomeContext: any = createContext(null);
 
@@ -78,6 +79,7 @@ function Home() {
 
   return (
     <HomeContext.Provider value={{ scrollDisabled, setScrollDisabled }}>
+      <Header />
       <ReactFullpage
         //fullpage options
         licenseKey={'YOUR_KEY_HERE'}
@@ -92,31 +94,33 @@ function Home() {
         render={({ state, fullpageApi }) => {
           setfullpageApi(fullpageApi);
           return (
-            <ReactFullpage.Wrapper>
-              <div className="section">
-                <Screen1 nextPage={nextPageClick} page={page} />
-              </div>
+            <>
+              <ReactFullpage.Wrapper>
+                <div className="section">
+                  <Screen1 nextPage={nextPageClick} page={page} />
+                </div>
 
-              <div className="section">
-                <BusinessUser page={page} />
-              </div>
+                <div className="section">
+                  <BusinessUser page={page} />
+                </div>
 
-              <div className="section">
-                <AppPreview page={page} />
-              </div>
+                <div className="section">
+                  <AppPreview page={page} />
+                </div>
 
-              <div className="section">
-                <CustomerUser page={page} />
-              </div>
+                <div className="section">
+                  <CustomerUser page={page} />
+                </div>
 
-              <div className="section">
-                <Cases page={page} />
-              </div>
+                <div className="section">
+                  <Cases page={page} />
+                </div>
 
-              <div className="section">
-                <Foorter className="!h-[100vh]" />
-              </div>
-            </ReactFullpage.Wrapper>
+                <div className="section">
+                  <Foorter className="!h-[100vh]" />
+                </div>
+              </ReactFullpage.Wrapper>
+            </>
           );
         }}
       />

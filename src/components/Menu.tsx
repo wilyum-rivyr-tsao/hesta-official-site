@@ -25,6 +25,20 @@ const Menu = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (state.showMenu) {
+      window.addEventListener('wheel', (e) => {
+        e.stopPropagation();
+      });
+      document.body.style.maxHeight = '100vh';
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.maxHeight = '';
+        document.body.style.overflow = '';
+      };
+    }
+  }, [state.showMenu]);
+
   const [current, setcurrent] = useState('');
   const pathname = usePathname();
 
@@ -56,13 +70,16 @@ const Menu = () => {
   }, [current, pathname]);
 
   return (
-    <div className="absolute left-0 top-0 z-[99999] h-[100vh] w-full select-none" onClick={expand}>
-      <div className="absolute right-0 top-0">
+    <div
+      className="fixed left-0 top-0 z-[99] h-[100vh] w-full select-none"
+      onClick={() => dispatch({ type: 'showMenu', payload: false })}
+    >
+      <div className="fixed right-0 top-0 z-[999]">
         {/* <div className="absolute right-0 top-0 h-[100vh] w-[50vw] bg-white bg-opacity-75 blur-xl"></div> */}
         <div className="absolute right-0 top-0 z-50 h-[100vh] w-[40vw] border-l border-white bg-[#ffffff86] backdrop-blur-md">
           <div
-            onClick={expand}
-            className="absolute right-[54px] top-[36px] flex cursor-pointer items-center"
+            onClick={() => dispatch({ type: 'showMenu', payload: false })}
+            className="fixed right-[54px] top-[36px] z-[9999] flex cursor-pointer items-center"
           >
             <Image
               src={`/imgs/${state.showMenu ? 'icon_menu_close' : 'icon_menu'}.png`}
@@ -73,10 +90,7 @@ const Menu = () => {
             <span className="ml-[10px] text-[16px]">{state.showMenu ? 'Close' : 'Menu'}</span>
           </div>
 
-          <div
-            className="flex h-full flex-col items-center justify-between py-[130px] font-harmony"
-            // onClick={() => dispatch({ type: 'showMenu', payload: false })}
-          >
+          <div className="flex h-full flex-col items-center justify-between py-[130px] font-harmony">
             <Link className="flex flex-col items-center" href="/">
               <span
                 className={`ml-2 text-[32px] font-bold ${current === 'home' && 'text-[#383b4365]'} hover:text-[#383b4365]`}

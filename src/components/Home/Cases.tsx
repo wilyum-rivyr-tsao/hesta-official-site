@@ -82,7 +82,7 @@ function Cases(props: any) {
             duration: 0.1,
             ease: 'easeOut',
           }}
-          initial={{ y: 1000, opacity: 0 }}
+          initial={{ y: 100, opacity: 0 }}
         >
           <BackgroundImage src={'/imgs/case2.jpg'} className="h-[100vh] min-h-[700px]">
             <div className="absolute left-[6vw] top-[86vh] w-[74%] font-harmony text-white">
@@ -113,7 +113,7 @@ function Cases(props: any) {
             delay: 0.1,
             ease: 'easeOut',
           }}
-          initial={{ y: 1000, opacity: 0 }}
+          initial={{ y: 200, opacity: 0 }}
         >
           <BackgroundImage src={'/imgs/case1.jpg'} className="h-[100vh] min-h-[700px]">
             <div className="absolute left-[6vw] top-[85vh] w-[74%] font-harmony text-white">

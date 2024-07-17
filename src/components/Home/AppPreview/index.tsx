@@ -9,6 +9,7 @@ import React, {
   // useRef,
   useState,
 } from 'react';
+import ReadMoreBtn from '@/components/Basic/ReadMoreBtn';
 // import PopMsg1 from './PopMsg1';
 // import Preview1 from './Preview1';
 // import PopMsg5 from './PopMsg5';
@@ -234,8 +235,11 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   // const [slideUpState, slideUpDispatch] = useReducer(slideUpReducer, initialState);
 
   return (
-    <div ref={ref} className="h-[100vh] w-full overflow-x-hidden">
-      <div className="flex w-full flex-col items-center bg-no-repeat">
+    <div
+      ref={ref}
+      className="relative flex h-[100vh] w-full flex-col items-center overflow-x-hidden"
+    >
+      <div className="mt-[64px] flex w-full flex-col items-center bg-no-repeat">
         <div className={`relative z-[9999] flex w-full flex-col items-center justify-center`}>
           <div
             className={`relative z-[99] flex w-[521px] cursor-pointer select-none justify-between font-akrobat`}
@@ -261,6 +265,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
           <Preview page={page} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} />
         </div>
       </div>
+      <ReadMoreBtn className="absolute bottom-[43px] z-[999999]" href="/business_user" />
     </div>
   );
 });

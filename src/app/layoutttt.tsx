@@ -25,7 +25,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className="min-w-[1400px] bg-[#E9ECF4]">
+      <body className="min-w-[1280px] bg-[#E9ECF4]">
         <NextIntlClientProvider messages={messages}>
           <PopupProvider>{children}</PopupProvider>
         </NextIntlClientProvider>

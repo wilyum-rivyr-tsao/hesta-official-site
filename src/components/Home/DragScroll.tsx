@@ -85,7 +85,7 @@ function DragScroll(props: any) {
 
   return (
     <div
-      className="relative mt-[20px] flex w-full shrink-0 select-none justify-center overflow-hidden"
+      className="mt-[20px] flex w-full shrink-0 select-none justify-center overflow-hidden"
       ref={componentRef}
     >
       {showing && (

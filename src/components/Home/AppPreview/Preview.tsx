@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Content1 from './Content1';
 import { motion, useInView } from 'framer-motion';
-import ReadMoreBtn from '@/components/Basic/ReadMoreBtn';
+
 import Content2 from './Content2';
 import { title } from 'process';
 import Content3 from './Content3';
@@ -50,7 +50,7 @@ function Preview(props: any) {
     >
       <div className={`z-50 -mt-[100px] flex flex-col items-center justify-center`}>
         <motion.span
-          className="mt-[4.1667vw] font-harmony text-[1.3889vw] text-xl font-semibold text-[#383B43]"
+          className="mt-[60px] font-harmony text-[1.3889vw] text-xl font-semibold text-[#383B43]"
           animate={
             isInView
               ? {
@@ -106,7 +106,7 @@ function Preview(props: any) {
 
       {page === 2 && <Content2 delay={0} className="mt-[52px]" />}
 
-      {page === 3 && <Content3 delay={0} className="mt-[52px] sm-screen:-mt-[50px]" />}
+      {page === 3 && <Content3 delay={0} className="mt-[52px]" />}
 
       {page === 5 && (
         <Content1
@@ -121,14 +121,8 @@ function Preview(props: any) {
       )}
 
       {page === 6 && (
-        <Content6
-          delay={0}
-          className="mt-[52px] flex justify-center sm-screen:-mt-[50px]"
-          showing={page === 6}
-        />
+        <Content6 delay={0} className="mt-[52px] flex justify-center" showing={page === 6} />
       )}
-
-      <ReadMoreBtn className="absolute bottom-[10px] z-[999999]" href="/business_user" />
     </div>
   );
 }

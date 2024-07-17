@@ -13,7 +13,7 @@ function Content1(props: any) {
   return (
     <div ref={ref} className="relative flex w-full flex-col justify-center">
       <motion.div
-        className={`${className} flex justify-center`}
+        className={`${className} flex justify-center overflow-x-hidden`}
         animate={
           isInView
             ? {
@@ -34,7 +34,7 @@ function Content1(props: any) {
           alt={''}
           width={2300}
           height={1400}
-          className="h-[560px] w-[1220px] sm-screen:h-[400px] sm-screen:w-[871px]"
+          className="-mx-[300px] h-[560px] w-[1220px] sm-screen:h-[700px] sm-screen:w-[4300px]"
         />
       </motion.div>
 

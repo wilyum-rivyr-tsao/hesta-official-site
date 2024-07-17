@@ -22,7 +22,7 @@ const ScrollDownButton = (props: {
   return (
     <motion.div
       onClick={handleScroll}
-      className={`${className} shake10`}
+      className={`${className} tinyShake10`}
       animate={{ y: 0, opacity: 1, scale: 1 }}
       transition={{
         duration: 0.3,

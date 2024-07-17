@@ -35,7 +35,7 @@ function Content2({ delay = 1, className = '' }: { className?: string; delay?: n
         alt={''}
         width={1468}
         height={772}
-        className={`h-[368px] w-[734px] sm-screen:h-[330px] sm-screen:w-[620px]`}
+        className={`h-[368px] w-[734px]`}
       />
     </motion.div>
   );
