@@ -71,7 +71,7 @@ function Cases(props: any) {
         <motion.div
           onMouseEnter={() => focus(2)}
           onMouseOut={() => focus(3)}
-          onClick={() => router.push('/case?id=2')}
+          onClick={() => router.push('/case/2')}
           className={`normal-img h-[100vh] min-h-[700px] ${focusIndex === 2 ? 'grow-width' : 'shrink-width'}`}
           animate={
             page === 4
@@ -102,7 +102,7 @@ function Cases(props: any) {
         <motion.div
           onMouseEnter={() => focus(3)}
           onMouseOut={() => focus(3)}
-          onClick={() => router.push('/case?id=1')}
+          onClick={() => router.push('/case/1')}
           className={`normal-img h-[100vh] min-h-[700px] ${focusIndex === 3 ? 'grow-width' : 'shrink-width'}`}
           animate={
             page === 4
