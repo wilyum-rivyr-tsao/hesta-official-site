@@ -27,7 +27,9 @@ function Header(props: any) {
               height="40"
               alt={'logo'}
             />
-            <span className="ml-[10px] text-[16px]">{state.showMenu ? 'Close' : 'Menu'}</span>
+            <span className="ml-[10px] text-[16px] font-normal">
+              {state.showMenu ? 'Close' : 'Menu'}
+            </span>
           </div>
         )}
       </div>

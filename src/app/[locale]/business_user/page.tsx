@@ -102,35 +102,35 @@ function Index() {
           实现一站式管理平台，帮助商业用户最大程度提高物业管理效率
         </p>
       </div>
-      <div className="mt-20 flex min-h-[1000px] justify-between bg-[url('/imgs/customer_user/bg_second.png')] bg-cover bg-center bg-no-repeat px-[140px] pt-[176px]">
+      <div className="mt-20 flex justify-between bg-[url('/imgs/customer_user/bg_second.png')] bg-cover bg-center bg-no-repeat px-[140px] pt-[176px]">
         <h1 className="w-[398px] min-w-[398px] font-harmony text-[48px] font-bold">
           当前商业用户正在面临的痛点
         </h1>
         <div className="-ml-[100px] grid max-h-[600px] min-w-[900px] grid-cols-3 gap-x-7 gap-y-0">
           <div className="h-[263px] w-[280px]"></div>
           <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-            <Image src={'/imgs/customer_user/icon_platform1.png'} width={70} height={70} alt={''} />
+            <Image src={'/imgs/business_user/icon_platform.png'} width={70} height={70} alt={''} />
             <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">平台</h4>
             <p className="font-light">缺乏提供全面解决方案的统一平台</p>
           </div>
           <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-            <Image src={'/imgs/customer_user/icon_platform1.png'} width={70} height={70} alt={''} />
+            <Image src={'/imgs/business_user/icon_plan.png'} width={70} height={70} alt={''} />
             <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">方案</h4>
             <p className="font-light">缺乏提供全面解决方案的统一平台</p>
           </div>
           <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-            <Image src={'/imgs/customer_user/icon_cost.png'} width={70} height={70} alt={''} />
+            <Image src={'/imgs/business_user/icon_data.png'} width={70} height={70} alt={''} />
             <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">改装</h4>
             <p className="font-light">现有房屋的改装/后装解决方案有限且实施困难</p>
           </div>
           <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-            <Image src={'/imgs/customer_user/icon_refit.png'} width={70} height={70} alt={''} />
+            <Image src={'/imgs/business_user/icon_intellect.png'} width={70} height={70} alt={''} />
             <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">成本</h4>
             <p className="font-light">全面集成的智能家居系统实施成本高</p>
           </div>
           <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
             <Image
-              src={'/imgs/customer_user/icon_userfriendly.png'}
+              src={'/imgs/business_user/icon_customization.png'}
               width={70}
               height={70}
               alt={''}
@@ -141,7 +141,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="flex h-[50vw] min-h-[900px] w-full flex-col justify-end overflow-hidden">
+      <div className="flex h-[100vh] min-h-[900px] w-full flex-col justify-end overflow-hidden">
         {slidePage.page === 1 && (
           <Content1
             title="五号洗手间漏水"

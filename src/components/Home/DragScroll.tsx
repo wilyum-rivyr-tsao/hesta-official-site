@@ -114,11 +114,11 @@ function DragScroll(props: any) {
             }}
             initial={{ y: 1000, opacity: 0 }}
             style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
-            className={`mr-2 flex h-[420px] w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+            className={`mr-2 flex h-[21.875vw] min-h-[420px] w-[20.9375vw] min-w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
           >
             <motion.div
               style={{ backgroundImage: `url(${CDN}/imgs/3dicon_platform.png)` }}
-              className={`-mt-[60px] h-[220px] w-[288px] bg-cover bg-center bg-no-repeat`}
+              className={`-mt-[3.125vw] h-[11.4583vw] min-h-[220px] w-[15vw] min-w-[288px] bg-cover bg-center bg-no-repeat sm-screen:-mt-[60px]`}
               animate={
                 hover === 1
                   ? {
@@ -133,6 +133,155 @@ function DragScroll(props: any) {
             </p>
           </motion.div>
           <motion.div
+            onMouseEnter={() => setHover(1)}
+            onMouseLeave={() => setHover(0)}
+            animate={
+              showing
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 0.2,
+              delay: 0,
+              ease: 'easeOut',
+            }}
+            initial={{ y: 1000, opacity: 0 }}
+            style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+            className={`mr-2 flex h-[21.875vw] min-h-[420px] w-[20.9375vw] min-w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+          >
+            <motion.div
+              style={{ backgroundImage: `url(${CDN}/imgs/3dicon_platform.png)` }}
+              className={`-mt-[3.125vw] h-[11.4583vw] min-h-[220px] w-[15vw] min-w-[288px] bg-cover bg-center bg-no-repeat sm-screen:-mt-[60px]`}
+              animate={
+                hover === 1
+                  ? {
+                      scale: 1.2,
+                    }
+                  : {}
+              }
+            ></motion.div>
+            <h3 className="mt-[17px] font-harmony text-[20px] font-bold">一站式平台+万物互联</h3>
+            <p className="mt-[20px] font-harmony text-[14px] font-thin">
+              HESTA兼容市场主流协议，并与多家厂商合作，实现万物互联，让用户无需拘泥于特定生态或品牌，在享受个性化选择的同时，依然能够通过一个平台控制全家的设备。
+            </p>
+          </motion.div>
+          <motion.div
+            onMouseEnter={() => setHover(1)}
+            onMouseLeave={() => setHover(0)}
+            animate={
+              showing
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 0.2,
+              delay: 0,
+              ease: 'easeOut',
+            }}
+            initial={{ y: 1000, opacity: 0 }}
+            style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+            className={`mr-2 flex h-[21.875vw] min-h-[420px] w-[20.9375vw] min-w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+          >
+            <motion.div
+              style={{ backgroundImage: `url(${CDN}/imgs/3dicon_platform.png)` }}
+              className={`-mt-[3.125vw] h-[11.4583vw] min-h-[220px] w-[15vw] min-w-[288px] bg-cover bg-center bg-no-repeat sm-screen:-mt-[60px]`}
+              animate={
+                hover === 1
+                  ? {
+                      scale: 1.2,
+                    }
+                  : {}
+              }
+            ></motion.div>
+            <h3 className="mt-[17px] font-harmony text-[20px] font-bold">一站式平台+万物互联</h3>
+            <p className="mt-[20px] font-harmony text-[14px] font-thin">
+              HESTA兼容市场主流协议，并与多家厂商合作，实现万物互联，让用户无需拘泥于特定生态或品牌，在享受个性化选择的同时，依然能够通过一个平台控制全家的设备。
+            </p>
+          </motion.div>
+          <motion.div
+            onMouseEnter={() => setHover(1)}
+            onMouseLeave={() => setHover(0)}
+            animate={
+              showing
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 0.2,
+              delay: 0,
+              ease: 'easeOut',
+            }}
+            initial={{ y: 1000, opacity: 0 }}
+            style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+            className={`mr-2 flex h-[21.875vw] min-h-[420px] w-[20.9375vw] min-w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+          >
+            <motion.div
+              style={{ backgroundImage: `url(${CDN}/imgs/3dicon_platform.png)` }}
+              className={`-mt-[3.125vw] h-[11.4583vw] min-h-[220px] w-[15vw] min-w-[288px] bg-cover bg-center bg-no-repeat sm-screen:-mt-[60px]`}
+              animate={
+                hover === 1
+                  ? {
+                      scale: 1.2,
+                    }
+                  : {}
+              }
+            ></motion.div>
+            <h3 className="mt-[17px] font-harmony text-[20px] font-bold">一站式平台+万物互联</h3>
+            <p className="mt-[20px] font-harmony text-[14px] font-thin">
+              HESTA兼容市场主流协议，并与多家厂商合作，实现万物互联，让用户无需拘泥于特定生态或品牌，在享受个性化选择的同时，依然能够通过一个平台控制全家的设备。
+            </p>
+          </motion.div>
+          <motion.div
+            onMouseEnter={() => setHover(1)}
+            onMouseLeave={() => setHover(0)}
+            animate={
+              showing
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 0.2,
+              delay: 0,
+              ease: 'easeOut',
+            }}
+            initial={{ y: 1000, opacity: 0 }}
+            style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+            className={`mr-2 flex h-[21.875vw] min-h-[420px] w-[20.9375vw] min-w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px]`}
+          >
+            <motion.div
+              style={{ backgroundImage: `url(${CDN}/imgs/3dicon_platform.png)` }}
+              className={`-mt-[3.125vw] h-[11.4583vw] min-h-[220px] w-[15vw] min-w-[288px] bg-cover bg-center bg-no-repeat sm-screen:-mt-[60px]`}
+              animate={
+                hover === 1
+                  ? {
+                      scale: 1.2,
+                    }
+                  : {}
+              }
+            ></motion.div>
+            <h3 className="mt-[17px] font-harmony text-[20px] font-bold">一站式平台+万物互联</h3>
+            <p className="mt-[20px] font-harmony text-[14px] font-thin">
+              HESTA兼容市场主流协议，并与多家厂商合作，实现万物互联，让用户无需拘泥于特定生态或品牌，在享受个性化选择的同时，依然能够通过一个平台控制全家的设备。
+            </p>
+          </motion.div>
+
+          {/* <motion.div
             onMouseEnter={() => setHover(2)}
             onMouseLeave={() => setHover(0)}
             animate={
@@ -282,7 +431,7 @@ function DragScroll(props: any) {
             <p className="mt-[20px] font-harmony text-[14px] font-thin">
               HESTA结合尖端AI技术以及全方位的产业知识经验，为用户打造真正的无感式智能家居系统，无需动手，无需说话，房屋就是你的私人管家，想你所想，能你所能，用智慧家居开启未来生活。
             </p>
-          </motion.div>
+          </motion.div> */}
         </div>
       )}
     </div>
