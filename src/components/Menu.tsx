@@ -118,7 +118,7 @@ const Menu = () => {
               <span className="ml-2 text-[20px] font-light">RESIDENCE</span>
               <span className="rotate-[24deg] text-[30px] font-thin">/</span>
             </Link>
-            <Link href="/case" className="flex flex-col items-center">
+            <Link href="/case/0" className="flex flex-col items-center">
               <span
                 className={`ml-2 text-[32px] font-bold ${current === 'case' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >

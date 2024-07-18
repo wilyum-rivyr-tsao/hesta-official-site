@@ -34,7 +34,7 @@ function Content1(props: any) {
           alt={''}
           width={2300}
           height={1400}
-          className="-mx-[300px] h-[560px] w-[1220px] sm-screen:h-[700px] sm-screen:w-[4300px]"
+          className="h-[560px] w-[1220px]"
         />
       </motion.div>
 

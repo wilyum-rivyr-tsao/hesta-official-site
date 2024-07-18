@@ -59,7 +59,7 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
               <Link href="/about_us">关于我们</Link>
             </li>
             <li className="mt-[2.0833vw]">
-              <Link href="/case">案例分析</Link>
+              <Link href="/case/0">案例分析</Link>
             </li>
             <li className="mt-[2.0833vw]" onClick={showTerms2}>
               <div>隐私政策</div>

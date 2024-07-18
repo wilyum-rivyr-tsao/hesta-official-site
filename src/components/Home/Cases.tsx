@@ -11,6 +11,7 @@ import {
   useState,
 } from 'react';
 import debounce from 'lodash/debounce';
+import { useRouter } from 'next/navigation';
 
 import { motion, useInView } from 'framer-motion';
 import BackgroundImage from '@/components/Basic/BackgroundImage';
@@ -32,6 +33,8 @@ function Cases(props: any) {
   const leave = () => {
     setfocusIndex(3);
   };
+
+  const router = useRouter();
 
   return (
     <div className="h-[100vh] min-h-[700px] w-full overflow-hidden" onMouseLeave={leave}>
@@ -68,6 +71,7 @@ function Cases(props: any) {
         <motion.div
           onMouseEnter={() => focus(2)}
           onMouseOut={() => focus(3)}
+          onClick={() => router.push('/case?id=2')}
           className={`normal-img h-[100vh] min-h-[700px] ${focusIndex === 2 ? 'grow-width' : 'shrink-width'}`}
           animate={
             page === 4
@@ -98,6 +102,7 @@ function Cases(props: any) {
         <motion.div
           onMouseEnter={() => focus(3)}
           onMouseOut={() => focus(3)}
+          onClick={() => router.push('/case?id=1')}
           className={`normal-img h-[100vh] min-h-[700px] ${focusIndex === 3 ? 'grow-width' : 'shrink-width'}`}
           animate={
             page === 4

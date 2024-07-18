@@ -6,12 +6,12 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
-import { useReducer, useRef, useState } from 'react';
-import BusinessCase1 from '../../../components/Cases/BusinessCase1';
+import { useEffect, useReducer, useRef, useState } from 'react';
+import BusinessCase1 from '../../../../components/Cases/BusinessCase1';
 import BusinessCase2 from '@/components/Cases/BusinessCase2';
 import { CDN } from '@/constants';
 
-function Case() {
+function Case({ params }: { params: { id: string } }) {
   const t = useTranslations();
 
   const reducer = (state: any, action: any) => {
@@ -32,6 +32,19 @@ function Case() {
   const [current, setcurrent] = useState('all');
   const [hoverIndex, setHoverIndex] = useState(0);
   const [hoverType, setHoverType] = useState('');
+
+  useEffect(() => {
+    switch (params.id) {
+      case '1':
+        dispatchCase({ type: 'bCase1', payload: true });
+        break;
+      case '2':
+        dispatchCase({ type: 'bCase2', payload: true });
+        break;
+      default:
+        break;
+    }
+  }, [params.id]);
 
   return (
     <div>
