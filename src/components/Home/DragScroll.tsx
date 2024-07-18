@@ -88,12 +88,12 @@ function DragScroll(props: any) {
 
   return (
     <div
-      className={`flex w-full shrink-0 select-none justify-center overflow-hidden ${className}`}
+      className={`flex min-h-[684px] w-full shrink-0 select-none justify-center overflow-hidden ${className}`}
       ref={componentRef}
     >
       {showing && (
         <div
-          className={`no-scrollbar flex justify-start overflow-x-auto px-[100px] pt-[80px]`}
+          className={`no-scrollbar flex justify-start overflow-x-auto px-[140px] pt-[80px]`}
           ref={scrollContent}
           onMouseDown={onMouseDown}
           style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
@@ -119,7 +119,8 @@ function DragScroll(props: any) {
               }}
               initial={{ y: 1000, opacity: 0 }}
               style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
-              className={`mr-2 flex h-[21.875vw] min-h-[420px] w-[20.9375vw] min-w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px] 4xl:h-[604px] 4xl:w-[578px]`}
+              // h-[21.875vw] w-[20.9375vw]
+              className={`mr-2 flex h-[420px] w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px] 4xl:h-[604px] 4xl:w-[578px]`}
             >
               <motion.div
                 style={{ backgroundImage: `url(${item.icon})` }}

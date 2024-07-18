@@ -14,7 +14,7 @@ function Index(props: any, ref: Ref<HTMLDivElement>) {
   return (
     <div className="relative flex h-[100vh] min-h-[700px] w-full flex-col items-center justify-center">
       <motion.h2
-        className={`mb-[4.1667vw] w-full cursor-pointer text-center font-harmony text-[2.5vw] font-bold text-[#383B43] sm-screen:text-[48px]`}
+        className={`mb-[3.5vw] w-full cursor-pointer text-center font-harmony text-[2.5vw] font-bold text-[#383B43]`}
         animate={
           page === 3
             ? {
@@ -33,7 +33,6 @@ function Index(props: any, ref: Ref<HTMLDivElement>) {
       </motion.h2>
 
       <DragScroll showing={page === 3} className="" />
-      <div className="h-40"></div>
 
       <div className="absolute bottom-[43px] flex items-center">
         <motion.div
