@@ -20,7 +20,7 @@ function DragScroll(props: any) {
     'card4',
     'card5',
   ]);
-  const { showing } = props;
+  const { showing, className } = props;
 
   useEffect(() => {
     if (showing) {
@@ -85,7 +85,7 @@ function DragScroll(props: any) {
 
   return (
     <div
-      className="mt-[20px] flex w-full shrink-0 select-none justify-center overflow-hidden"
+      className={`flex w-full shrink-0 select-none justify-center overflow-hidden ${className}`}
       ref={componentRef}
     >
       {showing && (

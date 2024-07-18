@@ -32,7 +32,8 @@ function Index(props: any, ref: Ref<HTMLDivElement>) {
         住宅用户创新优势
       </motion.h2>
 
-      <DragScroll showing={page === 3} />
+      <DragScroll showing={page === 3} className="my-auto" />
+      <div className="h-40"></div>
 
       <div className="absolute bottom-[43px] flex items-center">
         <motion.div
