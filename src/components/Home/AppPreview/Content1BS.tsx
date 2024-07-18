@@ -4,16 +4,16 @@ import { motion, useInView } from 'framer-motion';
 
 function Content1(props: any) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
-  const { className, delay = 0, title, time, desc, icon, target } = props;
+  const isInViewInner = useInView(ref);
+  const { className, delay = 0, title, time, desc, icon, target, isInView } = props;
   useEffect(() => {}, [isInView]);
 
   return (
-    <div ref={ref} className="flex w-full justify-center">
+    <div className="flex w-full justify-center" ref={ref}>
       <motion.div
         className={`flex h-[70vh] w-full justify-center overflow-hidden bg-[url('/imgs/screen3half.png')] bg-contain bg-center bg-no-repeat ${className} w-full`}
         animate={
-          isInView
+          isInView || isInViewInner
             ? {
                 opacity: 1,
               }

@@ -52,7 +52,7 @@ function Content3({ delay = 0, className }: any) {
         initial={{ x: 2000, opacity: 0 }}
         className=""
       >
-        <div className="ml-4 rounded-sm bg-white opacity-90">
+        <div className="ml-4 overflow-hidden rounded-md bg-white opacity-90">
           {isInView && (
             <video
               className={`h-[386px] w-[452px] opacity-90`}

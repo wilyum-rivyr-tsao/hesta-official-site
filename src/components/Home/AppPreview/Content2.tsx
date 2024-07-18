@@ -3,15 +3,23 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import { CDN } from '@/constants';
 
-function Content2({ delay = 1, className = '' }: { className?: string; delay?: number }) {
+function Content2({
+  delay = 1,
+  className = '',
+  isInView = false,
+}: {
+  className?: string;
+  delay?: number;
+  isInView?: boolean;
+}) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInViewInner = useInView(ref);
 
   return (
     <motion.div
       ref={ref}
       animate={
-        isInView
+        isInView || isInViewInner
           ? {
               x: 0,
               opacity: 1,
@@ -35,7 +43,7 @@ function Content2({ delay = 1, className = '' }: { className?: string; delay?: n
         alt={''}
         width={1468}
         height={772}
-        className={`h-[368px] w-[734px]`}
+        className={`h-[498px] w-[948px]`}
       />
     </motion.div>
   );

@@ -202,7 +202,7 @@ function AboutUs() {
         <h3 className="mb-[90px] mt-[90px] font-harmony text-[40px] font-black">企业理念</h3>
 
         {isInViewConcept && (
-          <div className={`grid grid-cols-3`}>
+          <div className={`grid grid-cols-3 gap-4`}>
             <motion.div
               animate={
                 isInViewConcept
@@ -222,12 +222,19 @@ function AboutUs() {
               exit={{ y: 1000, opacity: 0 }}
             >
               <BackgroundImage
-                src={`${CDN}/imgs/about_us/Group1591.png`}
+                src={`${CDN}/imgs/about_us/card2.png`}
                 alt=""
-                className="-m-[15px] h-[401px] w-[374px]"
+                className="h-[350px] w-[374px]"
                 quality={50}
               >
-                <div className="mt-[200px] flex h-[401px] px-[80px]">
+                <Image
+                  src={`${CDN}/imgs/about_us/3dicon_vision.png`}
+                  width={1200}
+                  height={800}
+                  alt=""
+                  className="-mt-[100px] h-[236px] w-[336px]"
+                />
+                <div className="mt-[20px] flex px-[80px]">
                   <div className="mb-20 flex flex-col font-harmony">
                     <h4 className="mb-4 text-[20px] font-semibold">愿景</h4>
                     <p className="text-[14px] font-thin">
@@ -257,9 +264,10 @@ function AboutUs() {
               exit={{ y: 1000, opacity: 0 }}
             >
               <BackgroundImage
-                src={`${CDN}/imgs/about_us/Group1592.png`}
+                src={`${CDN}/imgs/about_us/card2.png`}
                 alt=""
-                className="-m-[15px] h-[401px] w-[374px]"
+                className="h-[350px] w-[374px]"
+                quality={50}
               >
                 <div className="mt-[200px] flex h-[401px] px-[80px]">
                   <div className="mb-20 flex flex-col font-harmony">
@@ -291,9 +299,10 @@ function AboutUs() {
               exit={{ y: 1000, opacity: 0 }}
             >
               <BackgroundImage
-                src={`${CDN}/imgs/about_us/Group1593.png`}
+                src={`${CDN}/imgs/about_us/card2.png`}
                 alt=""
-                className="-m-[15px] h-[401px] w-[374px]"
+                className="h-[350px] w-[374px]"
+                quality={50}
               >
                 <div className="mt-[200px] flex h-[401px] px-[80px]">
                   <div className="mb-20 flex flex-col font-harmony">

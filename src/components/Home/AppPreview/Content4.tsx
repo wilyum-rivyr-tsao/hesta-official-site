@@ -3,24 +3,29 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import { CDN } from '@/constants';
 
-function Content4({ delay = 1, className }: { delay?: number; className?: string }) {
+function Content4({
+  delay = 1,
+  className,
+  isInView = false,
+}: {
+  delay?: number;
+  className?: string;
+  isInView?: boolean;
+}) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInViewInner = useInView(ref);
 
   return (
     <motion.div
       ref={ref}
       animate={
-        isInView
+        isInView || isInViewInner
           ? {
               x: 0,
               opacity: 1,
               scale: 1,
             }
-          : {
-              opacity: 0,
-              x: -2000,
-            }
+          : {}
       }
       transition={{
         duration: 0.5,
