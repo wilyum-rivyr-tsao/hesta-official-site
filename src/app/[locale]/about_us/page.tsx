@@ -12,6 +12,7 @@ import { useEffect, useRef, useState } from 'react';
 import IncreaseNumberAnimation from '@/components/Basic/IncreaseNumberAnimation';
 import { motion, useInView } from 'framer-motion';
 import { CDN } from '@/constants';
+import SliderCard from '../../../components/Basic/SliderCard';
 
 function isCenterIndex(array: any[], index: number): boolean {
   const length = array.length;
@@ -198,120 +199,43 @@ function AboutUs() {
         />
       </div>
 
-      <div className="flex w-full flex-col items-center justify-center" ref={conceptRef}>
+      <div
+        className="flex min-h-[900px] w-full flex-col items-center justify-center"
+        ref={conceptRef}
+      >
         <h3 className="mb-[90px] mt-[90px] font-harmony text-[40px] font-black">企业理念</h3>
 
         {isInViewConcept && (
           <div className={`grid grid-cols-3 gap-4`}>
-            <motion.div
-              animate={
-                isInViewConcept
-                  ? {
-                      y: 0,
-                      opacity: 1,
-                      scale: 1,
-                    }
-                  : {}
-              }
-              transition={{
-                duration: 0.5,
-                delay: 0.5,
-                ease: 'easeOut',
-              }}
-              initial={{ y: 1000, opacity: 0 }}
-              exit={{ y: 1000, opacity: 0 }}
-            >
-              <BackgroundImage
-                src={`${CDN}/imgs/about_us/card2.png`}
-                alt=""
-                className="h-[350px] w-[374px]"
-                quality={50}
-              >
-                <Image
-                  src={`${CDN}/imgs/about_us/3dicon_vision.png`}
-                  width={1200}
-                  height={800}
-                  alt=""
-                  className="-mt-[100px] h-[236px] w-[336px]"
-                />
-                <div className="mt-[20px] flex px-[80px]">
-                  <div className="mb-20 flex flex-col font-harmony">
-                    <h4 className="mb-4 text-[20px] font-semibold">愿景</h4>
-                    <p className="text-[14px] font-thin">
-                      通过 AI 驱动数字平台，改变人们与房产互动的方式，打造轻松又便捷的物业维护体验。
-                    </p>
-                  </div>
-                </div>
-              </BackgroundImage>
-            </motion.div>
+            <SliderCard
+              title="愿景"
+              showing={isInViewConcept}
+              delay={0}
+              icon={`${CDN}/imgs/about_us/3dicon_vision.png`}
+              desc="通过 AI 驱动数字平台，改变人们与房产互动的方式，打造轻松又便捷的物业维护体验。"
+              size={'w-[374px] h-[350px]'}
+              iconSize={'w-[336px] h-[236px] -mt-[50px]'}
+            />
 
-            <motion.div
-              animate={
-                isInViewConcept
-                  ? {
-                      y: 0,
-                      opacity: 1,
-                      scale: 1,
-                    }
-                  : {}
-              }
-              transition={{
-                duration: 0.5,
-                delay: 1,
-                ease: 'easeOut',
-              }}
-              initial={{ y: 1000, opacity: 0 }}
-              exit={{ y: 1000, opacity: 0 }}
-            >
-              <BackgroundImage
-                src={`${CDN}/imgs/about_us/card2.png`}
-                alt=""
-                className="h-[350px] w-[374px]"
-                quality={50}
-              >
-                <div className="mt-[200px] flex h-[401px] px-[80px]">
-                  <div className="mb-20 flex flex-col font-harmony">
-                    <h4 className="mb-4 text-[20px] font-semibold">使命</h4>
-                    <p className="text-[14px] font-thin">
-                      将行业领先的解决方案带进千家万户。致力于开启真正的“智能”生活体验，为用户提供涵盖房屋全生命周期的全方位服务。
-                    </p>
-                  </div>
-                </div>
-              </BackgroundImage>
-            </motion.div>
+            <SliderCard
+              title="使命"
+              showing={isInViewConcept}
+              delay={0.1}
+              icon={`${CDN}/imgs/about_us/3dicon_mission.png`}
+              desc="将行业领先的解决方案带进千家万户。致力于开启真正的“智能”生活体验，为用户提供涵盖房屋全生命周期的全方位服务。"
+              size={'w-[374px] h-[350px]'}
+              iconSize={'w-[336px] h-[236px] -mt-[50px]'}
+            />
 
-            <motion.div
-              animate={
-                isInViewConcept
-                  ? {
-                      y: 0,
-                      opacity: 1,
-                      scale: 1,
-                    }
-                  : {}
-              }
-              transition={{
-                duration: 0.5,
-                delay: 1.5,
-                ease: 'easeOut',
-              }}
-              initial={{ y: 1000, opacity: 0 }}
-              exit={{ y: 1000, opacity: 0 }}
-            >
-              <BackgroundImage
-                src={`${CDN}/imgs/about_us/card2.png`}
-                alt=""
-                className="h-[350px] w-[374px]"
-                quality={50}
-              >
-                <div className="mt-[200px] flex h-[401px] px-[80px]">
-                  <div className="mb-20 flex flex-col font-harmony">
-                    <h4 className="mb-4 text-[20px] font-semibold">核心价值观</h4>
-                    <p className="text-[14px] font-thin">坚实与革新/超越用户需求/勇于接受挑战</p>
-                  </div>
-                </div>
-              </BackgroundImage>
-            </motion.div>
+            <SliderCard
+              title="核心价值观"
+              showing={isInViewConcept}
+              delay={0.2}
+              icon={`${CDN}/imgs/about_us/3dicon_value.png`}
+              desc="坚实与革新/超越用户需求/勇于接受挑战"
+              size={'w-[374px] h-[350px]'}
+              iconSize={'w-[336px] h-[236px] -mt-[50px]'}
+            />
           </div>
         )}
       </div>

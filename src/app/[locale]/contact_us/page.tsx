@@ -78,18 +78,23 @@ const Menu = ({ children, ...props }: any) => {
 };
 
 const colourStyles: StylesConfig<any> = {
-  control: (styles) => ({
+  control: (styles, state) => ({
     ...styles,
     height: '79px',
     width: '100%',
-    border: '1px solid #383b43',
+    // border: '1px solid #383b43',
     backgroundColor: 'white',
     fontFamily: 'harmony',
     fontSize: '16px',
     color: '#383b43',
     borderRadius: 0,
-    outline: 'none',
     paddingLeft: '20px',
+    border: state.isFocused ? '1px solid #383b4374' : '1px solid #383b43',
+    // This line disable the blue border
+    boxShadow: state.isFocused ? 0 : 0,
+    '&:hover': {
+      border: state.isFocused ? '1px solid #383b4374' : '1px solid #383b43',
+    },
   }),
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     return {
@@ -101,6 +106,7 @@ const colourStyles: StylesConfig<any> = {
         backgroundColor: undefined,
       },
       margin: '15px 0',
+      outline: 'none',
     };
   },
   menu: (styles) => ({
@@ -112,7 +118,7 @@ const colourStyles: StylesConfig<any> = {
     padding: '10px 0',
     boxShadow: '1px 1px 10px #00000030',
   }),
-  input: (styles) => ({ ...styles, background: '' }),
+  input: (styles) => ({ ...styles, background: '', outline: 'none' }),
   placeholder: (styles) => ({ ...styles }),
   indicatorsContainer: (styles) => ({
     ...styles,
@@ -202,19 +208,19 @@ const ContactForm = () => {
             <div className="mb-4 grid grid-cols-2 gap-4">
               <input
                 type="text"
-                className="h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none"
+                className="h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none hover:border-[#383b4374]"
                 placeholder="您的姓名"
               />
               <input
                 type="text"
-                className="h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none"
+                className="h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none hover:border-[#383b4374]"
                 placeholder="电话"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="text"
-                className="h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none"
+                className="h-[79px] w-full border border-[#383b43] bg-white px-6 font-harmony text-[16px] text-[#383b43] outline-none hover:border-[#383b4374]"
                 placeholder="所在城市"
               />
               {/* <input
@@ -299,7 +305,7 @@ const ContactForm = () => {
                 type="checkbox"
                 name=""
                 id=""
-                className="op-input mr-2 rounded-none border border-[#383B43]"
+                className="op-input mr-2 rounded-none border border-[#383B43] hover:border-[#383b4374]"
                 checked={isChecked}
                 onChange={handleCheckboxChange}
               />
@@ -320,9 +326,10 @@ const ContactForm = () => {
             </div>
           </div>
           <div className="my-[80px] w-full border-b border-[#383b4358]"></div>
-          <h1 className="font-harmony text-[30px] font-bold">可以通过以下方式联系我们</h1>
-          <div className="mt-10 flex w-full justify-evenly">
-            {/* <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
+          <div className="flex">
+            <h1 className="font-harmony text-[30px] font-bold">可以通过以下方式联系我们</h1>
+            <div className="flex w-full justify-evenly">
+              {/* <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
               <Image
                 src="/imgs/icon_contact.png"
                 width={140}
@@ -334,31 +341,32 @@ const ContactForm = () => {
               <h4 className="mt-[52px] font-harmony font-bold">联系电话</h4>
               <p className="mt-[10px] font-harmony font-thin">400-0913-777</p>
             </div> */}
-            <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/icon_email.png`}
-                width={140}
-                height={140}
-                className="h-[70px] w-[70px]"
-                alt=""
-              />
+              <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
+                <Image
+                  src={`${CDN}/imgs/icon_email.png`}
+                  width={140}
+                  height={140}
+                  className="h-[70px] w-[70px]"
+                  alt=""
+                />
 
-              <h4 className="mt-[52px] font-harmony font-bold">邮箱</h4>
-              <p className="mt-[10px] font-harmony font-thin">contact@xikan.tech</p>
-            </div>
-            <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/icon_address.png`}
-                width={140}
-                height={140}
-                className="h-[70px] w-[70px]"
-                alt=""
-              />
+                <h4 className="mt-[52px] font-harmony font-bold">邮箱</h4>
+                <p className="mt-[10px] font-harmony font-thin">contact@xikan.tech</p>
+              </div>
+              <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
+                <Image
+                  src={`${CDN}/imgs/icon_address.png`}
+                  width={140}
+                  height={140}
+                  className="h-[70px] w-[70px]"
+                  alt=""
+                />
 
-              <h4 className="mt-[52px] font-harmony font-bold">地址</h4>
-              <p className="mt-[10px] font-harmony font-thin">
-                北京市朝阳区东坝乡半截塔村53号60幢1层6026
-              </p>
+                <h4 className="mt-[52px] font-harmony font-bold">地址</h4>
+                <p className="mt-[10px] font-harmony font-thin">
+                  北京市朝阳区东坝乡半截塔村53号60幢1层6026
+                </p>
+              </div>
             </div>
           </div>
         </div>
