@@ -12,9 +12,9 @@ function Index(props: any, ref: Ref<HTMLDivElement>) {
   const isInView = useInView(ref2);
 
   return (
-    <div className="relative flex h-[100vh] min-h-[700px] w-full flex-col items-center pt-[80px]">
+    <div className="relative flex h-[100vh] min-h-[700px] w-full flex-col items-center justify-center">
       <motion.h2
-        className={`w-full cursor-pointer text-center font-harmony text-[48px] font-bold text-[#383B43]`}
+        className={`mb-[4.1667vw] w-full cursor-pointer text-center font-harmony text-[2.5vw] font-bold text-[#383B43] sm-screen:text-[48px]`}
         animate={
           page === 3
             ? {
@@ -32,7 +32,7 @@ function Index(props: any, ref: Ref<HTMLDivElement>) {
         住宅用户创新优势
       </motion.h2>
 
-      <DragScroll showing={page === 3} className="my-auto" />
+      <DragScroll showing={page === 3} className="" />
       <div className="h-40"></div>
 
       <div className="absolute bottom-[43px] flex items-center">

@@ -21,7 +21,7 @@ const config: Config = withMT({
       screens: {
         'sm-screen': { max: '1440px' },
         '3xl': '1600px',
-        '4xl': '2000px',
+        '4xl': '1920px',
         hairtail: '3189px',
       },
     },
