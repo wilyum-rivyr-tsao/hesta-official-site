@@ -37,9 +37,9 @@ function Index(props: {
         }}
       >
         {page <= 1 && limitRange ? (
-          <Image width={20} src="/imgs/icon_prev_off.png" height={20} alt="" />
+          <Image width={20} src="/imgs/icon_prev_off.webp" height={20} alt="" />
         ) : (
-          <Image width={20} src="/imgs/icon_prev_on.png" height={20} alt="" />
+          <Image width={20} src="/imgs/icon_prev_on.webp" height={20} alt="" />
         )}
       </div>
       <div className="h-[38px] border-r border-[#cccdd3]"></div>
@@ -50,9 +50,9 @@ function Index(props: {
         }}
       >
         {page >= totalPage && limitRange ? (
-          <Image width={20} src="/imgs/icon_next_off.png" height={20} alt="" />
+          <Image width={20} src="/imgs/icon_next_off.webp" height={20} alt="" />
         ) : (
-          <Image width={20} src="/imgs/icon_next_on.png" height={20} alt="" />
+          <Image width={20} src="/imgs/icon_next_on.webp" height={20} alt="" />
         )}
       </div>
     </div>

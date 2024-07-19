@@ -39,7 +39,7 @@ function Content2({
       className={`${className}`}
     >
       <Image
-        src={`${CDN}/imgs/Frame9.jpg`}
+        src={`${CDN}/imgs/Frame9.webp`}
         alt={''}
         width={1468}
         height={772}

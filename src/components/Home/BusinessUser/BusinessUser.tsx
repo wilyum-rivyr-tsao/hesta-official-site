@@ -14,13 +14,13 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   return (
     <motion.div className="" {...restProps}>
       <BackgroundImage
-        src={`/imgs/screen2.png`}
+        src={`/imgs/screen2.webp`}
         className="flex h-[100vh] min-h-[700px] w-full flex-col items-center justify-center"
         contentClass="w-[100vw]"
       >
         <div className={`flex h-[100vh] min-h-[700px] w-full`}>
           <Image
-            src={`${CDN}/imgs/ill_square1.png`}
+            src={`${CDN}/imgs/ill_square1.webp`}
             alt=""
             width={310}
             height={310}
@@ -29,21 +29,21 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
           />
 
           <Image
-            src={`${CDN}/imgs/ill_square2.png`}
+            src={`${CDN}/imgs/ill_square2.webp`}
             alt=""
             width={360}
             height={360}
             className={`animate__animated animate__slower absolute left-[54.1667%] top-[22%] h-[360px] w-[360px] ${page === 2 ? '' : ''} ${initAnimate ? 'animate__fadeIn' : 'shake11'}`}
           />
           <Image
-            src={`${CDN}/imgs/ill_square3.png`}
+            src={`${CDN}/imgs/ill_square3.webp`}
             alt=""
             width={120}
             height={120}
             className={`animate__animated animate__slower absolute left-[20.1389%] top-[60%] h-[120px] w-[120px] ${page === 2 ? '' : ''} ${initAnimate ? 'animate__fadeIn' : 'shake11'}`}
           />
           <Image
-            src={`${CDN}/imgs/ill_circle.png`}
+            src={`${CDN}/imgs/ill_circle.webp`}
             alt=""
             width={186}
             height={186}

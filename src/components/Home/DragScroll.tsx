@@ -9,27 +9,27 @@ import { CDN } from '@/constants';
 
 const slides = [
   {
-    icon: `${CDN}/imgs/3dicon_platform.png`,
+    icon: `${CDN}/imgs/3dicon_platform.webp`,
     title: '一站式平台+万物互联',
     desc: 'HESTA兼容市场主流协议，并与多家厂商合作，实现万物互联，让用户无需拘泥于特定生态或品牌，在享受个性化选择的同时，依然能够通过一个平台控制全家的设备。',
   },
   {
-    icon: `${CDN}/imgs/3dicon_intelligence.png`,
+    icon: `${CDN}/imgs/3dicon_intelligence.webp`,
     title: '一键智能',
     desc: 'HESTA结合平台数据、知识图谱和AI算法，为用户定制智能化方案。无论全屋整装或部分后装，HESTA APP几分钟内即可生成解决方案，确保智能家居的可行性、精确性、普惠性和高效性，让每个人轻松享受智慧生活。',
   },
   {
-    icon: `${CDN}/imgs/3dicon_interaction.png`,
+    icon: `${CDN}/imgs/3dicon_interaction.webp`,
     title: '3D交互体验',
     desc: 'HESTA利用先进的3D扫描技术，让用户轻松拥有3D资产，并通过物联网集成，实现前所未有的房屋交互，全面可视化，提高用户对房屋的了解和控制。',
   },
   {
-    icon: `${CDN}/imgs/3dicon_customization.png`,
+    icon: `${CDN}/imgs/3dicon_customization.webp`,
     title: '定制化人工智能服务',
     desc: 'HESTA AI提供个性化智能家居服务，根据用户房屋、设备特点和个人偏好，从AI设计渲染、一键智能到AI维护管理与优化，进行针对性决策分析，确保提供完整、可靠的主动式AI服务。',
   },
   {
-    icon: `${CDN}/imgs/3dicon_life.png`,
+    icon: `${CDN}/imgs/3dicon_life.webp`,
     title: '智慧生活',
     desc: 'HESTA结合尖端AI技术以及全方位的产业知识经验，为用户打造真正的无感式智能家居系统，无需动手，无需说话，房屋就是你的私人管家，想你所想，能你所能，用智慧家居开启未来生活。',
   },
@@ -118,7 +118,7 @@ function DragScroll(props: any) {
                 ease: 'easeOut',
               }}
               initial={{ y: 1000, opacity: 0 }}
-              style={{ backgroundImage: `url("${CDN}/imgs/card2.png")` }}
+              style={{ backgroundImage: `url("${CDN}/imgs/card2.webp")` }}
               // h-[21.875vw] w-[20.9375vw]
               className={`mr-2 flex h-[420px] w-[402px] shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px] 4xl:h-[604px] 4xl:w-[578px]`}
             >

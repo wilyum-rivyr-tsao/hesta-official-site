@@ -80,7 +80,7 @@ function Preview(props: any) {
       ></motion.div> */}
       <div className="flex w-full shrink-0 items-center justify-center">
         <Image
-          src={`${CDN}/imgs/screen3half.png`}
+          src={`${CDN}/imgs/screen3half.webp`}
           className="mt-20 h-[643px] w-[1462px]"
           alt={''}
           width={4000}

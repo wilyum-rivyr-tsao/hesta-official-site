@@ -17,12 +17,12 @@ function Header(props: any) {
         {...restProps}
       >
         <Link href="/" className="ml-20 flex">
-          <Image src={`${CDN}/imgs/logo.png`} width="158" height="46" alt={'logo'} />
+          <Image src={`${CDN}/imgs/logo.webp`} width="158" height="46" alt={'logo'} />
         </Link>
         {!state.showMenu && (
           <div onClick={expand} className="mr-10 flex cursor-pointer items-center">
             <Image
-              src={`/imgs/${state.showMenu ? 'icon_menu_close' : 'icon_menu'}.png`}
+              src={`/imgs/${state.showMenu ? 'icon_menu_close' : 'icon_menu'}.webp`}
               width="40"
               height="40"
               alt={'logo'}

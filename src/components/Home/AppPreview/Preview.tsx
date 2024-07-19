@@ -98,7 +98,7 @@ function Preview(props: any) {
           title="五号洗手间漏水"
           time="10:48"
           desc="5号传感器检测到潜在风险，请立即采取行动，查看报告获取更多信息。"
-          icon="bg_system.jpg"
+          icon="bg_system.webp"
           target="home"
           key={1}
         />
@@ -115,7 +115,7 @@ function Preview(props: any) {
           title="检测到有毒气体"
           time="厨房1"
           desc="请立即打开窗户，并尽快离开封闭的环境，前往一个空气流通良好的地方。"
-          icon="bg_warning.jpg"
+          icon="bg_warning.webp"
           target="home"
         />
       )}

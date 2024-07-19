@@ -80,7 +80,7 @@ function Preview2({
           initial={{ opacity: 0 }}
         >
           <Image
-            src={`${CDN}/imgs/frame06.png`}
+            src={`${CDN}/imgs/frame06.webp`}
             alt={''}
             width={2000}
             height={800}

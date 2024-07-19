@@ -72,7 +72,7 @@ function Preview(props: any) {
         title="五号洗手间漏水"
         time="10:48"
         desc="5号传感器检测到潜在风险，请立即采取行动，查看报告获取更多信息。"
-        icon="bg_system.png"
+        icon="bg_system.webp"
         target="home"
       />
       <ReadMoreBtn className="" href="/business_user" />

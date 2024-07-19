@@ -32,7 +32,7 @@ const ScrollDownButton = (props: {
       initial={{ y: -50, opacity: 0 }}
     >
       <Image
-        src="/imgs/icon_guidearrow.png"
+        src="/imgs/icon_guidearrow.webp"
         alt={''}
         width={44}
         height={70}

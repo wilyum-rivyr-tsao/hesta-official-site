@@ -41,7 +41,7 @@ function Content4({
         initial={{ x: 2000, opacity: 0 }}
       >
         <Image
-          src={`${CDN}/imgs/Group1600.png`}
+          src={`${CDN}/imgs/Group1600.webp`}
           alt={''}
           width={5000}
           height={5000}
@@ -70,7 +70,7 @@ function Content4({
         className={`absolute ${charPos === 'bottom' ? 'top-[150px]' : '-top-[150px]'} `}
       >
         <Image
-          src={`${CDN}/imgs/slide6chart2.png`}
+          src={`${CDN}/imgs/slide6chart2.webp`}
           alt={''}
           width={1420}
           height={900}

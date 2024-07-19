@@ -30,7 +30,7 @@ function Content1(props: any) {
         initial={{ opacity: 0 }}
       >
         <Image
-          src={`${CDN}/imgs/ill_house2.png`}
+          src={`${CDN}/imgs/ill_house2.webp`}
           alt={''}
           width={2300}
           height={1400}

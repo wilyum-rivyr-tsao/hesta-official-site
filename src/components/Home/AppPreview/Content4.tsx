@@ -36,7 +36,7 @@ function Content4({
       className={className}
     >
       <Image
-        src={`${CDN}/imgs/bg_computer.png`}
+        src={`${CDN}/imgs/bg_computer.webp`}
         alt={''}
         width={5000}
         height={5000}

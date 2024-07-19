@@ -14,7 +14,7 @@ const Option = ({ children, ...props }: any) => {
       <div className="flex items-center justify-start">
         {isSelected ? (
           <Image
-            src={`${CDN}/imgs/icon_choose.png`}
+            src={`${CDN}/imgs/icon_choose.webp`}
             alt={''}
             width={14}
             height={14}
@@ -33,7 +33,7 @@ const Option = ({ children, ...props }: any) => {
 const DropdownIndicator = (props: DropdownIndicatorProps) => {
   return (
     <components.DropdownIndicator {...props}>
-      <Image src={`${CDN}/imgs/icon_xiala.png`} alt={''} width={14} height={14} className="mr-8" />
+      <Image src={`${CDN}/imgs/icon_xiala.webp`} alt={''} width={14} height={14} className="mr-8" />
     </components.DropdownIndicator>
   );
 };
@@ -196,7 +196,7 @@ const ContactForm = () => {
         <p className="font-harmony text-[#fff]">{submitMsg}</p>
       </Alert>
       <Image
-        src={`${CDN}/imgs/bg_sayhi.png`}
+        src={`${CDN}/imgs/bg_sayhi.webp`}
         className="h-[600px] w-[1150px]"
         width={4000}
         height={4000}
@@ -317,7 +317,7 @@ const ContactForm = () => {
 
           <div className="mt-[50px] flex justify-center">
             <div
-              className={`button-hover flex h-[54px] w-[154px] cursor-pointer items-center bg-[url("/imgs/button.png")] bg-cover bg-center bg-no-repeat hover:bg-[url("/imgs/button_active.png")]`}
+              className={`button-hover flex h-[54px] w-[154px] cursor-pointer items-center bg-[url("/imgs/button.webp")] bg-cover bg-center bg-no-repeat hover:bg-[url("/imgs/button_active.webp")]`}
               onClick={submit}
             >
               <span className="-ml-1 -mt-1 w-full text-center font-harmony text-[16px] font-thin">
@@ -331,7 +331,7 @@ const ContactForm = () => {
             <div className="flex w-full justify-evenly">
               {/* <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
               <Image
-                src="/imgs/icon_contact.png"
+                src="/imgs/icon_contact.webp"
                 width={140}
                 height={140}
                 className="h-[70px] w-[70px]"
@@ -343,7 +343,7 @@ const ContactForm = () => {
             </div> */}
               <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
                 <Image
-                  src={`${CDN}/imgs/icon_email.png`}
+                  src={`${CDN}/imgs/icon_email.webp`}
                   width={140}
                   height={140}
                   className="h-[70px] w-[70px]"
@@ -355,7 +355,7 @@ const ContactForm = () => {
               </div>
               <div className="h-[263px] w-[280px] rounded-md border border-white bg-[#fff] px-[40px] py-[30px]">
                 <Image
-                  src={`${CDN}/imgs/icon_address.png`}
+                  src={`${CDN}/imgs/icon_address.webp`}
                   width={140}
                   height={140}
                   className="h-[70px] w-[70px]"

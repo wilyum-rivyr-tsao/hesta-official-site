@@ -31,7 +31,7 @@ function PopMsg1(props: any) {
         initial={{ opacity: 0 }}
       >
         <Image
-          src="/imgs/circle.png"
+          src="/imgs/circle.webp"
           height={46}
           width={46}
           style={{ width: '2vw', height: '2vw' }}
@@ -59,7 +59,7 @@ function PopMsg1(props: any) {
         initial={{ opacity: 0, x: 200 }}
       >
         <div
-          style={{ backgroundImage: `url("${CDN}/imgs/bg_system.png")` }}
+          style={{ backgroundImage: `url("${CDN}/imgs/bg_system.webp")` }}
           className={`h-[80px] bg-cover bg-center bg-no-repeat px-5 pt-6`}
         >
           <h3 className="font-harmony text-[18px] font-bold">检测到有毒气体</h3>

@@ -17,7 +17,7 @@ function BusinessCase1({ close, showing }: any) {
               在现代都市生活中，商业综合体不仅仅是购物和娱乐的场所，更是城市经济的重要支撑点。位于北京市的某商业综合体，通过引入Hesta的先进物业管理解决方案，成为了智慧物业管理的新标杆。管理面积达150,000平方米的这个综合体，正因为Hesta的全面服务而焕然一新。
             </p>
             <Image
-              src={`${CDN}/imgs/case/Frame105.png`}
+              src={`${CDN}/imgs/case/Frame105.webp`}
               alt=""
               className="mt-14 h-[34.7222vw] w-[58.125vw]"
               width={1600}
@@ -44,7 +44,7 @@ function BusinessCase1({ close, showing }: any) {
             </div>
 
             <Image
-              src={`${CDN}/imgs/case/Frame1062.png`}
+              src={`${CDN}/imgs/case/Frame1062.webp`}
               alt=""
               className="mt-14 h-[34.7222vw] w-[58.125vw]"
               width={1600}

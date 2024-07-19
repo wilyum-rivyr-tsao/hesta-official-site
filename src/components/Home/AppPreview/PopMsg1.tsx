@@ -27,7 +27,7 @@ function PopMsg1(props?: any) {
         initial={{ opacity: 0 }}
       >
         <Image
-          src={`${CDN}/imgs/circle.png`}
+          src={`${CDN}/imgs/circle.webp`}
           height={46}
           width={46}
           style={{ width: '2vw', height: '2vw' }}

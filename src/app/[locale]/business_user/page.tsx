@@ -99,13 +99,13 @@ function Index() {
   };
   return (
     <>
-      <div className="flex h-[100vh] min-h-[900px] w-full flex-col items-center justify-center bg-[url('/imgs/business_user/banner_business.png')] bg-cover bg-center bg-no-repeat">
+      <div className="flex h-[100vh] min-h-[900px] w-full flex-col items-center justify-center bg-[url('/imgs/business_user/banner_business.webp')] bg-cover bg-center bg-no-repeat">
         <h1 className="font-harmony text-[48px] font-bold text-[#383B43]">商业用户生活体验</h1>
         <p className="mt-5 font-harmony text-[20px] font-thin">
           实现一站式管理平台，帮助商业用户最大程度提高物业管理效率
         </p>
       </div>
-      <div className="flex bg-[url('/imgs/customer_user/bg_second.png')] bg-cover bg-center bg-no-repeat">
+      <div className="flex bg-[url('/imgs/customer_user/bg_second.webp')] bg-cover bg-center bg-no-repeat">
         <div className="mx-auto mb-[168px] mt-[176px] flex w-[1160px] justify-between">
           <h1 className="w-[398px] min-w-[398px] font-harmony text-[48px] font-bold">
             当前商业用户正在面临的痛点
@@ -114,7 +114,7 @@ function Index() {
             <div className="h-[263px] w-[280px]"></div>
             <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
               <Image
-                src={'/imgs/business_user/icon_platform.png'}
+                src={'/imgs/business_user/icon_platform.webp'}
                 width={70}
                 height={70}
                 alt={''}
@@ -123,18 +123,18 @@ function Index() {
               <p className="font-light">缺乏提供全面解决方案的统一平台</p>
             </div>
             <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image src={'/imgs/business_user/icon_plan.png'} width={70} height={70} alt={''} />
+              <Image src={'/imgs/business_user/icon_plan.webp'} width={70} height={70} alt={''} />
               <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">方案</h4>
               <p className="font-light">缺乏提供全面解决方案的统一平台</p>
             </div>
             <div className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image src={'/imgs/business_user/icon_data.png'} width={70} height={70} alt={''} />
+              <Image src={'/imgs/business_user/icon_data.webp'} width={70} height={70} alt={''} />
               <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">改装</h4>
               <p className="font-light">现有房屋的改装/后装解决方案有限且实施困难</p>
             </div>
             <div className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
               <Image
-                src={'/imgs/business_user/icon_intellect.png'}
+                src={'/imgs/business_user/icon_intellect.webp'}
                 width={70}
                 height={70}
                 alt={''}
@@ -144,7 +144,7 @@ function Index() {
             </div>
             <div className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
               <Image
-                src={'/imgs/business_user/icon_customization.png'}
+                src={'/imgs/business_user/icon_customization.webp'}
                 width={70}
                 height={70}
                 alt={''}
@@ -165,7 +165,7 @@ function Index() {
             title="五号洗手间漏水"
             time="10:48"
             desc="5号传感器检测到潜在风险，请立即采取行动，查看报告获取更多信息。"
-            icon="bg_system.png"
+            icon="bg_system.webp"
             className="-mt-[500px]"
             isInView={isInViewSlide}
             delay={0.5}
@@ -185,7 +185,7 @@ function Index() {
             title="检测到有毒气体"
             time="厨房1"
             desc="5号传感器检测到潜在风险，请立即采取行动，查看报告获取更多信息。"
-            icon="bg_warning.png"
+            icon="bg_warning.webp"
             target="business"
           />
         )}
@@ -206,7 +206,7 @@ function Index() {
             }}
           >
             <Image
-              src={`${CDN}/imgs/business_user/icon_prev.png`}
+              src={`${CDN}/imgs/business_user/icon_prev.webp`}
               alt=""
               width={77}
               height={5}
@@ -223,7 +223,7 @@ function Index() {
             <h4 className="mr-4 font-impact text-[50px]">0{slidePages[1]}</h4>
 
             <Image
-              src={`${CDN}/imgs/business_user/icon_next.png`}
+              src={`${CDN}/imgs/business_user/icon_next.webp`}
               alt=""
               width={77}
               height={5}
@@ -264,10 +264,10 @@ function Index() {
         </div>
       </div>
 
-      <div className="relative flex h-[62.5vw] min-h-[900px] items-end bg-[url('/imgs/business_user/banner_management.png')] bg-cover bg-no-repeat">
+      <div className="relative flex h-[62.5vw] min-h-[900px] items-end bg-[url('/imgs/business_user/banner_management.webp')] bg-cover bg-no-repeat">
         <div className="mb-[80px] ml-[9.5vw]">
           <Image
-            src={`/imgs/business_user/x4.png`}
+            src={`/imgs/business_user/x4.webp`}
             width={208}
             height={230}
             className="h-[15.9722vw] w-[14.4444vw] sm-screen:h-[230px] sm-screen:w-[208px]"
@@ -325,7 +325,7 @@ function Index() {
                       width={427}
                       height={290}
                       className="absolute h-[20.1389vw] w-[29vw]"
-                      src={`${CDN}/imgs/business_user/jixie.png`}
+                      src={`${CDN}/imgs/business_user/jixie.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -351,7 +351,7 @@ function Index() {
                       width={427}
                       height={290}
                       className="h-[20.1389vw] w-[29.6528vw]"
-                      src={`${CDN}/imgs/business_user/geipaishui.png`}
+                      src={`${CDN}/imgs/business_user/geipaishui.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -377,7 +377,7 @@ function Index() {
                       width={280}
                       height={290}
                       className="h-[20.1389vw] w-[19.4444vw] shrink-0"
-                      src={`${CDN}/imgs/business_user/nenghao.jpg`}
+                      src={`${CDN}/imgs/business_user/nenghao.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -403,7 +403,7 @@ function Index() {
                       width={306}
                       height={290}
                       className="h-[20.1389vw] w-[21.25vw]"
-                      src={`${CDN}/imgs/business_user/tongnuan.png`}
+                      src={`${CDN}/imgs/business_user/tongnuan.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -428,7 +428,7 @@ function Index() {
                       width={370}
                       height={290}
                       className="h-[20.1389vw] w-[25.6944vw] shrink-0"
-                      src={`${CDN}/imgs/business_user/huanjing.png`}
+                      src={`${CDN}/imgs/business_user/huanjing.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -452,7 +452,7 @@ function Index() {
                       width={561}
                       height={290}
                       className="h-[20.1389vw] w-[38.9583vw] shrink-0"
-                      src={`${CDN}/imgs/business_user/lvhua.png`}
+                      src={`${CDN}/imgs/business_user/lvhua.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -476,7 +476,7 @@ function Index() {
                       width={509}
                       height={290}
                       className="h-[20.1389vw] w-[35.3472vw] shrink-0"
-                      src={`${CDN}/imgs/business_user/zhaoming.png`}
+                      src={`${CDN}/imgs/business_user/zhaoming.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -525,7 +525,7 @@ function Index() {
                       width={496}
                       height={290}
                       className="absolute h-[20.1389vw] w-[32vw]"
-                      src={`${CDN}/imgs/business_user/dianti.jpg`}
+                      src={`${CDN}/imgs/business_user/dianti.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -548,7 +548,7 @@ function Index() {
                       width={474}
                       height={290}
                       className="h-[20.1389vw] w-[34vw]"
-                      src={`${CDN}/imgs/business_user/fabu.jpg`}
+                      src={`${CDN}/imgs/business_user/fabu.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -571,7 +571,7 @@ function Index() {
                       width={470}
                       height={290}
                       className="h-[20.1389vw] w-[34vw]"
-                      src={`${CDN}/imgs/business_user/tingche.jpg`}
+                      src={`${CDN}/imgs/business_user/tingche.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -596,7 +596,7 @@ function Index() {
                       width={370}
                       height={290}
                       className="h-[20.1389vw] w-[25vw]"
-                      src={`${CDN}/imgs/business_user/menjin.jpg`}
+                      src={`${CDN}/imgs/business_user/menjin.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -619,7 +619,7 @@ function Index() {
                       width={370}
                       height={290}
                       className="h-[20.1389vw] w-[25vw]"
-                      src={`${CDN}/imgs/business_user/shipin.jpg`}
+                      src={`${CDN}/imgs/business_user/shipin.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -642,7 +642,7 @@ function Index() {
                       width={370}
                       height={290}
                       className="h-[20.1389vw] w-[25vw]"
-                      src={`${CDN}/imgs/business_user/huojing.jpg`}
+                      src={`${CDN}/imgs/business_user/huojing.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">
@@ -665,7 +665,7 @@ function Index() {
                       width={370}
                       height={290}
                       className="h-[20.1389vw] w-[25vw]"
-                      src={`${CDN}/imgs/business_user/ruqin.jpg`}
+                      src={`${CDN}/imgs/business_user/ruqin.webp`}
                       alt=""
                     />
                     <div className="absolute top-0 z-20 h-[20.1389vw] w-full px-[40px] py-[60px]">

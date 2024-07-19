@@ -11,7 +11,7 @@ function Content1(props: any) {
   return (
     <div className="flex w-full justify-center" ref={ref}>
       <motion.div
-        className={`flex h-[70vh] w-full justify-center overflow-hidden bg-[url('/imgs/screen3half.png')] bg-contain bg-center bg-no-repeat ${className} w-full`}
+        className={`flex h-[70vh] w-full justify-center overflow-hidden bg-[url('/imgs/screen3half.webp')] bg-contain bg-center bg-no-repeat ${className} w-full`}
         animate={
           isInView || isInViewInner
             ? {

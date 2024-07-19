@@ -215,14 +215,14 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   const containerStyle = useCallback(() => {
     switch (page) {
       case 1:
-        // return { backgroundImage: "url('/imgs/ill_house.png')" };
+        // return { backgroundImage: "url('/imgs/ill_house.webp')" };
         break;
       case 5:
-        // return { backgroundImage: "url('/imgs/ill_house.png')" };
+        // return { backgroundImage: "url('/imgs/ill_house.webp')" };
         break;
       case 3:
         return {
-          backgroundImage: "url('/imgs/bg_conduit.png')",
+          backgroundImage: "url('/imgs/bg_conduit.webp')",
           // backgroundPositionY: '211px',
           // backgroundPositionX: 'center',
           // backgroundSize: 'contain',
@@ -235,7 +235,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
         };
       case 4:
         return {
-          backgroundImage: "url('/imgs/bg_computer.png')",
+          backgroundImage: "url('/imgs/bg_computer.webp')",
           backgroundSize: 'contain',
           backgroundPosition: 'center',
           height: '80vh',
@@ -244,7 +244,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
         };
 
       case 6:
-        return { backgroundImage: "url('/imgs/bg_colorlump.png')" };
+        return { backgroundImage: "url('/imgs/bg_colorlump.webp')" };
 
       default:
         return {};
@@ -277,7 +277,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
               {curPages[2]}
             </div>
           </div>
-          <div className="-mt-[70px] flex h-[113px] w-[605px] items-center justify-center bg-[url('/imgs/turntable.png')] bg-cover bg-center bg-no-repeat"></div>
+          <div className="-mt-[70px] flex h-[113px] w-[605px] items-center justify-center bg-[url('/imgs/turntable.webp')] bg-cover bg-center bg-no-repeat"></div>
         </div>
 
         <div style={containerStyle()}>

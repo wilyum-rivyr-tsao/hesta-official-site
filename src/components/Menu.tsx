@@ -102,7 +102,7 @@ const Menu = () => {
             className="fixed right-[54px] top-[36px] z-[9999] flex cursor-pointer items-center"
           >
             <Image
-              src={`/imgs/${state.showMenu ? 'icon_menu_close' : 'icon_menu'}.png`}
+              src={`/imgs/${state.showMenu ? 'icon_menu_close' : 'icon_menu'}.webp`}
               width="40"
               height="40"
               alt={'logo'}

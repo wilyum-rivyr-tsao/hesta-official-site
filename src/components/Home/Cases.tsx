@@ -33,7 +33,7 @@ function Cases(props: any) {
         {/* <motion.div
           onMouseEnter={() => focus(1)}
           onMouseOut={() => focus(3)}
-          className={`normal-img h-[100vh] min-h-[700px] bg-[url('/imgs/case3.jpg')] bg-cover bg-no-repeat ${focusIndex === 1 ? 'grow-width' : 'shrink-width'}`}
+          className={`normal-img h-[100vh] min-h-[700px] bg-[url('/imgs/case3.webp')] bg-cover bg-no-repeat ${focusIndex === 1 ? 'grow-width' : 'shrink-width'}`}
           animate={
             page === 5
               ? {
@@ -79,7 +79,7 @@ function Cases(props: any) {
           }}
           initial={{ y: 100, opacity: 0 }}
         >
-          <BackgroundImage src={'/imgs/case2.jpg'} className="h-[100vh] min-h-[700px]">
+          <BackgroundImage src={'/imgs/case2.webp'} className="h-[100vh] min-h-[700px]">
             <div className="absolute left-[6vw] top-[86vh] w-[74%] font-harmony text-white">
               <h2 className="w-full min-w-[677px] text-[35px] font-bold text-white">
                 智能豪华别墅的未来
@@ -111,7 +111,7 @@ function Cases(props: any) {
           }}
           initial={{ y: 200, opacity: 0 }}
         >
-          <BackgroundImage src={'/imgs/case1.jpg'} className="h-[100vh] min-h-[700px]">
+          <BackgroundImage src={'/imgs/case1.webp'} className="h-[100vh] min-h-[700px]">
             <div className="absolute left-[6vw] top-[85vh] w-[74%] font-harmony text-white">
               <h2 className="w-full min-w-[677px] text-[35px] font-bold text-white">
                 Hesta助力北京商业综合体实现卓越运营

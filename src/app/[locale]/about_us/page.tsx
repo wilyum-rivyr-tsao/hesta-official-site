@@ -4,7 +4,7 @@ import ContentLayout from '@/components/ContentLayout';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-// import firstImg from '/public/imgs/about_us/first.png';
+// import firstImg from '/public/imgs/about_us/first.webp';
 import BackgroundImage from '@/components/Basic/BackgroundImage';
 import RoundedPagination from '@/components/Basic/RoundedPagination';
 import './style.css';
@@ -89,7 +89,7 @@ function AboutUs() {
   return (
     <>
       <Image
-        src={`${CDN}/imgs/about_us/first.png`}
+        src={`${CDN}/imgs/about_us/first.webp`}
         objectFit="cover"
         alt={''}
         priority
@@ -98,7 +98,7 @@ function AboutUs() {
       />
 
       <BackgroundImage
-        src={`${CDN}/imgs/about_us/Group1595.png`}
+        src={`${CDN}/imgs/about_us/Group1595.webp`}
         alt=""
         className="h-[70vw] min-h-[1200px] w-full"
         quality={70}
@@ -184,14 +184,14 @@ function AboutUs() {
         </div>
 
         <Image
-          src={`${CDN}/imgs/about_us/fb.png`}
+          src={`${CDN}/imgs/about_us/fb.webp`}
           width={451}
           height={440}
           alt=""
           className="absolute -top-[30px] left-[25vw]"
         />
         <Image
-          src={`${CDN}/imgs/about_us/fb1.png`}
+          src={`${CDN}/imgs/about_us/fb1.webp`}
           width={240}
           height={234}
           alt=""
@@ -211,7 +211,7 @@ function AboutUs() {
               title="愿景"
               showing={isInViewConcept}
               delay={0}
-              icon={`${CDN}/imgs/about_us/3dicon_vision.png`}
+              icon={`${CDN}/imgs/about_us/3dicon_vision.webp`}
               desc="通过 AI 驱动数字平台，改变人们与房产互动的方式，打造轻松又便捷的物业维护体验。"
               size={'w-[374px] h-[350px]'}
               iconSize={'w-[336px] h-[236px] -mt-[50px]'}
@@ -221,7 +221,7 @@ function AboutUs() {
               title="使命"
               showing={isInViewConcept}
               delay={0.1}
-              icon={`${CDN}/imgs/about_us/3dicon_mission.png`}
+              icon={`${CDN}/imgs/about_us/3dicon_mission.webp`}
               desc="将行业领先的解决方案带进千家万户。致力于开启真正的“智能”生活体验，为用户提供涵盖房屋全生命周期的全方位服务。"
               size={'w-[374px] h-[350px]'}
               iconSize={'w-[336px] h-[236px] -mt-[50px]'}
@@ -231,7 +231,7 @@ function AboutUs() {
               title="核心价值观"
               showing={isInViewConcept}
               delay={0.2}
-              icon={`${CDN}/imgs/about_us/3dicon_value.png`}
+              icon={`${CDN}/imgs/about_us/3dicon_value.webp`}
               desc="坚实与革新/超越用户需求/勇于接受挑战"
               size={'w-[374px] h-[350px]'}
               iconSize={'w-[336px] h-[236px] -mt-[50px]'}
@@ -241,7 +241,7 @@ function AboutUs() {
       </div>
       <BackgroundImage
         className="mt-[113px] h-[34.7222vw] min-h-[520px] w-full"
-        src={`${CDN}/imgs/about_us/banner_xuanze.png`}
+        src={`${CDN}/imgs/about_us/banner_xuanze.webp`}
       >
         <div className="ml-[9.7222vw] h-[34.7222vw] min-h-[500px] w-[33.6111vw] min-w-[520px] bg-white bg-opacity-60 px-10 pt-[118px] font-harmony backdrop-blur-md">
           <h3 className="mb-[30px] font-harmony text-[30px] font-black">选择悉瞰</h3>
@@ -260,7 +260,7 @@ function AboutUs() {
         <div className="flex w-[1100px] items-end self-end overflow-hidden">
           <div className="mr-[70px] w-[360px] shrink-0">
             <Image
-              src="/imgs/about_us/member1.png"
+              src="/imgs/about_us/member1.webp"
               alt=""
               width={720}
               height={780}
@@ -272,7 +272,7 @@ function AboutUs() {
           </div>
           <div className="mr-[70px] w-[360px] shrink-0">
             <Image
-              src="/imgs/about_us/member1.png"
+              src="/imgs/about_us/member1.webp"
               alt=""
               width={720}
               height={780}
@@ -287,7 +287,7 @@ function AboutUs() {
           </div>
           <div className="mr-[70px] w-[360px] shrink-0">
             <Image
-              src="/imgs/about_us/member1.png"
+              src="/imgs/about_us/member1.webp"
               alt=""
               width={720}
               height={780}

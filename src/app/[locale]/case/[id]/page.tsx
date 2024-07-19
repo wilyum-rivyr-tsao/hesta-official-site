@@ -77,7 +77,7 @@ function Case({ params }: { params: { id: string } }) {
                 onMouseLeave={() => setHoverType('')}
               >
                 <Image
-                  src={`/imgs/case/${current === 'customer' || hoverType === 'customer' ? 'icon_dwelling_active.png' : 'icon_dwelling.png'}`}
+                  src={`/imgs/case/${current === 'customer' || hoverType === 'customer' ? 'icon_dwelling_active.webp' : 'icon_dwelling.webp'}`}
                   alt=""
                   width={16}
                   height={16}
@@ -94,7 +94,7 @@ function Case({ params }: { params: { id: string } }) {
                 onMouseLeave={() => setHoverType('')}
               >
                 <Image
-                  src={`/imgs/case/${current === 'business' || hoverType === 'business' ? 'icon_business_active.png' : 'icon_business.png'}`}
+                  src={`/imgs/case/${current === 'business' || hoverType === 'business' ? 'icon_business_active.webp' : 'icon_business.webp'}`}
                   alt=""
                   width={16}
                   height={16}
@@ -104,7 +104,7 @@ function Case({ params }: { params: { id: string } }) {
               </div>
             </div>
             <Image
-              src={`${CDN}/imgs/case/case_square.png`}
+              src={`${CDN}/imgs/case/case_square.webp`}
               alt=""
               width={500}
               height={500}
@@ -138,7 +138,7 @@ function Case({ params }: { params: { id: string } }) {
                     className="sm-screen:min-h-[435px] sm-screen:min-w-[580px]"
                   >
                     <Image
-                      src={`${CDN}/imgs/case/Frame105.png`}
+                      src={`${CDN}/imgs/case/Frame105.webp`}
                       alt=""
                       width={1000}
                       height={800}
@@ -148,7 +148,7 @@ function Case({ params }: { params: { id: string } }) {
                 </div>
                 <div className="flex w-[50%] flex-col px-[6.25vw] pt-[8.4722vw] sm-screen:min-w-[580px]">
                   <Image
-                    src={`${CDN}/imgs/case/icon_business_white.png`}
+                    src={`${CDN}/imgs/case/icon_business_white.webp`}
                     alt=""
                     width={500}
                     height={500}
@@ -175,7 +175,7 @@ function Case({ params }: { params: { id: string } }) {
               >
                 <div className="flex w-[50%] flex-col px-[6.25vw] pt-[8.4722vw] sm-screen:min-w-[580px]">
                   <Image
-                    src={`${CDN}/imgs/case/icon_business_white.png`}
+                    src={`${CDN}/imgs/case/icon_business_white.webp`}
                     alt=""
                     width={500}
                     height={500}
@@ -206,7 +206,7 @@ function Case({ params }: { params: { id: string } }) {
                     className="sm-screen:min-h-[435px] sm-screen:min-w-[580px]"
                   >
                     <Image
-                      src={`${CDN}/imgs/case/Frame105.jpg`}
+                      src={`${CDN}/imgs/case/Frame105.webp`}
                       alt=""
                       width={1000}
                       height={800}

@@ -29,7 +29,7 @@ function SlideUpModal({
         className="fixed bottom-[85vh] flex h-[64px] w-[130px] cursor-pointer items-center justify-center rounded-full bg-white"
         onClick={close}
       >
-        <Image src="/imgs/x.png" width={16} height={16} alt="" />
+        <Image src="/imgs/x.webp" width={16} height={16} alt="" />
         <span className="ml-2 font-harmony">Close</span>
       </div>
       <motion.div

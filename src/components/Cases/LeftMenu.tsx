@@ -9,7 +9,7 @@ function LeftMenu() {
           alt=""
           width={46}
           height={46}
-          src={`${CDN}/imgs/case/icon_business_white.png`}
+          src={`${CDN}/imgs/case/icon_business_white.webp`}
           className="mr-4 h-[46px] w-[46px] shrink-0"
         />
         <div className="mt-1 flex flex-col font-harmony">
@@ -22,7 +22,7 @@ function LeftMenu() {
           alt=""
           width={46}
           height={46}
-          src={`${CDN}/imgs/case/icon_business_white.png`}
+          src={`${CDN}/imgs/case/icon_business_white.webp`}
           className="mr-4 h-[46px] w-[46px] shrink-0"
         />
         <div className="mt-1 flex flex-col font-harmony">
@@ -35,7 +35,7 @@ function LeftMenu() {
           alt=""
           width={46}
           height={46}
-          src={`${CDN}/imgs/case/icon_business_white.png`}
+          src={`${CDN}/imgs/case/icon_business_white.webp`}
           className="mr-4 h-[46px] w-[46px] shrink-0"
         />
         <div className="mt-1 flex flex-col font-harmony">

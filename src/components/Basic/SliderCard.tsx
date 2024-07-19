@@ -34,7 +34,7 @@ function SliderCard(props: any) {
         ease: 'easeOut',
       }}
       initial={{ y: 1000, opacity: 0 }}
-      style={{ backgroundImage: `url("${CDN}/imgs/about_us/card2.png")` }}
+      style={{ backgroundImage: `url("${CDN}/imgs/about_us/card2.webp")` }}
       // h-[21.875vw] w-[20.9375vw]
       className={`flex shrink-0 flex-col items-center bg-contain bg-center bg-no-repeat px-[40px] ${size}`}
     >

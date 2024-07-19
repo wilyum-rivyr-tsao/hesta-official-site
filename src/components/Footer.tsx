@@ -23,14 +23,14 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
   console.log('CDN', CDN);
   return (
     <div
-      style={{ backgroundImage: `url('${CDN}/imgs/bg_end.png')` }}
+      style={{ backgroundImage: `url('${CDN}/imgs/bg_end.webp')` }}
       className={`h-[62.5vw] bg-cover bg-center bg-no-repeat px-[9.7222vw] ${className} relative flex flex-col items-center justify-center`}
       ref={ref}
     >
       <div className="flex w-full items-center justify-between">
         <div>
           <Image
-            src={`${CDN}/imgs/logo.png`}
+            src={`${CDN}/imgs/logo.webp`}
             width="148"
             height="46"
             alt={'logo'}
@@ -44,7 +44,7 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
           </h2>
           <Link href="/contact_us">
             <div
-              className={`button-hover mt-[4.1667vw] flex h-[3.75vw] w-[10.6944vw] items-center bg-[url("/imgs/btnarr.png")] bg-cover bg-center bg-no-repeat hover:bg-[url("/imgs/btnarr_active.png")]`}
+              className={`button-hover mt-[4.1667vw] flex h-[3.75vw] w-[10.6944vw] items-center bg-[url("/imgs/btnarr.webp")] bg-cover bg-center bg-no-repeat hover:bg-[url("/imgs/btnarr_active.webp")]`}
             >
               <span className="-mt-2 ml-[0.5556vw] font-harmony text-[1.1111vw] font-thin hover:text-white">
                 {t('Contact us')}
