@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePopupContext } from '@/context/PopupContext';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 const Menu = () => {
   const t = useTranslations();
@@ -76,7 +77,26 @@ const Menu = () => {
     >
       <div className="fixed right-0 top-0 z-[999]">
         {/* <div className="absolute right-0 top-0 h-[100vh] w-[50vw] bg-white bg-opacity-75 blur-xl"></div> */}
-        <div className="absolute right-0 top-0 z-50 h-[100vh] w-[40vw] border-l border-white bg-[#ffffff86] backdrop-blur-md">
+        <motion.div
+          className="absolute right-0 top-0 z-50 h-[100vh] w-[40vw] border-l border-white bg-[#ffffff86] backdrop-blur-md"
+          animate={
+            state.showMenu
+              ? {
+                  x: 0,
+                  opacity: 1,
+                  scale: 1,
+                }
+              : {
+                  opacity: 0,
+                  x: 2000,
+                }
+          }
+          transition={{
+            duration: 0.5,
+            ease: 'easeOut',
+          }}
+          initial={{ x: 2000, opacity: 0 }}
+        >
           <div
             onClick={() => dispatch({ type: 'showMenu', payload: false })}
             className="fixed right-[54px] top-[36px] z-[9999] flex cursor-pointer items-center"
@@ -146,7 +166,7 @@ const Menu = () => {
               {/* <span className="rotate-[24deg] text-[30px] font-thin">/</span> */}
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

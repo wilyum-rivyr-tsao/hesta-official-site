@@ -1,15 +1,6 @@
 'use client';
 import './style.css';
-import {
-  forwardRef,
-  MouseEventHandler,
-  Ref,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { useRef, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { useRouter } from 'next/navigation';
 

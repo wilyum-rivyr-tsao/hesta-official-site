@@ -3,13 +3,13 @@
 import { usePopupContext } from '@/context/PopupContext';
 import SlideUpModal from './Basic/SlideUpModal';
 
-function Terms() {
+function Terms({ showing }: any) {
   const { state, dispatch }: any = usePopupContext();
   const close = () => {
     dispatch({ type: 'showTerms', payload: false });
   };
   return (
-    <SlideUpModal close={close}>
+    <SlideUpModal close={close} showing={showing}>
       <div>
         <h1 className="mb-[69px] flex font-harmony text-[40px] font-black">
           悉瞰公司网页及问询提交隐私政策

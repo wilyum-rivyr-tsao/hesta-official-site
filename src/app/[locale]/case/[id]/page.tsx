@@ -224,6 +224,7 @@ function Case({ params }: { params: { id: string } }) {
           close={() => {
             dispatchCase({ type: 'bCase1', payload: false });
           }}
+          showing={cases.bCase1}
         />
       )}
 
@@ -232,6 +233,7 @@ function Case({ params }: { params: { id: string } }) {
           close={() => {
             dispatchCase({ type: 'bCase2', payload: false });
           }}
+          showing={cases.bCase2}
         />
       )}
     </div>

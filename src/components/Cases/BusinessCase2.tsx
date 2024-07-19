@@ -3,9 +3,9 @@ import SlideUpModal from '../Basic/SlideUpModal';
 import LeftMenu from './LeftMenu';
 import Image from 'next/image';
 
-function BusinessCase1({ close }: any) {
+function BusinessCase1({ close, showing }: any) {
   return (
-    <SlideUpModal close={close}>
+    <SlideUpModal close={close} showing={showing}>
       <div className="flex">
         <LeftMenu></LeftMenu>
         <div className="shrink-1">

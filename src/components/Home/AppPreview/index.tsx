@@ -9,6 +9,7 @@ import React, {
   // useRef,
   useState,
 } from 'react';
+import debouce from 'lodash/debounce';
 import ReadMoreBtn from '@/components/Basic/ReadMoreBtn';
 // import PopMsg1 from './PopMsg1';
 // import Preview1 from './Preview1';
@@ -65,20 +66,30 @@ import Preview from './Preview';
 // };
 
 const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
+  const { page: outerPage } = props;
   const [page, setPage] = useState(1);
   const pages = ['01', '02', '03', '04', '05', '06'];
   const [curPages, setCurPages] = useState(['06', '01', '02']);
-  const { componentRef, componentTop, rect } = useIsScrolledIntoView();
-  const [scrollDisabled, setScrollDisabled] = useState(false);
+  // const { componentRef, componentTop, rect } = useIsScrolledIntoView();
+  // const [scrollDisabled, setScrollDisabled] = useState(false);
   // const [scrollPosition, setScrollPosition] = useState(0);
   const homeContext: any = useContext(HomeContext);
 
   // const outerPage = props.page;
 
   useEffect(() => {
-    // const handleWheel = debouce(
-    const handleWheel = (e: any) => {
-      if (homeContext?.scrollDisabled) {
+    const handleWheel = debouce((e: any) => {
+      let scrollDisabled = homeContext?.scrollDisabled;
+      if (e.deltaY > 0 && page === 6) {
+        homeContext?.setScrollDisabled(false);
+        scrollDisabled = false;
+      }
+      if (e.deltaY < 0 && page === 1) {
+        homeContext?.setScrollDisabled(false);
+        scrollDisabled = false;
+      }
+
+      if (scrollDisabled) {
         e.preventDefault();
         let nextPage = page;
         if (e.deltaY > 0 && page < 6) {
@@ -98,9 +109,9 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
         }
         const newPages = generateNewArray(nextPage);
         setCurPages(newPages);
+        console.log('e.deltaY > 0 && page === 6', e.deltaY > 0, page === 6);
       }
-    };
-    // , 300);
+    }, 100);
 
     window.addEventListener('wheel', handleWheel, { passive: false });
 
@@ -109,13 +120,21 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
     };
   }, [homeContext, page]);
 
+  useEffect(() => {
+    if (outerPage === 2) {
+      homeContext?.setScrollDisabled(true);
+    } else {
+      homeContext?.setScrollDisabled(false);
+    }
+  }, [outerPage]);
+
   const mouseEnter = () => {
     console.log('enter');
-    homeContext?.setScrollDisabled(true);
+    // homeContext?.setScrollDisabled(true);
   };
   const mouseLeave = () => {
     console.log('leave');
-    homeContext?.setScrollDisabled(false);
+    // homeContext?.setScrollDisabled(false);
   };
 
   // useEffect(() => {

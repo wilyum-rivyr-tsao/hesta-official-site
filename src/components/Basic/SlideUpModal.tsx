@@ -1,12 +1,15 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { MouseEventHandler, ReactElement, useEffect } from 'react';
 
 function SlideUpModal({
   children,
   close,
+  showing = false,
 }: {
   children: ReactElement;
   close: MouseEventHandler<HTMLDivElement>;
+  showing?: boolean;
 }) {
   useEffect(() => {
     window.addEventListener('wheel', (e) => {
@@ -29,9 +32,28 @@ function SlideUpModal({
         <Image src="/imgs/x.png" width={16} height={16} alt="" />
         <span className="ml-2 font-harmony">Close</span>
       </div>
-      <div className="fixed bottom-0 h-[80vh] w-[100%] rounded-t-[100px] bg-[#fff] px-[140px] pt-[100px]">
+      <motion.div
+        className="fixed bottom-0 h-[80vh] w-[100%] rounded-t-[100px] bg-[#fff] px-[140px] pt-[100px]"
+        animate={
+          showing
+            ? {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+              }
+            : {
+                opacity: 0,
+                y: 2000,
+              }
+        }
+        transition={{
+          duration: 0.5,
+          ease: 'easeOut',
+        }}
+        initial={{ y: 2000, opacity: 0 }}
+      >
         {children}
-      </div>
+      </motion.div>
     </div>
   );
 }

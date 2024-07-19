@@ -114,7 +114,7 @@ function DragScroll(props: any) {
               }
               transition={{
                 duration: 0.2,
-                delay: 0,
+                delay: index * 0.1,
                 ease: 'easeOut',
               }}
               initial={{ y: 1000, opacity: 0 }}

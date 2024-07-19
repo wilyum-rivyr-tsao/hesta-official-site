@@ -31,8 +31,8 @@ export const PopupProvider = ({ children }: { children: ReactNode }) => {
       <PopupContext.Provider value={{ state, dispatch } as any}>
         {children}
         {state.showMenu && <Menu />}
-        {state.showTerms && <Terms />}
-        {state.showTerms2 && <Terms2 />}
+        {state.showTerms && <Terms showing={state.showTerms} />}
+        {state.showTerms2 && <Terms2 showing={state.showTerms2} />}
       </PopupContext.Provider>
     </>
   );
