@@ -4,7 +4,6 @@ import ContentLayout from '@/components/ContentLayout';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-// import firstImg from '/public/imgs/about_us/first.webp';
 import BackgroundImage from '@/components/Basic/BackgroundImage';
 import RoundedPagination from '@/components/Basic/RoundedPagination';
 import './style.css';
@@ -95,6 +94,7 @@ function AboutUs() {
         priority
         width={2000}
         height={2000}
+        className="h-[100vh] w-full"
       />
 
       <BackgroundImage

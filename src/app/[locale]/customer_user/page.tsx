@@ -5,6 +5,7 @@ import RoundedPagination from '@/components/Basic/RoundedPagination';
 import { useState } from 'react';
 import { CDN } from '@/constants';
 import { Tooltip } from 'react-tooltip';
+import { motion } from 'framer-motion';
 
 const appSlides = [
   {
@@ -52,7 +53,7 @@ function Index() {
   const [appSlide, setappSlide] = useState(appSlides[0]);
   return (
     <>
-      <div className="flex h-[100vh] min-h-[900px] w-full flex-col items-center justify-center bg-[url('/imgs/customer_user/banner_dwelling.webp')] bg-cover bg-center bg-no-repeat">
+      <div className="flex h-[100vh] min-h-[900px] flex-col items-center justify-center overflow-x-hidden bg-[url('/imgs/customer_user/banner_dwelling.webp')] bg-cover bg-center bg-no-repeat">
         <h1 className="font-harmony text-[48px] font-bold text-[#383B43]">数字化智能生活体验</h1>
         <p className="mt-5 font-harmony text-[20px] font-thin">
           丰富数字化智能生活体验，通过创新技术与个性化服务，为住宅用户打造更智能、更便捷的生活体验。
@@ -210,7 +211,7 @@ function Index() {
         {/* <div className="btn btn-outline mt-20 w-40">查看详情</div> */}
       </div>
 
-      <div className="relative flex h-[74.3056vw] min-h-[1070px] items-end bg-[url('/imgs/Group1581.webp')] bg-cover bg-center bg-no-repeat">
+      <div className="relative flex h-[74.3056vw] min-h-[1070px] w-full items-end overflow-x-hidden bg-[url('/imgs/Group1581.webp')] bg-cover bg-center bg-no-repeat">
         <div className="flex w-full items-end justify-between rounded-[100px] rounded-b bg-[#F9FAFC] px-[9.7222vw] pb-[173px] pt-[160px]">
           <div>
             <RoundedPagination
@@ -223,13 +224,38 @@ function Index() {
           </div>
           <p className="w-[598px] font-harmony text-[16px] font-light">{appSlide.desc}</p>
         </div>
-        <Image
-          src={appSlide.img}
-          alt="apple"
-          width={1400}
-          height={1400}
-          className="absolute bottom-[180px] left-[50%] -ml-[365px] h-[730px] w-[730px]"
-        />
+        {appSlides.map((slide) => {
+          return (
+            <motion.div
+              animate={
+                slide.img === appSlide.img
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                      scale: 1,
+                    }
+                  : {
+                      opacity: 0,
+                      x: 2000,
+                    }
+              }
+              transition={{
+                duration: 1,
+                ease: 'easeOut',
+              }}
+              initial={{ x: 2000, opacity: 0 }}
+              className={`absolute bottom-[180px] left-[50%] -ml-[365px] ${slide.img === appSlide.img ? 'visible' : 'hidden'}`}
+            >
+              <Image
+                src={slide.img}
+                alt="apple"
+                width={1400}
+                height={1400}
+                className={`h-[730px] w-[730px]`}
+              />
+            </motion.div>
+          );
+        })}
       </div>
 
       <div className="flex flex-col items-center justify-center bg-[#F9FAFC]">
