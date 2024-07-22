@@ -53,13 +53,19 @@ function Index() {
   const [appSlide, setappSlide] = useState(appSlides[0]);
   return (
     <>
-      <div className="flex h-[100vh] min-h-[900px] flex-col items-center justify-center overflow-x-hidden bg-[url('/imgs/customer_user/banner_dwelling.webp')] bg-cover bg-center bg-no-repeat">
+      <div
+        className="flex h-[100vh] min-h-[900px] flex-col items-center justify-center overflow-x-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('${CDN}/imgs/customer_user/banner_dwelling.webp')` }}
+      >
         <h1 className="font-harmony text-[48px] font-bold text-[#383B43]">数字化智能生活体验</h1>
         <p className="mt-5 font-harmony text-[20px] font-thin">
           丰富数字化智能生活体验，通过创新技术与个性化服务，为住宅用户打造更智能、更便捷的生活体验。
         </p>
       </div>
-      <div className="bg-[url('/imgs/customer_user/bg_second.webp')] bg-cover bg-center bg-no-repeat">
+      <div
+        className="bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('${CDN}/imgs/customer_user/bg_second.webp')` }}
+      >
         <div className="mx-auto flex min-h-[900px] max-w-[1160px] justify-between py-[176px]">
           <h1 className="w-[407px] font-harmony text-[48px] font-bold">
             当前住宅用户正在面临的痛点
@@ -67,7 +73,7 @@ function Index() {
           <div className="grid max-h-[600px] min-w-[576px] grid-cols-2 gap-4">
             <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
               <Image
-                src={'/imgs/customer_user/icon_platform1.webp'}
+                src={`${CDN}/imgs/customer_user/icon_platform1.webp`}
                 width={70}
                 height={70}
                 alt={''}
@@ -76,18 +82,28 @@ function Index() {
               <p className="font-light">缺乏提供全面解决方案的统一平台</p>
             </div>
             <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image src={'/imgs/customer_user/icon_cost.webp'} width={70} height={70} alt={''} />
+              <Image
+                src={`${CDN}/imgs/customer_user/icon_cost.webp`}
+                width={70}
+                height={70}
+                alt={''}
+              />
               <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">改装</h4>
               <p className="font-light">现有房屋的改装/后装解决方案有限且实施困难</p>
             </div>
             <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image src={'/imgs/customer_user/icon_refit.webp'} width={70} height={70} alt={''} />
+              <Image
+                src={`${CDN}/imgs/customer_user/icon_refit.webp`}
+                width={70}
+                height={70}
+                alt={''}
+              />
               <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">成本</h4>
               <p className="font-light">全面集成的智能家居系统实施成本高</p>
             </div>
             <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
               <Image
-                src={'/imgs/customer_user/icon_userfriendly.webp'}
+                src={`${CDN}/imgs/customer_user/icon_userfriendly.webp`}
                 width={70}
                 height={70}
                 alt={''}
@@ -194,7 +210,10 @@ function Index() {
         </div> */}
       </div>
 
-      <div className="relative flex h-[62.5vw] min-h-[900px] items-end bg-[url('/imgs/customer_user/banner_loushui.webp')] bg-cover bg-no-repeat">
+      <div
+        className="relative flex h-[62.5vw] min-h-[900px] items-end bg-cover bg-no-repeat"
+        style={{ backgroundImage: `url('${CDN}/imgs/customer_user/banner_loushui.webp')` }}
+      >
         <div className="mb-[80px] ml-[9.5vw]">
           <Image
             src={`/imgs/customer_user/Group1583.webp`}
@@ -211,7 +230,10 @@ function Index() {
         {/* <div className="btn btn-outline mt-20 w-40">查看详情</div> */}
       </div>
 
-      <div className="relative flex h-[74.3056vw] min-h-[1070px] w-full items-end overflow-x-hidden bg-[url('/imgs/Group1581.webp')] bg-cover bg-center bg-no-repeat">
+      <div
+        className="relative flex h-[74.3056vw] min-h-[1070px] w-full items-end overflow-x-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('${CDN}/imgs/Group1581.webp')` }}
+      >
         <div className="flex w-full items-end justify-between rounded-[100px] rounded-b bg-[#F9FAFC] px-[9.7222vw] pb-[173px] pt-[160px]">
           <div>
             <RoundedPagination

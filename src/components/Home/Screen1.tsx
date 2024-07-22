@@ -71,10 +71,6 @@ const Screen1 = (props: any) => {
           </>
         )}
 
-        {/* Image fallback or additional content */}
-        {/* <div className="absolute left-0 top-0 z-0 h-full w-full bg-[url('/imgs/bg_home.webp')] bg-cover bg-center"> */}
-        {/* Optional: Add a background image if desired */}
-        {/* </div> */}
         {/* Content */}
         <div className="relative z-10 flex h-full flex-col">
           <div className="h-[38vh] min-h-[351px] w-1"></div>

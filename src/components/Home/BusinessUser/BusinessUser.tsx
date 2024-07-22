@@ -14,7 +14,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   return (
     <motion.div className="" {...restProps}>
       <BackgroundImage
-        src={`/imgs/screen2.webp`}
+        src={`${CDN}/imgs/screen2.webp`}
         className="flex h-[100vh] min-h-[700px] w-full flex-col items-center justify-center"
         contentClass="w-[100vw]"
       >

@@ -34,7 +34,8 @@ function Cases(props: any) {
         {/* <motion.div
           onMouseEnter={() => focus(1)}
           onMouseOut={() => focus(3)}
-          className={`normal-img h-[100vh] min-h-[700px] bg-[url('/imgs/case3.webp')] bg-cover bg-no-repeat ${focusIndex === 1 ? 'grow-width' : 'shrink-width'}`}
+          style={{backgroundImage:`${CDN}/imgs/case3.webp`}}
+          className={`normal-img h-[100vh] min-h-[700px] bg-cover bg-no-repeat ${focusIndex === 1 ? 'grow-width' : 'shrink-width'}`}
           animate={
             page === 5
               ? {

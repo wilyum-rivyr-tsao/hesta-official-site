@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import PopMsg1 from './PopMsg1';
 import { motion, useInView } from 'framer-motion';
+import { CDN } from '@/constants';
 
 function Content1(props: any) {
   const ref = useRef(null);
@@ -11,7 +12,8 @@ function Content1(props: any) {
   return (
     <div className="flex w-full justify-center" ref={ref}>
       <motion.div
-        className={`flex h-[70vh] w-full justify-center overflow-hidden bg-[url('/imgs/screen3half.webp')] bg-contain bg-center bg-no-repeat ${className} w-full`}
+        className={`flex h-[70vh] w-full justify-center overflow-hidden bg-contain bg-center bg-no-repeat ${className} w-full`}
+        style={{ backgroundImage: `url('${CDN}/imgs/screen3half.webp')` }}
         animate={
           isInView || isInViewInner
             ? {

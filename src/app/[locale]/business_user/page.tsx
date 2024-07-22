@@ -99,13 +99,19 @@ function Index() {
   };
   return (
     <>
-      <div className="flex h-[100vh] min-h-[900px] w-full flex-col items-center justify-center bg-[url('/imgs/business_user/banner_business.webp')] bg-cover bg-center bg-no-repeat">
+      <div
+        className="flex h-[100vh] min-h-[900px] w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('${CDN}/imgs/business_user/banner_business.webp')` }}
+      >
         <h1 className="font-harmony text-[48px] font-bold text-[#383B43]">商业用户生活体验</h1>
         <p className="mt-5 font-harmony text-[20px] font-thin">
           实现一站式管理平台，帮助商业用户最大程度提高物业管理效率
         </p>
       </div>
-      <div className="flex bg-[url('/imgs/customer_user/bg_second.webp')] bg-cover bg-center bg-no-repeat">
+      <div
+        className="flex bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('${CDN}/imgs/customer_user/bg_second.webp')` }}
+      >
         <div className="mx-auto mb-[168px] mt-[176px] flex w-[1160px] justify-between">
           <h1 className="w-[398px] min-w-[398px] font-harmony text-[48px] font-bold">
             当前商业用户正在面临的痛点
@@ -114,7 +120,7 @@ function Index() {
             <div className="h-[263px] w-[280px]"></div>
             <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
               <Image
-                src={'/imgs/business_user/icon_platform.webp'}
+                src={`${CDN}/imgs/business_user/icon_platform.webp`}
                 width={70}
                 height={70}
                 alt={''}
@@ -123,18 +129,28 @@ function Index() {
               <p className="font-light">缺乏提供全面解决方案的统一平台</p>
             </div>
             <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image src={'/imgs/business_user/icon_plan.webp'} width={70} height={70} alt={''} />
+              <Image
+                src={`${CDN}/imgs/business_user/icon_plan.webp`}
+                width={70}
+                height={70}
+                alt={''}
+              />
               <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">方案</h4>
               <p className="font-light">缺乏提供全面解决方案的统一平台</p>
             </div>
             <div className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image src={'/imgs/business_user/icon_data.webp'} width={70} height={70} alt={''} />
+              <Image
+                src={`${CDN}/imgs/business_user/icon_data.webp`}
+                width={70}
+                height={70}
+                alt={''}
+              />
               <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">改装</h4>
               <p className="font-light">现有房屋的改装/后装解决方案有限且实施困难</p>
             </div>
             <div className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
               <Image
-                src={'/imgs/business_user/icon_intellect.webp'}
+                src={`${CDN}/imgs/business_user/icon_intellect.webp`}
                 width={70}
                 height={70}
                 alt={''}
@@ -144,7 +160,7 @@ function Index() {
             </div>
             <div className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
               <Image
-                src={'/imgs/business_user/icon_customization.webp'}
+                src={`${CDN}/imgs/business_user/icon_customization.webp`}
                 width={70}
                 height={70}
                 alt={''}
@@ -264,7 +280,10 @@ function Index() {
         </div>
       </div>
 
-      <div className="relative flex h-[62.5vw] min-h-[900px] items-end bg-[url('/imgs/business_user/banner_management.webp')] bg-cover bg-no-repeat">
+      <div
+        className="relative flex h-[62.5vw] min-h-[900px] items-end bg-cover bg-no-repeat"
+        style={{ backgroundImage: `url('${CDN}/imgs/business_user/banner_management.webp')` }}
+      >
         <div className="mb-[80px] ml-[9.5vw]">
           <Image
             src={`/imgs/business_user/x4.webp`}
