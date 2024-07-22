@@ -110,60 +110,60 @@ const Menu = () => {
             <span className="ml-[10px] text-[16px]">{state.showMenu ? 'Close' : 'Menu'}</span>
           </div>
 
-          <div className="flex h-full flex-col items-center justify-between py-[130px] font-harmony">
+          <div className="flex h-full flex-col items-center justify-between py-[6.7708vw] font-harmony">
             <Link className="flex flex-col items-center" href="/">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'home' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
+                className={`ml-2 text-[32px] font-bold sm-screen:text-[28px] ${current === 'home' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 首页
               </span>
-              <span className="ml-2 text-[20px] font-light">HOME</span>
-              <span className="rotate-[24deg] text-[30px] font-thin">/</span>
+              <span className="ml-2 text-[20px] font-light sm-screen:text-[16px]">HOME</span>
+              <span className="rotate-[24deg] text-[30px] font-thin sm-screen:text-[26px]">/</span>
             </Link>
             <Link href="/business_user" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'business_user' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
+                className={`ml-2 text-[32px] font-bold sm-screen:text-[28px] ${current === 'business_user' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 商业
               </span>
-              <span className="ml-2 text-[20px] font-light">BUSINESS</span>
-              <span className="rotate-[24deg] text-[30px] font-thin">/</span>
+              <span className="ml-2 text-[20px] font-light sm-screen:text-[16px]">BUSINESS</span>
+              <span className="rotate-[24deg] text-[30px] font-thin sm-screen:text-[26px]">/</span>
             </Link>
             <Link href="/customer_user" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'customer_user' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
+                className={`ml-2 text-[32px] font-bold sm-screen:text-[28px] ${current === 'customer_user' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 住宅
               </span>
-              <span className="ml-2 text-[20px] font-light">RESIDENCE</span>
-              <span className="rotate-[24deg] text-[30px] font-thin">/</span>
+              <span className="ml-2 text-[20px] font-light sm-screen:text-[16px]">RESIDENCE</span>
+              <span className="rotate-[24deg] text-[30px] font-thin sm-screen:text-[26px]">/</span>
             </Link>
             <Link href="/case/0" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'case' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
+                className={`ml-2 text-[32px] font-bold sm-screen:text-[28px] ${current === 'case' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 案例
               </span>
-              <span className="ml-2 text-[20px] font-light">CASE</span>
-              <span className="rotate-[24deg] text-[30px] font-thin">/</span>
+              <span className="ml-2 text-[20px] font-light sm-screen:text-[16px]">CASE</span>
+              <span className="rotate-[24deg] text-[30px] font-thin sm-screen:text-[26px]">/</span>
             </Link>
             <Link href="/about_us" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'about_us' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
+                className={`ml-2 text-[32px] font-bold sm-screen:text-[28px] ${current === 'about_us' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 关于
               </span>
-              <span className="ml-2 text-[20px] font-light">ABOUT</span>
-              <span className="rotate-[24deg] text-[30px] font-thin">/</span>
+              <span className="ml-2 text-[20px] font-light sm-screen:text-[16px]">ABOUT</span>
+              <span className="rotate-[24deg] text-[30px] font-thin sm-screen:text-[26px]">/</span>
             </Link>
             <Link href="/contact_us" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold ${current === 'cotact_us' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
+                className={`ml-2 text-[32px] font-bold sm-screen:text-[28px] ${current === 'cotact_us' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 联系我们
               </span>
-              <span className="ml-2 text-[20px] font-light">CONTACT</span>
-              {/* <span className="rotate-[24deg] text-[30px] font-thin">/</span> */}
+              <span className="ml-2 text-[20px] font-light sm-screen:text-[16px]">CONTACT</span>
+              {/* <span className="rotate-[24deg] text-[30px] font- sm-screen:text-[26px] thin">/</span> */}
             </Link>
           </div>
         </motion.div>
