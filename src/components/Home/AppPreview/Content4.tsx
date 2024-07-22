@@ -41,6 +41,7 @@ function Content4({
         width={5000}
         height={5000}
         className={`h-[850px] w-full`}
+        priority
       />
     </motion.div>
   );
