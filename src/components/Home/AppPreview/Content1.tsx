@@ -29,13 +29,14 @@ function Content1(props: any) {
         }}
         initial={{ opacity: 0 }}
       >
-        <Image
+        {/* <Image
           src={`${CDN}/imgs/ill_house2.webp`}
           alt={''}
           width={2300}
           height={1400}
           className="h-[560px] w-[1220px]"
-        />
+        /> */}
+        <img src={`${CDN}/imgs/ill_house2.webp`} className="h-[560px] w-[1220px]" />
       </motion.div>
 
       <PopMsg1

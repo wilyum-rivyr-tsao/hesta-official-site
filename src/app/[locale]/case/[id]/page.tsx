@@ -206,7 +206,7 @@ function Case({ params }: { params: { id: string } }) {
                     className="sm-screen:min-h-[435px] sm-screen:min-w-[580px]"
                   >
                     <Image
-                      src={`${CDN}/imgs/case/Frame105.webp`}
+                      src={`${CDN}/imgs/case2.webp`}
                       alt=""
                       width={1000}
                       height={800}
