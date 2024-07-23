@@ -6,120 +6,87 @@ import React, {
   useContext,
   useEffect,
   // useReducer,
-  // useRef,
+  useRef,
   useState,
 } from 'react';
-import debouce from 'lodash/debounce';
 import ReadMoreBtn from '@/components/Basic/ReadMoreBtn';
-// import PopMsg1 from './PopMsg1';
-// import Preview1 from './Preview1';
-// import PopMsg5 from './PopMsg5';
-// import Preview2 from './Preview2';
-// import Preview3 from './Preview3';
-// import Preview4 from './Preview4';
-// import Preview5 from './Preview5';
-// import Preview6 from './Preview6';
-// import Link from 'next/link';
 import 'animate.css';
-import useIsScrolledIntoView from '@/Hooks/useIsScrolledIntoView';
-
 import { HomeContext } from '..';
 import Preview from './Preview';
 import { CDN } from '@/constants';
+import { Lethargy } from 'lethargy-ts';
+import { throttle } from 'lodash';
 
-// Define the state type
-// interface SlideUpState {
-//   page: boolean;
-//   text: boolean;
-//   bg: boolean;
-//   pop: boolean;
-// }
-
-// // Define the action types
-// type SlideUpAction =
-//   | { type: 'SET_PAGE'; payload: boolean }
-//   | { type: 'SET_TEXT'; payload: boolean }
-//   | { type: 'SET_BG'; payload: boolean }
-//   | { type: 'SET_POP'; payload: boolean };
-
-// Create the reducer function
-// const slideUpReducer = (state: SlideUpState, action: SlideUpAction): SlideUpState => {
-//   switch (action.type) {
-//     case 'SET_PAGE':
-//       return { ...state, page: action.payload };
-//     case 'SET_TEXT':
-//       return { ...state, text: action.payload };
-//     case 'SET_BG':
-//       return { ...state, bg: action.payload };
-//     case 'SET_POP':
-//       return { ...state, pop: action.payload };
-//     default:
-//       return state;
-//   }
-// };
-
-// // Initialize the state
-// const initialState: SlideUpState = {
-//   page: false,
-//   text: false,
-//   bg: false,
-//   pop: false,
-// };
+const lethargy = new Lethargy({
+  sensitivity: 300,
+  delay: 100,
+  increasingDeltasThreshold: 50,
+});
 
 const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   const { page: outerPage } = props;
   const [page, setPage] = useState(1);
   const pages = ['01', '02', '03', '04', '05', '06'];
   const [curPages, setCurPages] = useState(['06', '01', '02']);
-  // const { componentRef, componentTop, rect } = useIsScrolledIntoView();
-  // const [scrollDisabled, setScrollDisabled] = useState(false);
-  // const [scrollPosition, setScrollPosition] = useState(0);
+  const startScrollTime = useRef(new Date().getTime());
+
   const homeContext: any = useContext(HomeContext);
 
-  // const outerPage = props.page;
+  const scrollContent = (e: any) => {
+    const now = new Date().getTime();
+    console.log('now - startScrollTime.current', now - startScrollTime.current);
+    if (now - startScrollTime.current < 1500) {
+      return;
+    }
+    startScrollTime.current = now;
+    let scrollDisabled = homeContext?.scrollDisabled;
+    console.log('scrollDisabled1', scrollDisabled, e.deltaY);
+    if (e.deltaY > 0 && page === 6) {
+      homeContext?.setScrollDisabled(false);
+      scrollDisabled = false;
+    }
+    if (e.deltaY < 0 && page === 1) {
+      homeContext?.setScrollDisabled(false);
+      scrollDisabled = false;
+    }
+    console.log('scrollDisabled', scrollDisabled);
+    if (scrollDisabled) {
+      e.preventDefault();
 
-  useEffect(() => {
-    const handleWheel = debouce((e: any) => {
-      let scrollDisabled = homeContext?.scrollDisabled;
-      if (e.deltaY > 0 && page === 6) {
-        homeContext?.setScrollDisabled(false);
-        scrollDisabled = false;
+      if (e.deltaY > 0 && page < 6) {
+        setPage((prev) => {
+          const nextPageNum = prev + 1;
+          const newPages = generateNewArray(nextPageNum);
+          setCurPages(newPages);
+          return nextPageNum;
+        });
+      } else if (e.deltaY < 0 && page > 1) {
+        setPage((prev) => {
+          const nextPageNum = prev - 1;
+          const newPages = generateNewArray(nextPageNum);
+          setCurPages(newPages);
+          return nextPageNum;
+        });
       }
-      if (e.deltaY < 0 && page === 1) {
-        homeContext?.setScrollDisabled(false);
-        scrollDisabled = false;
-      }
+    }
+  };
 
-      if (scrollDisabled) {
-        e.preventDefault();
-        let nextPage = page;
-        if (e.deltaY > 0 && page < 6) {
-          nextPage = page + 1;
-          console.log('nextPag---', nextPage);
-          // if (nextPage > 6) {
-          //   enableScroll();
-          //   return;
-          // }
+  // useEffect(() => {
+  //   const checkWheelEvent = (e: WheelEvent) => {
+  //     const isIntentional = lethargy.check(e);
+  //     // console.log('e', e);
+  //     if (isIntentional) {
+  //       // console.log('first');
+  //       scrollContent(e);
+  //       // Do something with the scroll event
+  //     }
+  //   };
 
-          setPage(nextPage);
-        } else if (e.deltaY < 0 && page > 1) {
-          nextPage = page - 1;
-          console.log('nextPage', nextPage);
-
-          setPage(nextPage);
-        }
-        const newPages = generateNewArray(nextPage);
-        setCurPages(newPages);
-        console.log('e.deltaY > 0 && page === 6', e.deltaY > 0, page === 6);
-      }
-    }, 100);
-
-    window.addEventListener('wheel', handleWheel, { passive: false });
-
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-    };
-  }, [homeContext, page]);
+  //   window.addEventListener('wheel', checkWheelEvent, { passive: true });
+  //   return () => {
+  //     window.removeEventListener('wheel', checkWheelEvent);
+  //   };
+  // }, [homeContext, page]);
 
   useEffect(() => {
     if (outerPage === 2) {
@@ -129,37 +96,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
     }
   }, [outerPage]);
 
-  const mouseEnter = () => {
-    console.log('enter');
-    // homeContext?.setScrollDisabled(true);
-  };
-  const mouseLeave = () => {
-    console.log('leave');
-    // homeContext?.setScrollDisabled(false);
-  };
-
-  // useEffect(() => {
-  //   if (outerPage === 3) {
-  //     slideUpDispatch({ type: 'SET_PAGE', payload: true });
-  //     setTimeout(() => {
-  //       slideUpDispatch({ type: 'SET_BG', payload: true });
-  //     }, 500);
-  //     setTimeout(() => {
-  //       slideUpDispatch({ type: 'SET_TEXT', payload: true });
-  //     }, 1000);
-  //     setTimeout(() => {
-  //       slideUpDispatch({ type: 'SET_POP', payload: true });
-  //     }, 1500);
-  //   } else {
-  //     slideUpDispatch({ type: 'SET_PAGE', payload: false });
-  //     slideUpDispatch({ type: 'SET_BG', payload: false });
-  //     slideUpDispatch({ type: 'SET_TEXT', payload: false });
-  //     slideUpDispatch({ type: 'SET_POP', payload: false });
-  //   }
-  // }, [outerPage]);
-
   // SECTION pagination
-
   const generateNewArray = (nextPage: number) => {
     const totalPages = pages.length;
     let startIndex = nextPage - 2;
@@ -218,10 +155,6 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
       case 3:
         return {
           backgroundImage: `url('${CDN}/imgs/bg_conduit.webp')`,
-          // backgroundPositionY: '211px',
-          // backgroundPositionX: 'center',
-          // backgroundSize: 'contain',
-
           backgroundSize: 'contain',
           backgroundPosition: 'center',
           height: '80vh',
@@ -246,12 +179,14 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
     }
   }, [page]);
 
-  // const [slideUpState, slideUpDispatch] = useReducer(slideUpReducer, initialState);
+  const handleWheel = throttle(scrollContent, 100);
 
   return (
     <div
       ref={ref}
       className="relative flex h-[100vh] w-full flex-col items-center overflow-x-hidden"
+      id="trigger"
+      onWheel={handleWheel}
     >
       <div className="mt-[64px] flex w-full flex-col items-center bg-no-repeat">
         <div className={`relative z-[9999] flex w-full flex-col items-center justify-center`}>
@@ -279,7 +214,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
         </div>
 
         <div style={containerStyle()}>
-          <Preview page={page} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} />
+          <Preview page={page} />
         </div>
       </div>
       <ReadMoreBtn className="absolute bottom-[43px] z-[999999]" href="/business_user" />
