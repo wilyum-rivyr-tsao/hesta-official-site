@@ -14,14 +14,7 @@ import 'animate.css';
 import { HomeContext } from '..';
 import Preview from './Preview';
 import { CDN } from '@/constants';
-import { Lethargy } from 'lethargy-ts';
-import { throttle } from 'lodash';
-
-const lethargy = new Lethargy({
-  sensitivity: 300,
-  delay: 100,
-  increasingDeltasThreshold: 50,
-});
+import throttle from 'lodash/throttle';
 
 const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   const { page: outerPage } = props;
@@ -35,7 +28,7 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   const scrollContent = (e: any) => {
     const now = new Date().getTime();
     console.log('now - startScrollTime.current', now - startScrollTime.current);
-    if (now - startScrollTime.current < 1500) {
+    if (now - startScrollTime.current < 1200) {
       return;
     }
     startScrollTime.current = now;
@@ -70,23 +63,6 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
       }
     }
   };
-
-  // useEffect(() => {
-  //   const checkWheelEvent = (e: WheelEvent) => {
-  //     const isIntentional = lethargy.check(e);
-  //     // console.log('e', e);
-  //     if (isIntentional) {
-  //       // console.log('first');
-  //       scrollContent(e);
-  //       // Do something with the scroll event
-  //     }
-  //   };
-
-  //   window.addEventListener('wheel', checkWheelEvent, { passive: true });
-  //   return () => {
-  //     window.removeEventListener('wheel', checkWheelEvent);
-  //   };
-  // }, [homeContext, page]);
 
   useEffect(() => {
     if (outerPage === 2) {
@@ -181,12 +157,19 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
 
   const handleWheel = throttle(scrollContent, 100);
 
+  useEffect(() => {
+    window.addEventListener('wheel', handleWheel);
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+    };
+  }, [homeContext, page]);
+
   return (
     <div
       ref={ref}
       className="relative flex h-[100vh] w-full flex-col items-center overflow-x-hidden"
       id="trigger"
-      onWheel={handleWheel}
+      // onWheel={handleWheel}
     >
       <div className="mt-[64px] flex w-full flex-col items-center bg-no-repeat">
         <div className={`relative z-[9999] flex w-full flex-col items-center justify-center`}>
