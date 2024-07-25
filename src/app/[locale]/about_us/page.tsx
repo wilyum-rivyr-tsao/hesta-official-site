@@ -12,6 +12,7 @@ import IncreaseNumberAnimation from '@/components/Basic/IncreaseNumberAnimation'
 import { motion, useInView } from 'framer-motion';
 import { CDN } from '@/constants';
 import SliderCard from '../../../components/Basic/SliderCard';
+import PreventScrollWrapper from '../../../components/Basic/PreventScrollWrapper';
 
 function isCenterIndex(array: any[], index: number): boolean {
   const length = array.length;
@@ -84,6 +85,32 @@ function AboutUs() {
     console.log('pageCur', pageCur);
     sethistoryPage(pageCur ?? ({} as Item));
   };
+  const startScrollTime = useRef(new Date().getTime());
+
+  const scrollContent = (e: any) => {
+    console.log('e', e.deltaY);
+    const now = new Date().getTime();
+    console.log('now - startScrollTime.current', now - startScrollTime.current);
+    if (now - startScrollTime.current < 600 || Math.abs(e.deltaY) < 70) {
+      return;
+    }
+    startScrollTime.current = now;
+    if (e.deltaY > 0) {
+      const page = historyPage.page < historyArr.length ? historyPage.page + 1 : 1;
+      const pageCur = historyArr.find((item) => {
+        return item.page === page;
+      });
+      sethistoryPage(pageCur ?? ({} as Item));
+    } else if (e.deltaY < 0) {
+      const page = historyPage.page > 1 ? historyPage.page - 1 : historyArr.length;
+      const pageCur = historyArr.find((item) => {
+        return item.page === page;
+      });
+      sethistoryPage(pageCur ?? ({} as Item));
+    }
+  };
+
+  const scrollDisabled = useRef(false);
 
   return (
     <>
@@ -94,7 +121,7 @@ function AboutUs() {
         priority
         width={2000}
         height={2000}
-        className="h-[100vh] w-full"
+        className="w-full"
       />
 
       <BackgroundImage
@@ -149,39 +176,66 @@ function AboutUs() {
         </div>
       </BackgroundImage>
       <div className="relative my-[5.9722vw] flex cursor-pointer select-none flex-col items-center">
-        <div className="relative z-20 flex h-[580px] w-[428px] items-center justify-center overflow-hidden">
+        <PreventScrollWrapper
+          className="relative z-20 flex h-[580px] w-full items-center justify-center overflow-hidden"
+          onWheel={scrollContent}
+        >
           <div className="absolute top-0 z-30 h-[80px] w-full bg-gradient-to-b from-[#E9ECF4] to-transparent font-akrobat"></div>
-          <div className="flex w-[428px] flex-col items-center justify-center">
+          <div
+            className="flex w-[428px] flex-col items-center justify-center"
+            // onMouseEnter={(e) => (scrollDisabled.current = true)}
+            // onMouseLeave={(e) => (scrollDisabled.current = false)}
+            // onScroll={(e) => scrollDisabled.current && e.preventDefault()}
+          >
             {historyArr.map((item, index) => {
               return (
-                <div
-                  className={`font-akrobat ${isCenterIndex(historyArr, index) ? 'text-[100px]' : 'text-[80px] text-[#DEE0E5]'}`}
+                <motion.div
+                  className={`font-akrobat text-[80px] ${isCenterIndex(historyArr, index) ? 'text-[100px]' : 'text-[#DEE0E5]'}`}
                   key={item.id}
+                  animate={
+                    isCenterIndex(historyArr, index)
+                      ? {
+                          y: 0,
+                          opacity: 1,
+                          scale: 1.2,
+                        }
+                      : {
+                          y: 0,
+                          scale: 1,
+                          opacity: 1,
+                        }
+                  }
+                  transition={{
+                    duration: 1,
+                    ease: 'easeOut',
+                  }}
+                  initial={{ opacity: 0, scale: 1 }}
                 >
                   {item.date}
-                </div>
+                </motion.div>
               );
             })}
           </div>
           <div className="absolute bottom-0 z-30 h-[80px] w-full bg-gradient-to-t from-[#E9ECF4] to-transparent font-akrobat"></div>
-        </div>
-        <div className="absolute top-[53%] z-20 flex w-full justify-center">
-          <div className="w-[80%]">
-            <div className="h-[30px] w-full border-t border-black bg-[#E9ECF4]"></div>
-            <p className="-mr-10 text-center font-harmony text-[18px] font-light">
-              {historyPage.desc}
-            </p>
-          </div>
 
-          <RoundedPagination
-            className="-mt-[20px] rotate-90"
-            goto={gotoHis}
-            totalPage={historyArr.length}
-            page={historyPage.page}
-            direction={setDirection}
-            limitRange={false}
-          />
-        </div>
+          <div className="absolute top-[53%] z-20 flex w-full justify-center">
+            <div className="w-[80%]">
+              <div className="h-[30px] w-full border-t border-black bg-[#E9ECF4]"></div>
+              <p className="-mr-10 text-center font-harmony text-[18px] font-light">
+                {historyPage.desc}
+              </p>
+            </div>
+
+            <RoundedPagination
+              className="-mt-[20px] rotate-90"
+              goto={gotoHis}
+              totalPage={historyArr.length}
+              page={historyPage.page}
+              direction={setDirection}
+              limitRange={false}
+            />
+          </div>
+        </PreventScrollWrapper>
 
         <Image
           src={`${CDN}/imgs/about_us/fb.webp`}
@@ -190,6 +244,7 @@ function AboutUs() {
           alt=""
           className="absolute -top-[30px] left-[25vw]"
         />
+
         <Image
           src={`${CDN}/imgs/about_us/fb1.webp`}
           width={240}
