@@ -9,7 +9,7 @@ function BusinessCase1({ close, showing }: any) {
       <div className="flex">
         <LeftMenu></LeftMenu>
         <div className="shrink-1">
-          <h1 className="mb-[69px] flex font-harmony text-[40px] font-black">智能豪华别墅的未来</h1>
+          <h1 className="mb-[25px] flex font-harmony text-[40px] font-black">智能豪华别墅的未来</h1>
           <div className="h-[50vh] overflow-y-auto font-harmony">
             <p>
               在现代高端生活中，豪华别墅不仅是奢华的居住空间，更是智能化生活的象征。对于管理面积达1095平方米的豪华别墅而言，传统的物业管理方式已难以满足业主对高效、便捷和智能化的需求。Hesta凭借其先进技术和全面服务，成功将这座豪华别墅带入智能管理的新纪元，大幅提升了物业管理的质量和效率。

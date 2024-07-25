@@ -3,8 +3,9 @@ import { usePopupContext } from '@/context/PopupContext';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
-import { forwardRef, Ref } from 'react';
+import { forwardRef, Ref, useRef } from 'react';
 import { CDN } from '@/constants';
+import { motion, useInView } from 'framer-motion';
 
 interface Props {
   className?: string;
@@ -12,6 +13,8 @@ interface Props {
 const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDivElement>) {
   const t = useTranslations();
   const { state, dispatch }: any = usePopupContext();
+  const ref2 = useRef(null);
+  const isInView = useInView(ref2);
 
   const showTerms = () => {
     dispatch({ type: 'showTerms', payload: !state.showTerms });
@@ -27,29 +30,79 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
       className={`h-[62.5vw] bg-cover bg-center bg-no-repeat px-[9.7222vw] ${className} relative flex flex-col items-center justify-center`}
       ref={ref}
     >
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between" ref={ref2}>
         <div>
-          <Image
-            src={`${CDN}/imgs/logo.webp`}
-            width="148"
-            height="46"
-            alt={'logo'}
-            style={{
-              width: '10.2778vw',
-              height: '3.1944vw',
+          <motion.div
+            animate={
+              isInView
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 1,
+              delay: 0,
+              ease: 'easeOut',
             }}
-          />
-          <h2 className="mt-[1.4vw] h-[7.7778vw] w-[20.9028vw] font-harmony text-[3.3333vw] font-bold">
+            initial={{ y: 50, opacity: 0 }}
+          >
+            <Image
+              src={`${CDN}/imgs/logo.webp`}
+              width="148"
+              height="46"
+              alt={'logo'}
+              style={{
+                width: '10.2778vw',
+                height: '3.1944vw',
+              }}
+            />
+          </motion.div>
+          <motion.h2
+            className="mt-[1.4vw] h-[7.7778vw] w-[20.9028vw] font-harmony text-[3.3333vw] font-bold"
+            animate={
+              isInView
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 1,
+              delay: 0.5,
+              ease: 'easeOut',
+            }}
+            initial={{ y: 50, opacity: 0 }}
+          >
             洞悉地产科技 瞰见智慧未来
-          </h2>
+          </motion.h2>
           <Link href="/contact_us">
-            <div
+            <motion.div
               className={`button-hover mt-[4.1667vw] flex h-[3.75vw] w-[10.6944vw] items-center bg-[url("/imgs/btnarr.webp")] bg-cover bg-center bg-no-repeat hover:bg-[url("/imgs/btnarr_active.webp")]`}
+              animate={
+                isInView
+                  ? {
+                      y: 0,
+                      opacity: 1,
+                      scale: 1,
+                    }
+                  : {}
+              }
+              transition={{
+                duration: 1,
+                delay: 1,
+                ease: 'easeOut',
+              }}
+              initial={{ y: 50, opacity: 0 }}
             >
               <span className="-mt-2 ml-[0.5556vw] font-harmony text-[1.1111vw] font-thin hover:text-white">
                 {t('Contact us')}
               </span>
-            </div>
+            </motion.div>
           </Link>
         </div>
 

@@ -3,7 +3,7 @@
 import Menu from '@/components/Menu';
 import Terms from '@/components/Terms';
 import Terms2 from '@/components/Terms2';
-import { createContext, ReactNode, useContext, useReducer } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useReducer, useState } from 'react';
 
 const initialContext: any = {
   showMenu: false,
@@ -24,13 +24,27 @@ const reducer = (state: any, action: any) => {
       return state;
   }
 };
+
 export const PopupProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialContext);
+  const [delayMenu, setdelayMenu] = useState(state.showMenu);
+
+  useEffect(() => {
+    if (!state.showMenu) {
+      const timer = setTimeout(() => {
+        setdelayMenu(state.showMenu);
+        clearTimeout(timer);
+      }, 500);
+    } else {
+      setdelayMenu(state.showMenu);
+    }
+  }, [state.showMenu]);
+
   return (
     <>
       <PopupContext.Provider value={{ state, dispatch } as any}>
         {children}
-        {state.showMenu && <Menu />}
+        {delayMenu && <Menu />}
         {state.showTerms && <Terms showing={state.showTerms} />}
         {state.showTerms2 && <Terms2 showing={state.showTerms2} />}
       </PopupContext.Provider>

@@ -219,23 +219,20 @@ function Case({ params }: { params: { id: string } }) {
           </div>
         </div>
       </ContentLayout>
-      {cases.bCase1 && (
-        <BusinessCase1
-          close={() => {
-            dispatchCase({ type: 'bCase1', payload: false });
-          }}
-          showing={cases.bCase1}
-        />
-      )}
 
-      {cases.bCase2 && (
-        <BusinessCase2
-          close={() => {
-            dispatchCase({ type: 'bCase2', payload: false });
-          }}
-          showing={cases.bCase2}
-        />
-      )}
+      <BusinessCase1
+        close={() => {
+          dispatchCase({ type: 'bCase1', payload: false });
+        }}
+        showing={cases.bCase1}
+      />
+
+      <BusinessCase2
+        close={() => {
+          dispatchCase({ type: 'bCase2', payload: false });
+        }}
+        showing={cases.bCase2}
+      />
     </div>
   );
 }

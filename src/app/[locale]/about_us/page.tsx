@@ -125,6 +125,8 @@ function AboutUs() {
   };
 
   const scrollDisabled = useRef(false);
+  const xuanzeRef = useRef(null);
+  const xuanzeIsInView = useInView(xuanzeRef);
 
   return (
     <>
@@ -204,7 +206,7 @@ function AboutUs() {
             {historyArr.map((item, index) => {
               return (
                 <motion.div
-                  className={`bg-gri bg-clip-text font-akrobat text-[80px] ${isCenterIndex(historyArr, index) ? 'text-[100px]' : 'text-[#DEE0E5]'} ${
+                  className={`bg-gri bg-clip-text font-akrobat ${isCenterIndex(historyArr, index) ? 'text-[100px]' : 'text-[80px] text-[#DEE0E5]'} ${
                     offsetCenterIndex(historyArr, index, -2) &&
                     'bg-gradient-to-t from-[#DEE0E5] to-transparent text-transparent'
                   } ${offsetCenterIndex(historyArr, index, 2) && 'bg-gradient-to-b from-[#DEE0E5] to-transparent text-transparent'} `}
@@ -299,11 +301,50 @@ function AboutUs() {
         className="mt-[113px] h-[34.7222vw] min-h-[520px] w-full"
         src={`${CDN}/imgs/about_us/banner_xuanze.webp`}
       >
-        <div className="ml-[9.7222vw] h-[34.7222vw] min-h-[500px] w-[33.6111vw] min-w-[520px] bg-white bg-opacity-60 px-10 pt-[118px] font-harmony backdrop-blur-md">
-          <h3 className="mb-[30px] font-harmony text-[30px] font-black">选择悉瞰</h3>
-          <p className="text-[18px] font-light leading-[35px]">
+        <div
+          className="ml-[9.7222vw] h-[34.7222vw] min-h-[500px] w-[33.6111vw] min-w-[520px] bg-white bg-opacity-60 px-10 pt-[118px] font-harmony backdrop-blur-md"
+          ref={xuanzeRef}
+        >
+          <motion.h3
+            animate={
+              xuanzeIsInView
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 0.5,
+              delay: 0,
+              ease: 'easeOut',
+            }}
+            initial={{ y: 1000, opacity: 0 }}
+            className="mb-[30px] font-harmony text-[30px] font-black"
+          >
+            选择悉瞰
+          </motion.h3>
+          <motion.p
+            animate={
+              xuanzeIsInView
+                ? {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {}
+            }
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              ease: 'easeOut',
+            }}
+            initial={{ y: 1000, opacity: 0 }}
+            className="text-[18px] font-light leading-[35px]"
+          >
             Hesta通过提供全方位一站式的解决方案，以满足物业生命周期中的每一个需求。我们打破传统IoT生态的局限，提供无缝、无界的体验，提升效能、效率和经济性。此外，Hesta率先使用3D互动模型，重新定义人们与物业的互动方式。通过我们的一键智能家居转型服务以及行业领先的AI定制服务，Hesta不仅重新定义了与物业的互动，还极大地改变了这些房屋和空间对人们日常工作、生活的影响。Hesta将真正注释未来生活。
-          </p>
+          </motion.p>
         </div>
       </BackgroundImage>
       {/* <div className="flex h-[62.5vw] min-h-[900px] w-full flex-col pt-[140px]">

@@ -300,7 +300,7 @@ function Index() {
         {/* <div className="btn btn-outline mt-20 w-40">查看详情</div> */}
       </div>
 
-      <div className="flex h-[100vh] items-end">
+      <div className="flex items-end pt-10 4xl:min-h-[100vh]">
         <div className="flex flex-col items-center" ref={refProduct}>
           <h3 className="mt-[6.4583vw] items-center font-harmony text-[48px] font-black">
             产品系统

@@ -9,7 +9,7 @@ function BusinessCase1({ close, showing }: any) {
       <div className="flex">
         <LeftMenu></LeftMenu>
         <div className="shrink-1">
-          <h1 className="mb-[50px] flex font-harmony text-[40px] font-black">
+          <h1 className="mb-[25px] flex font-harmony text-[40px] font-black">
             Hesta助力北京商业综合体实现卓越运营
           </h1>
           <div className="h-[60vh] overflow-y-auto pb-20 font-harmony">

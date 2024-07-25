@@ -7,7 +7,7 @@ function Layout({ children }: { children: ReactNode }) {
     <>
       <Header />
       {children}
-      <Footer className="relative z-20 -mt-[100px] bg-[#F9FAFC]" />
+      <Footer className="relative z-20 -mt-[200px] bg-[#F9FAFC]" />
     </>
   );
 }

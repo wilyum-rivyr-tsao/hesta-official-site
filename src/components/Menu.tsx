@@ -15,31 +15,6 @@ const Menu = () => {
     dispatch({ type: 'showMenu', payload: !state.showMenu });
   };
 
-  useEffect(() => {
-    document.body.style.maxHeight = '100vh';
-    document.body.style.overflow = 'hidden';
-
-    console.log('router.pathname', pathname);
-    return () => {
-      document.body.style.maxHeight = '';
-      document.body.style.overflow = '';
-    };
-  }, []);
-
-  useEffect(() => {
-    if (state.showMenu) {
-      window.addEventListener('wheel', (e) => {
-        e.stopPropagation();
-      });
-      document.body.style.maxHeight = '100vh';
-      document.body.style.overflow = 'hidden';
-      return () => {
-        document.body.style.maxHeight = '';
-        document.body.style.overflow = '';
-      };
-    }
-  }, [state.showMenu]);
-
   const [current, setcurrent] = useState('');
   const pathname = usePathname();
 
@@ -99,7 +74,7 @@ const Menu = () => {
         >
           <div
             onClick={() => dispatch({ type: 'showMenu', payload: false })}
-            className="fixed right-[54px] top-[36px] z-[9999] flex cursor-pointer items-center"
+            className="fixed right-[40px] top-[36px] z-[9999] flex cursor-pointer items-center"
           >
             <Image
               src={`/imgs/${state.showMenu ? 'icon_menu_close' : 'icon_menu'}.webp`}

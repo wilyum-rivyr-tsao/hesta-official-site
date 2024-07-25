@@ -125,15 +125,35 @@ function Index() {
         />
         <div className="flex">
           <div className={`mt-14 flex ${advatage !== 1 && 'hidden'}`}>
-            <div className="advantage z-20 -ml-4 -mt-10 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:border-0 hover:bg-[url('/imgs/3dicon_platform1.webp')]">
-              <p className="font-harmony font-light">
-                HESTA兼容市场主流协议，并与多家厂商合作，实现万物互联，让用户无需拘泥于特定生态或品牌，在享受个性化选择的同时，依然能够通过一个平台控制全家的设备。
-              </p>
-              <h3 className="mt-16 font-harmony text-2xl font-semibold">一站式物业管理平台</h3>
-              <div className="divider-[#383B43] divider"></div>
-              <h1 className="font-impact text-[100px]">01</h1>
+            <div className="relative">
+              <motion.div
+                className="advantage z-20 -ml-4 -mt-10 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:z-30 hover:border-0 hover:bg-[url('/imgs/3dicon_platform1.webp')]"
+                whileHover={{
+                  opacity: [0.2, 1],
+                  transition: { duration: 0.2 },
+                }}
+                initial={{
+                  opacity: 1,
+                }}
+              >
+                <p className="font-harmony font-light">
+                  HESTA兼容市场主流协议，并与多家厂商合作，实现万物互联，让用户无需拘泥于特定生态或品牌，在享受个性化选择的同时，依然能够通过一个平台控制全家的设备。
+                </p>
+                <h3 className="mt-16 font-harmony text-2xl font-semibold">一站式物业管理平台</h3>
+                <div className="divider-[#383B43] divider"></div>
+                <h1 className="font-impact text-[100px]">01</h1>
+              </motion.div>
             </div>
-            <div className="advantage z-20 -ml-4 mt-10 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:border-0 hover:bg-[url('/imgs/customer_user/3dicon_intelligence1.webp')]">
+            <motion.div
+              whileHover={{
+                opacity: [0.2, 1],
+                transition: { duration: 0.2 },
+              }}
+              initial={{
+                opacity: 1,
+              }}
+              className="advantage z-20 -ml-4 mt-10 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:border-0 hover:bg-[url('/imgs/customer_user/3dicon_intelligence1.webp')]"
+            >
               <p className="font-harmony font-light">
                 HESTA结合平台数据、知识图谱和AI算法，为用户定制智能化方案。无论全屋整装或部分后装，HESTA
                 APP几分钟内即可生成解决方案，确保智能家居的可行性、精确性、普惠性和高效性，让每个人轻松享受智慧生活。
@@ -141,19 +161,37 @@ function Index() {
               <h3 className="mt-16 font-harmony text-2xl font-semibold">一键智能</h3>
               <div className="divider-[#383B43] divider"></div>
               <h1 className="mt-4 font-impact text-[100px]">02</h1>
-            </div>
-            <div className="advantage -ml-4 mt-20 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:border-0 hover:bg-[url('/imgs/3dicon_interaction1.webp')]">
+            </motion.div>
+            <motion.div
+              whileHover={{
+                opacity: [0.2, 1],
+                transition: { duration: 0.2 },
+              }}
+              initial={{
+                opacity: 1,
+              }}
+              className="advantage -ml-4 mt-20 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:z-30 hover:border-0 hover:bg-[url('/imgs/3dicon_interaction1.webp')]"
+            >
               <p className="font-harmony font-light">
                 HESTA利用先进的3D扫描技术，让用户轻松拥有3D资产，并通过物联网集成，实现前所未有的房屋交互，全面可视化，提高用户对房屋的了解和控制。
               </p>
               <h3 className="mt-16 font-harmony text-2xl font-semibold">3D交互体验</h3>
               <div className="divider-[#383B43] divider"></div>
               <h1 className="font-impact text-[100px]">03</h1>
-            </div>
+            </motion.div>
           </div>
           {/* section2 */}
           <div className={`mt-14 flex ${advatage !== 2 && 'hidden'}`}>
-            <div className="advantage z-20 -ml-4 -mt-10 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:border-0 hover:bg-[url('/imgs/3dicon_customization1.webp')]">
+            <motion.div
+              whileHover={{
+                opacity: [0.2, 1],
+                transition: { duration: 0.2 },
+              }}
+              initial={{
+                opacity: 1,
+              }}
+              className="advantage z-20 -ml-4 -mt-10 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:z-30 hover:border-0 hover:bg-[url('/imgs/3dicon_customization1.webp')]"
+            >
               <p className="font-harmony font-light">
                 HESTA
                 AI提供个性化智能家居服务，根据用户房屋、设备特点和个人偏好，从AI设计渲染、一键智能到AI维护管理与优化，进行针对性决策分析，确保提供完整、可靠的主动式AI服务。
@@ -161,15 +199,24 @@ function Index() {
               <h3 className="mt-16 font-harmony text-2xl font-semibold">定制化人工智能服务</h3>
               <div className="divider-[#383B43] divider"></div>
               <h1 className="font-impact text-[100px]">04</h1>
-            </div>
-            <div className="advantage z-20 -ml-4 mt-10 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:border-0 hover:bg-[url('/imgs/3dicon_life1.webp')]">
+            </motion.div>
+            <motion.div
+              whileHover={{
+                opacity: [0.2, 1],
+                transition: { duration: 0.2 },
+              }}
+              initial={{
+                opacity: 1,
+              }}
+              className="advantage z-20 -ml-4 mt-10 h-[470px] w-[484px] justify-center border border-[#383B43] bg-[#E9ECF4] bg-cover bg-center bg-no-repeat px-10 py-16 hover:z-30 hover:border-0 hover:bg-[url('/imgs/3dicon_life1.webp')]"
+            >
               <p className="font-harmony font-light">
                 HESTA结合尖端AI技术以及全方位的产业知识经验，为用户打造真正的无感式智能家居系统，无需动手，无需说话，房屋就是你的私人管家，想你所想，能你所能，用智慧家居开启未来生活。
               </p>
               <h3 className="mt-16 font-harmony text-2xl font-semibold">智慧生活</h3>
               <div className="divider-[#383B43] divider"></div>
               <h1 className="mt-4 font-impact text-[100px]">05</h1>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
