@@ -29,7 +29,7 @@ function SliderCard(props: any) {
           : {}
       }
       transition={{
-        duration: 0.2,
+        duration: 0.5,
         delay,
         ease: 'easeOut',
       }}

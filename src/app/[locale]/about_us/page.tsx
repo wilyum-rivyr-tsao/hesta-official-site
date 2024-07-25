@@ -13,6 +13,7 @@ import { motion, useInView } from 'framer-motion';
 import { CDN } from '@/constants';
 import SliderCard from '../../../components/Basic/SliderCard';
 import PreventScrollWrapper from '../../../components/Basic/PreventScrollWrapper';
+import '@/app/globals.css';
 
 function isCenterIndex(array: any[], index: number): boolean {
   const length = array.length;
@@ -25,6 +26,19 @@ function isCenterIndex(array: any[], index: number): boolean {
   const middleIndex2 = Math.ceil((length - 1) / 2);
 
   return index === middleIndex1 || index === middleIndex2;
+}
+
+function offsetCenterIndex(array: any[], index: number, offset: number): boolean {
+  const length = array.length;
+
+  if (length === 0) {
+    return false; // Array is empty, no center index
+  }
+
+  const middleIndex1 = Math.floor((length - 1) / 2);
+  const middleIndex2 = Math.ceil((length - 1) / 2);
+
+  return index === middleIndex1 + offset || index === middleIndex2 + offset;
 }
 
 type Item = { date: string; desc: string; page: number };
@@ -180,7 +194,7 @@ function AboutUs() {
           className="relative z-20 flex h-[580px] w-full items-center justify-center overflow-hidden"
           onWheel={scrollContent}
         >
-          <div className="absolute top-0 z-30 h-[80px] w-full bg-gradient-to-b from-[#E9ECF4] to-transparent font-akrobat"></div>
+          {/* <div className="absolute top-[15px] z-30 h-[30px] w-full bg-gradient-to-b from-[#E9ECF4] to-transparent font-akrobat"></div> */}
           <div
             className="flex w-[428px] flex-col items-center justify-center"
             // onMouseEnter={(e) => (scrollDisabled.current = true)}
@@ -190,33 +204,20 @@ function AboutUs() {
             {historyArr.map((item, index) => {
               return (
                 <motion.div
-                  className={`font-akrobat text-[80px] ${isCenterIndex(historyArr, index) ? 'text-[100px]' : 'text-[#DEE0E5]'}`}
+                  className={`bg-gri bg-clip-text font-akrobat text-[80px] ${isCenterIndex(historyArr, index) ? 'text-[100px]' : 'text-[#DEE0E5]'} ${
+                    offsetCenterIndex(historyArr, index, -2) &&
+                    'bg-gradient-to-t from-[#DEE0E5] to-transparent text-transparent'
+                  } ${offsetCenterIndex(historyArr, index, 2) && 'bg-gradient-to-b from-[#DEE0E5] to-transparent text-transparent'} `}
                   key={item.id}
-                  animate={
-                    isCenterIndex(historyArr, index)
-                      ? {
-                          y: 0,
-                          opacity: 1,
-                          scale: 1.2,
-                        }
-                      : {
-                          y: 0,
-                          scale: 1,
-                          opacity: 1,
-                        }
-                  }
-                  transition={{
-                    duration: 1,
-                    ease: 'easeOut',
-                  }}
-                  initial={{ opacity: 0, scale: 1 }}
+                  onClick={() => gotoHis(item.page)}
                 >
+                  {/* text-[#DEE0E5] */}
                   {item.date}
                 </motion.div>
               );
             })}
           </div>
-          <div className="absolute bottom-0 z-30 h-[80px] w-full bg-gradient-to-t from-[#E9ECF4] to-transparent font-akrobat"></div>
+          {/* <div className="absolute bottom-[15px] z-30 h-[40px] w-full bg-gradient-to-t from-[#E9ECF4] to-transparent font-akrobat"></div> */}
 
           <div className="absolute top-[53%] z-20 flex w-full justify-center">
             <div className="w-[80%]">
@@ -242,7 +243,7 @@ function AboutUs() {
           width={451}
           height={440}
           alt=""
-          className="absolute -top-[30px] left-[25vw]"
+          className="shake10 absolute -top-[30px] left-[25vw]"
         />
 
         <Image
@@ -250,7 +251,7 @@ function AboutUs() {
           width={240}
           height={234}
           alt=""
-          className="absolute bottom-[50px] right-[30vw]"
+          className="shake11 absolute bottom-[50px] right-[30vw]"
         />
       </div>
 
@@ -275,7 +276,7 @@ function AboutUs() {
             <SliderCard
               title="使命"
               showing={isInViewConcept}
-              delay={0.1}
+              delay={0.2}
               icon={`${CDN}/imgs/about_us/3dicon_mission.webp`}
               desc="将行业领先的解决方案带进千家万户。致力于开启真正的“智能”生活体验，为用户提供涵盖房屋全生命周期的全方位服务。"
               size={'w-[374px] h-[350px]'}
@@ -285,7 +286,7 @@ function AboutUs() {
             <SliderCard
               title="核心价值观"
               showing={isInViewConcept}
-              delay={0.2}
+              delay={0.4}
               icon={`${CDN}/imgs/about_us/3dicon_value.webp`}
               desc="坚实与革新/超越用户需求/勇于接受挑战"
               size={'w-[374px] h-[350px]'}
