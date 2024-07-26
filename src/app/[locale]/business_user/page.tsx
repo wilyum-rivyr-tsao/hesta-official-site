@@ -112,7 +112,7 @@ function Index() {
         className="flex bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('${CDN}/imgs/customer_user/bg_second.webp')` }}
       >
-        <div className="mx-auto mb-[168px] mt-[176px] flex w-[1160px] justify-between">
+        <div className="mx-auto mb-[168px] mt-[176px] flex w-[1160px] justify-between 4xl:mb-[800px] 4xl:mt-[500px]">
           <h1 className="w-[398px] min-w-[398px] font-harmony text-[48px] font-bold">
             当前商业用户正在面临的痛点
           </h1>
@@ -172,82 +172,91 @@ function Index() {
         </div>
       </div>
 
-      <div
-        className="flex h-[80vh] min-h-[900px] w-full flex-col justify-end overflow-hidden"
-        ref={slideRef}
-      >
-        {slidePage.page === 1 && (
-          <Content1
-            title="五号洗手间漏水"
-            time="10:48"
-            desc="5号传感器检测到潜在风险，请立即采取行动，查看报告获取更多信息。"
-            icon="bg_system.webp"
-            className="-mt-[500px]"
-            isInView={isInViewSlide}
-            delay={0.5}
-          />
-        )}
+      <div className="flex w-full flex-col justify-end" ref={slideRef}>
+        <div className="relative h-[600px]">
+          <div className="absolute bottom-0 flex h-[600px] w-full items-end justify-center">
+            {slidePage.page === 1 && (
+              <Content1
+                title="五号洗手间漏水"
+                time="10:48"
+                desc="5号传感器检测到潜在风险，请立即采取行动，查看报告获取更多信息。"
+                icon="bg_system.webp"
+                className="-mb-[100px] max-w-[800vw] sm-screen:-mb-[60px]"
+                classPopMsg="top-[160px] left-[300px]"
+                isInView={isInViewSlide}
+                delay={0.5}
+              />
+            )}
 
-        {(slidePage.page === 2 || slidePage.page === 3 || slidePage.page === 4) && (
-          <div className="mb-[23vh] flex items-center justify-center">
-            {slidePage.page === 2 && <Content2 delay={0} isInView={isInViewSlide} />}
-            {slidePage.page === 3 && <Content3 />}
-            {slidePage.page === 4 && <Content4 className="h-[700px]" isInView={isInViewSlide} />}
+            {(slidePage.page === 2 || slidePage.page === 3 || slidePage.page === 4) && (
+              <div className="flex items-center justify-center">
+                {slidePage.page === 2 && (
+                  <Content2 delay={0} isInView={isInViewSlide} className="" />
+                )}
+                {slidePage.page === 3 && <Content3 className="mb-[50px]" />}
+                {slidePage.page === 4 && (
+                  <Content4 className="-mb-[200px]" isInView={isInViewSlide} />
+                )}
+              </div>
+            )}
+
+            {slidePage.page === 5 && (
+              <Content1
+                title="检测到有毒气体"
+                time="厨房1"
+                desc="5号传感器检测到潜在风险，请立即采取行动，查看报告获取更多信息。"
+                icon="bg_warning.webp"
+                target="business"
+                className="-mb-[100px] max-w-[800vw] sm-screen:-mb-[60px]"
+                classPopMsg="top-[160px] left-[300px]"
+              />
+            )}
+
+            {slidePage.page === 6 && (
+              <Content6
+                className="mb-10 flex justify-center"
+                charPos="top"
+                showing={slidePage.page === 6}
+              />
+            )}
           </div>
-        )}
 
-        {slidePage.page === 5 && (
-          <Content1
-            title="检测到有毒气体"
-            time="厨房1"
-            desc="5号传感器检测到潜在风险，请立即采取行动，查看报告获取更多信息。"
-            icon="bg_warning.webp"
-            target="business"
-          />
-        )}
+          <div className="absolute top-[50%] flex w-full">
+            <div
+              className="z-20 flex cursor-pointer select-none items-center"
+              onClick={() => {
+                changeSlidePage(slidePages[0]);
+              }}
+            >
+              <Image
+                src={`${CDN}/imgs/business_user/icon_prev.webp`}
+                alt=""
+                width={77}
+                height={5}
+                className="mr-4 h-[5px] w-[77px]"
+              />
+              <h4 className="font-impact text-[50px]">0{slidePages[0]}</h4>
+            </div>
+            <div
+              className="z-20 ml-auto flex cursor-pointer select-none items-center"
+              onClick={() => {
+                changeSlidePage(slidePages[1]);
+              }}
+            >
+              <h4 className="mr-4 font-impact text-[50px]">0{slidePages[1]}</h4>
 
-        {slidePage.page === 6 && (
-          <Content6
-            className="mb-[23vh] flex justify-center"
-            charPos="top"
-            showing={slidePage.page === 6}
-          />
-        )}
-
-        <div className="-mt-[43vh] mb-[160px] flex w-full">
-          <div
-            className="z-20 flex cursor-pointer select-none items-center"
-            onClick={() => {
-              changeSlidePage(slidePages[0]);
-            }}
-          >
-            <Image
-              src={`${CDN}/imgs/business_user/icon_prev.webp`}
-              alt=""
-              width={77}
-              height={5}
-              className="mr-4 h-[5px] w-[77px]"
-            />
-            <h4 className="font-impact text-[50px]">0{slidePages[0]}</h4>
-          </div>
-          <div
-            className="z-20 ml-auto flex cursor-pointer select-none items-center"
-            onClick={() => {
-              changeSlidePage(slidePages[1]);
-            }}
-          >
-            <h4 className="mr-4 font-impact text-[50px]">0{slidePages[1]}</h4>
-
-            <Image
-              src={`${CDN}/imgs/business_user/icon_next.webp`}
-              alt=""
-              width={77}
-              height={5}
-              className="h-[5px] w-[77px]"
-            />
+              <Image
+                src={`${CDN}/imgs/business_user/icon_next.webp`}
+                alt=""
+                width={77}
+                height={5}
+                className="h-[5px] w-[77px]"
+              />
+            </div>
           </div>
         </div>
-        <div className="z-50 flex h-[310px] w-full items-center justify-center rounded-t-[120px] bg-white">
+
+        <div className="z-50 -mt-[90px] flex h-[310px] w-full items-center justify-center rounded-t-[120px] bg-white">
           <div className="mb-[93px] flex w-[948px] flex-wrap justify-center">
             <h3 className="mb-[30px] mt-[60px] text-center font-harmony text-[20px] font-black">
               {slidePage.name}

@@ -6,13 +6,13 @@ import { CDN } from '@/constants';
 function Content1(props: any) {
   const ref = useRef(null);
   const isInViewInner = useInView(ref);
-  const { className, delay = 0, title, time, desc, icon, target, isInView } = props;
+  const { className, delay = 0, title, time, desc, icon, target, isInView, classPopMsg } = props;
   useEffect(() => {}, [isInView]);
 
   return (
     <div className="flex w-full justify-center" ref={ref}>
       <motion.div
-        className={`flex h-[70vh] w-full justify-center overflow-hidden bg-contain bg-center bg-no-repeat ${className} w-full`}
+        className={`mx-auto flex h-[70vh] w-full max-w-[1820px] justify-center overflow-hidden bg-contain bg-center bg-no-repeat ${className} w-full`}
         style={{ backgroundImage: `url('${CDN}/imgs/screen3half.webp')` }}
         animate={
           isInView || isInViewInner
@@ -35,7 +35,7 @@ function Content1(props: any) {
           desc={desc}
           icon={icon}
           target={target}
-          className="relative left-[18vw] top-[14vw]"
+          className={`relative ${classPopMsg ?? 'left-[18vw] top-[14vw]'}`}
         />
       </motion.div>
     </div>
