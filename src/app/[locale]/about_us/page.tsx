@@ -245,7 +245,7 @@ function AboutUs() {
           <div className="absolute top-[53%] z-20 flex w-full justify-center">
             <div className="w-[80%]">
               <div className="h-[30px] w-full border-t border-black bg-[#E9ECF4]"></div>
-              <p className="-mr-10 text-center font-harmony text-[18px] font-light">
+              <p className="-mr-20 text-center font-harmony text-[18px] font-light">
                 {historyPage.desc}
               </p>
             </div>
