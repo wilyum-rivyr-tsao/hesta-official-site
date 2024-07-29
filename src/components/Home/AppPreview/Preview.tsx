@@ -48,55 +48,52 @@ function Preview(props: any) {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {[1, 2, 3, 4, 5, 6].map((item) => {
-        if (page === item) {
-          return (
-            <div className={`z-50 -mt-[100px] flex flex-col items-center justify-center`}>
-              <motion.span
-                className="mt-[60px] font-harmony text-[1.3889vw] text-xl font-semibold text-[#383B43]"
-                animate={
-                  isInView
-                    ? {
-                        y: 0,
-                        opacity: 1,
-                        scale: 1,
-                      }
-                    : {}
-                }
-                transition={{
-                  duration: 0.3,
-                  delay: 0.2,
-                  ease: 'easeOut',
-                }}
-                initial={{ y: -20, opacity: 0 }}
-              >
-                {content[page - 1]?.title}
-              </motion.span>
-              <motion.p
-                className={`mt-[40px] w-[837px] font-harmony text-[16px] font-thin leading-[25px] text-[#383B43]`}
-                animate={
-                  isInView
-                    ? {
-                        y: 0,
-                        opacity: 1,
-                        scale: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      }
-                }
-                transition={{
-                  duration: 0.3,
-                  delay: 0.3,
-                  ease: 'easeOut',
-                }}
-                initial={{ y: -30, opacity: 0 }}
-              >
-                {content[page - 1]?.desc}
-              </motion.p>
-            </div>
-          );
-        }
+      {content.map((item, index) => {
+        // if (page === item) {
+        return (
+          <div
+            className={`z-50 -mt-[100px] flex flex-col items-center justify-center ${page === index + 1 ? '' : 'hidden'} `}
+            key={index}
+          >
+            <motion.span
+              className="mt-[60px] font-harmony text-[1.3889vw] text-xl font-semibold text-[#383B43]"
+              animate={
+                page === index + 1
+                  ? {
+                      y: 0,
+                      opacity: 1,
+                    }
+                  : {}
+              }
+              transition={{
+                duration: 0.5,
+                delay: 0.2,
+              }}
+              initial={{ y: -10, opacity: 0 }}
+            >
+              {item.title}
+            </motion.span>
+            <motion.p
+              className={`mt-[30px] w-[837px] font-harmony text-[16px] font-thin leading-[25px] text-[#383B43]`}
+              animate={
+                page === index + 1
+                  ? {
+                      y: 0,
+                      opacity: 1,
+                    }
+                  : {}
+              }
+              transition={{
+                duration: 0.5,
+                delay: 0.5,
+              }}
+              initial={{ y: -20, opacity: 0 }}
+            >
+              {item?.desc}
+            </motion.p>
+          </div>
+        );
+        // }
       })}
 
       {page === 1 && (

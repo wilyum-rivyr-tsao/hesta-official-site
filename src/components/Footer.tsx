@@ -106,7 +106,15 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
           </Link>
         </div>
 
-        <div className="flex cursor-pointer font-harmony">
+        <motion.div
+          className="flex cursor-pointer font-harmony"
+          animate={isInView ? { y: 0 } : {}}
+          transition={{
+            duration: 0.5,
+            delay: 0,
+          }}
+          initial={{ y: 100 }}
+        >
           <ul className="mr-[5.6vw]">
             <li>
               <Link href="/about_us">关于我们</Link>
@@ -133,7 +141,7 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
               <Link href="/contact_us">联系我们</Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
       <p className="absolute bottom-8 font-harmony font-normal text-[#383b43a8]">
         北京悉瞰科技有限公司 版权所有 | 京ICP备2023018344号-1

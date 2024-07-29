@@ -69,6 +69,10 @@ function Index() {
   const refProduct = useRef(null);
   const isInViewSlide = useInView(slideRef);
   const isInViewProduct = useInView(refProduct);
+  const div1Ref = useRef(null);
+  const isInViewDiv1 = useInView(div1Ref);
+  const div2Ref = useRef(null);
+  const isInViewDiv2 = useInView(div2Ref);
 
   const changeSlidePage = (nextPage: number) => {
     // check page direction by nextpage number - current page number if direction >0 is to next page
@@ -102,77 +106,149 @@ function Index() {
       <div
         className="flex h-[100vh] min-h-[900px] w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('${CDN}/imgs/business_user/banner_business.webp')` }}
+        ref={div1Ref}
       >
-        <h1 className="font-harmony text-[48px] font-bold text-[#383B43]">商业用户生活体验</h1>
-        <p className="mt-5 font-harmony text-[20px] font-thin">
+        <motion.h1
+          className="font-harmony text-[48px] font-bold text-[#383B43]"
+          animate={isInViewDiv1 ? { y: 0, opacity: 1 } : {}}
+          transition={{
+            duration: 0.5,
+          }}
+          initial={{ y: -300, opacity: 0 }}
+        >
+          商业用户生活体验
+        </motion.h1>
+        <motion.p
+          className={`mt-5 font-harmony text-[20px] font-thin`}
+          animate={isInViewDiv1 ? { y: 0, opacity: 1 } : {}}
+          transition={{
+            duration: 0.5,
+            delay: 0.3,
+          }}
+          initial={{ y: -100, opacity: 0 }}
+        >
           实现一站式管理平台，帮助商业用户最大程度提高物业管理效率
-        </p>
+        </motion.p>
       </div>
       <div
-        className="flex bg-cover bg-center bg-no-repeat"
+        className="flex bg-cover bg-center bg-no-repeat pb-[200px] 4xl:pb-0"
         style={{ backgroundImage: `url('${CDN}/imgs/customer_user/bg_second.webp')` }}
       >
-        <div className="mx-auto mb-[168px] mt-[176px] flex w-[1160px] justify-between 4xl:mb-[800px] 4xl:mt-[500px]">
-          <h1 className="w-[398px] min-w-[398px] font-harmony text-[48px] font-bold">
-            当前商业用户正在面临的痛点
-          </h1>
-          <div className="-ml-[100px] mt-3 grid max-h-[600px] min-w-[900px] grid-cols-3 gap-x-7 gap-y-0">
-            <div className="h-[263px] w-[280px]"></div>
-            <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/business_user/icon_platform.webp`}
-                width={70}
-                height={70}
-                alt={''}
-              />
-              <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">平台</h4>
-              <p className="font-light">缺乏提供全面解决方案的统一平台</p>
+        <div
+          className="mx-auto mb-[168px] mt-[176px] flex min-h-[500px] w-[1160px] justify-between 4xl:mb-[800px] 4xl:mt-[500px]"
+          ref={div2Ref}
+        >
+          <>
+            <motion.h1
+              animate={isInViewDiv2 ? { y: 0, opacity: 1 } : {}}
+              transition={{
+                duration: 0.5,
+              }}
+              initial={{ y: -100, opacity: 0 }}
+              className="w-[398px] min-w-[398px] font-harmony text-[48px] font-bold"
+            >
+              当前商业用户正在面临的痛点
+            </motion.h1>
+
+            <div
+              className={`-ml-[100px] mt-3 grid max-h-[600px] min-w-[900px] grid-cols-3 gap-x-7 gap-y-0`}
+            >
+              <div className="h-[263px] w-[280px]"></div>
+              <motion.div
+                className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]"
+                animate={isInViewDiv2 ? { y: 0, opacity: 1 } : { opacity: 0, y: 300 }}
+                transition={{
+                  duration: 0.3,
+                }}
+                initial={{ y: 2000, opacity: 0 }}
+              >
+                <Image
+                  src={`${CDN}/imgs/business_user/icon_platform.webp`}
+                  width={70}
+                  height={70}
+                  alt={''}
+                />
+                <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">平台</h4>
+                <p className="font-light">缺乏提供全面解决方案的统一平台</p>
+              </motion.div>
+              <motion.div
+                animate={isInViewDiv2 ? { y: 0, opacity: 1 } : { opacity: 0, y: 300 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.1,
+                }}
+                initial={{ y: 2000, opacity: 0 }}
+                className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]"
+              >
+                <Image
+                  src={`${CDN}/imgs/business_user/icon_plan.webp`}
+                  width={70}
+                  height={70}
+                  alt={''}
+                />
+                <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">方案</h4>
+                <p className="font-light">缺乏提供全面解决方案的统一平台</p>
+              </motion.div>
+              <motion.div
+                animate={isInViewDiv2 ? { y: 0, opacity: 1 } : { opacity: 0, y: 300 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.2,
+                }}
+                initial={{ y: 2000, opacity: 0 }}
+                className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]"
+              >
+                <Image
+                  src={`${CDN}/imgs/business_user/icon_data.webp`}
+                  width={70}
+                  height={70}
+                  alt={''}
+                />
+                <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">改装</h4>
+                <p className="font-light">现有房屋的改装/后装解决方案有限且实施困难</p>
+              </motion.div>
+              <motion.div
+                className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]"
+                animate={isInViewDiv2 ? { y: 0, opacity: 1 } : { opacity: 0, y: 300 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.3,
+                }}
+                initial={{ y: 2000, opacity: 0 }}
+              >
+                <Image
+                  src={`${CDN}/imgs/business_user/icon_intellect.webp`}
+                  width={70}
+                  height={70}
+                  alt={''}
+                />
+                <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">成本</h4>
+                <p className="font-light">全面集成的智能家居系统实施成本高</p>
+              </motion.div>
+              <motion.div
+                animate={isInViewDiv2 ? { y: 0, opacity: 1 } : { opacity: 0, y: 300 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.4,
+                }}
+                initial={{ y: 2000, opacity: 0 }}
+                className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]"
+              >
+                <Image
+                  src={`${CDN}/imgs/business_user/icon_customization.webp`}
+                  width={70}
+                  height={70}
+                  alt={''}
+                />
+                <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">预见</h4>
+                <p className="font-light">无法预⻅用户需求或为用户提前思考</p>
+              </motion.div>
             </div>
-            <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/business_user/icon_plan.webp`}
-                width={70}
-                height={70}
-                alt={''}
-              />
-              <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">方案</h4>
-              <p className="font-light">缺乏提供全面解决方案的统一平台</p>
-            </div>
-            <div className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/business_user/icon_data.webp`}
-                width={70}
-                height={70}
-                alt={''}
-              />
-              <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">改装</h4>
-              <p className="font-light">现有房屋的改装/后装解决方案有限且实施困难</p>
-            </div>
-            <div className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/business_user/icon_intellect.webp`}
-                width={70}
-                height={70}
-                alt={''}
-              />
-              <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">成本</h4>
-              <p className="font-light">全面集成的智能家居系统实施成本高</p>
-            </div>
-            <div className="mt-[30px] h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/business_user/icon_customization.webp`}
-                width={70}
-                height={70}
-                alt={''}
-              />
-              <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">预见</h4>
-              <p className="font-light">无法预⻅用户需求或为用户提前思考</p>
-            </div>
-          </div>
+          </>
         </div>
       </div>
 
-      <div className="flex w-full flex-col justify-end" ref={slideRef}>
+      <div className="mt-[100px] flex w-full flex-col justify-end 3xl:mt-auto" ref={slideRef}>
         <div className="relative h-[600px]">
           <div className="absolute bottom-0 flex h-[600px] w-full items-end justify-center">
             {slidePage.page === 1 && (
@@ -181,7 +257,7 @@ function Index() {
                 time="10:48"
                 desc="5号传感器检测到潜在风险，请立即采取行动，查看报告获取更多信息。"
                 icon="bg_system.webp"
-                className="-mb-[100px] max-w-[800vw] sm-screen:-mb-[60px]"
+                className="!h-[30vw] min-h-[600px] max-w-[2400px]"
                 classPopMsg="top-[160px] left-[300px]"
                 isInView={isInViewSlide}
                 delay={0.5}
@@ -324,7 +400,7 @@ function Index() {
           <div className="w-full overflow-hidden">
             {isInViewProduct && productPage === 1 && (
               <motion.div
-                className="mt-[4.1667vw] w-[99vw] overflow-hidden"
+                className="mt-[4.1667vw] w-full overflow-hidden"
                 animate={
                   isInViewProduct && productPage === 1
                     ? {
@@ -524,7 +600,7 @@ function Index() {
 
             {isInViewProduct && productPage === 2 && (
               <motion.div
-                className="mt-[80px] w-[99vw] overflow-hidden"
+                className="mt-[80px] w-full overflow-hidden"
                 animate={
                   isInViewProduct && productPage === 2
                     ? {

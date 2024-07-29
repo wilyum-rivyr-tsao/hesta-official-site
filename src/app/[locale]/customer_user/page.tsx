@@ -2,10 +2,10 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import RoundedPagination from '@/components/Basic/RoundedPagination';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { CDN } from '@/constants';
 import { Tooltip } from 'react-tooltip';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 const appSlides = [
   {
@@ -51,65 +51,132 @@ function Index() {
   const [advatage, setAdvantage] = useState(1);
 
   const [appSlide, setappSlide] = useState(appSlides[0]);
+
+  const div1Ref = useRef(null);
+  const isInViewDiv1 = useInView(div1Ref);
+  const div2Ref = useRef(null);
+  const isInViewDiv2 = useInView(div2Ref);
+
   return (
     <>
       <div
         className="flex h-[100vh] min-h-[900px] flex-col items-center justify-center overflow-x-hidden bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('${CDN}/imgs/customer_user/banner_dwelling.webp')` }}
+        ref={div1Ref}
       >
-        <h1 className="font-harmony text-[48px] font-bold text-[#383B43]">数字化智能生活体验</h1>
-        <p className="mt-5 font-harmony text-[20px] font-thin">
+        <motion.h1
+          className="font-harmony text-[48px] font-bold text-[#383B43]"
+          animate={isInViewDiv1 ? { y: 0, opacity: 1 } : {}}
+          transition={{
+            duration: 0.5,
+          }}
+          initial={{ y: -300, opacity: 0 }}
+        >
+          数字化智能生活体验
+        </motion.h1>
+        <motion.p
+          animate={isInViewDiv1 ? { y: 0, opacity: 1 } : {}}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+          }}
+          initial={{ y: -300, opacity: 0 }}
+          className="mt-5 font-harmony text-[20px] font-thin"
+        >
           丰富数字化智能生活体验，通过创新技术与个性化服务，为住宅用户打造更智能、更便捷的生活体验。
-        </p>
+        </motion.p>
       </div>
       <div
         className="bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('${CDN}/imgs/customer_user/bg_second.webp')` }}
       >
         <div className="mx-auto flex min-h-[900px] max-w-[1160px] justify-between py-[176px]">
-          <h1 className="w-[407px] font-harmony text-[48px] font-bold">
+          <motion.h1
+            animate={isInViewDiv2 ? { y: 0, opacity: 1 } : {}}
+            transition={{
+              duration: 0.5,
+            }}
+            initial={{ y: -300, opacity: 0 }}
+            className="w-[407px] font-harmony text-[48px] font-bold"
+          >
             当前住宅用户正在面临的痛点
-          </h1>
-          <div className="grid max-h-[600px] min-w-[576px] grid-cols-2 gap-4">
-            <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/customer_user/icon_platform1.webp`}
-                width={70}
-                height={70}
-                alt={''}
-              />
-              <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">平台</h4>
-              <p className="font-light">缺乏提供全面解决方案的统一平台</p>
-            </div>
-            <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/customer_user/icon_cost.webp`}
-                width={70}
-                height={70}
-                alt={''}
-              />
-              <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">改装</h4>
-              <p className="font-light">现有房屋的改装/后装解决方案有限且实施困难</p>
-            </div>
-            <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/customer_user/icon_refit.webp`}
-                width={70}
-                height={70}
-                alt={''}
-              />
-              <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">成本</h4>
-              <p className="font-light">全面集成的智能家居系统实施成本高</p>
-            </div>
-            <div className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]">
-              <Image
-                src={`${CDN}/imgs/customer_user/icon_userfriendly.webp`}
-                width={70}
-                height={70}
-                alt={''}
-              />
-              <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">预见</h4>
-              <p className="font-light">无法预⻅用户需求或为用户提前思考</p>
+          </motion.h1>
+          <div ref={div2Ref}>
+            <div
+              className={`grid max-h-[600px] min-w-[576px] grid-cols-2 gap-4 ${!isInViewDiv2 && 'hidden'}`}
+            >
+              <motion.div
+                className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]"
+                animate={isInViewDiv2 ? { y: 0, opacity: 1 } : {}}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.2,
+                }}
+                initial={{ y: 2000, opacity: 0 }}
+              >
+                <Image
+                  src={`${CDN}/imgs/customer_user/icon_platform1.webp`}
+                  width={70}
+                  height={70}
+                  alt={''}
+                />
+                <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">平台</h4>
+                <p className="font-light">缺乏提供全面解决方案的统一平台</p>
+              </motion.div>
+              <motion.div
+                animate={isInViewDiv2 ? { y: 0, opacity: 1 } : {}}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.4,
+                }}
+                initial={{ y: 2000, opacity: 0 }}
+                className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]"
+              >
+                <Image
+                  src={`${CDN}/imgs/customer_user/icon_cost.webp`}
+                  width={70}
+                  height={70}
+                  alt={''}
+                />
+                <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">改装</h4>
+                <p className="font-light">现有房屋的改装/后装解决方案有限且实施困难</p>
+              </motion.div>
+              <motion.div
+                animate={isInViewDiv2 ? { y: 0, opacity: 1 } : {}}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
+                initial={{ y: 2000, opacity: 0 }}
+                className="h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]"
+              >
+                <Image
+                  src={`${CDN}/imgs/customer_user/icon_refit.webp`}
+                  width={70}
+                  height={70}
+                  alt={''}
+                />
+                <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">成本</h4>
+                <p className="font-light">全面集成的智能家居系统实施成本高</p>
+              </motion.div>
+              <motion.div
+                className={`h-[263px] w-[280px] rounded-md border border-[#fff] bg-[#f7f8fb] px-[40px] py-[30px]`}
+                animate={isInViewDiv2 ? { y: 0, opacity: 1 } : {}}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.8,
+                }}
+                initial={{ y: 2000, opacity: 0 }}
+              >
+                <Image
+                  src={`${CDN}/imgs/customer_user/icon_userfriendly.webp`}
+                  width={70}
+                  height={70}
+                  alt={''}
+                />
+                <h4 className="mt-[52px] font-harmony text-[20px] font-[600]">预见</h4>
+                <p className="font-light">无法预⻅用户需求或为用户提前思考</p>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -293,9 +360,10 @@ function Index() {
           </div>
           <p className="w-[598px] font-harmony text-[16px] font-light">{appSlide.desc}</p>
         </div>
-        {appSlides.map((slide) => {
+        {appSlides.map((slide, index) => {
           return (
             <motion.div
+              key={index}
               animate={
                 slide.img === appSlide.img
                   ? {

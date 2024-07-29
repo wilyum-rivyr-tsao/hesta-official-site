@@ -64,7 +64,7 @@ function updateArrayOnPageChange(arr: Item[], page: number, direction: 1 | -1): 
 function AboutUs() {
   const t = useTranslations();
   const statisticsRef = useRef(null);
-  const isInView = useInView(statisticsRef);
+  const isInViewStatistics = useInView(statisticsRef);
 
   const conceptRef = useRef(null);
   const isInViewConcept = useInView(conceptRef);
@@ -127,6 +127,10 @@ function AboutUs() {
   const scrollDisabled = useRef(false);
   const xuanzeRef = useRef(null);
   const xuanzeIsInView = useInView(xuanzeRef);
+  const div1Ref = useRef(null);
+  const isInViewDiv1 = useInView(div1Ref);
+  const div2Ref = useRef(null);
+  const isInViewDiv2 = useInView(div2Ref);
 
   return (
     <>
@@ -147,12 +151,29 @@ function AboutUs() {
         quality={70}
         priority={true}
       >
-        <div className="flex w-full flex-col items-center justify-center">
-          <h3 className="mb-[40px] mt-[90px] font-harmony text-[40px] font-black">品牌故事</h3>
+        <div className="flex w-full flex-col items-center justify-center" ref={div1Ref}>
+          <motion.h3
+            className="mb-[40px] mt-[90px] font-harmony text-[40px] font-black"
+            animate={isInViewStatistics ? { y: 0, opacity: 1 } : {}}
+            transition={{
+              duration: 0.5,
+            }}
+            initial={{ y: -300, opacity: 0 }}
+          >
+            品牌故事
+          </motion.h3>
           <div className="w-[80.5556vw] font-harmony font-light">
-            <div className="min-h-[19.0278vw]">
+            <motion.div
+              className="min-h-[19.0278vw]"
+              animate={isInViewStatistics ? { y: 0, opacity: 1 } : {}}
+              transition={{
+                duration: 0.5,
+                delay: 0.2,
+              }}
+              initial={{ y: -300, opacity: 0 }}
+            >
               <p>
-                Hesta成立于2021年，由一群对科技和未来生活充满激情的创新者创立，创立初衷很简单——成为引领未来生活创新的先锋，让智慧生活触手可及。
+                北京悉瞰成立于2021年，由一群对科技和未来生活充满激情的创新者创立，创立初衷很简单——成为引领未来生活创新的先锋，让智慧生活触手可及。
               </p>
               <p className="mt-6">
                 我们相信创新是引领未来生活的核心动力，我们不断探索最新的科技成果，力求将最前沿的技术融入到产品和服务中。致力于将高科技解决方案大众化，让每一个消费者都能享受到智慧生活的便利。Hesta通过降低技术成本，提高技术可及性，使得更多的人能够享受到科技带来的美好生活。从物业建设到日常维护，Hesta提供全方位的智能服务，确保物业在其整个生命周期内都能保持最佳状态，为居住者提供持久的便利和舒适。我们的服务涵盖智能家居系统、社区安防、能源管理等多个方面，致力于为用户提供无缝衔接的智能生活体验。
@@ -161,7 +182,7 @@ function AboutUs() {
                 未来，Hesta将继续秉持“创新、普惠、全生命周期服务”的理念，不断推动科技进步和智慧生活的发展。我们相信，通过我们的努力，智慧生活将不再是梦想，而是每一个人都能触手可及的现实。
               </p>
               <p className="mt-6">Hesta，智慧生活的引领者，未来生活的开创者。</p>
-            </div>
+            </motion.div>
             <div className="relative h-[52.0139vw] w-full" ref={statisticsRef}>
               <div className="absolute left-[6.6667vw] top-[4.3056vw] flex flex-col">
                 <p className="text-[#383b439d]">
