@@ -97,7 +97,7 @@ const Screen1 = (props: any) => {
               initial={{ y: -50, opacity: 0 }}
               className="mt-[18px] cursor-pointer font-harmony text-[20px] font-thin"
             >
-              新一代房屋管理平台
+              北京悉瞰科技有限公司
             </motion.p>
             <motion.div
               animate={{ y: 0, opacity: 1, scale: 1 }}

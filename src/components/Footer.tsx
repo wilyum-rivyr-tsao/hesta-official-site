@@ -136,7 +136,7 @@ const Footer = forwardRef(function Foorter({ className }: Props, ref: Ref<HTMLDi
         </div>
       </div>
       <p className="absolute bottom-8 font-harmony font-normal text-[#383b43a8]">
-        Copyright © 2023 Hesta Technologies Inc. All Rights Reserved. 北京悉瞰科技有限公司 版权所有
+        北京悉瞰科技有限公司 版权所有 | 京ICP备2023018344号-1
       </p>
     </div>
   );
