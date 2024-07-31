@@ -4,15 +4,14 @@
 
 @font-face {
   font-family: 'HarmonyOS_Sans_SC';
-  src: url('http://xikan.tech/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Thin.ttf')
-    format('truetype');
+  src: url('http://xikan.tech/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Thin.ttf') format('truetype');
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'HarmonyOS_Sans_SC';
-  src: url('http://xikan.tech/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Light.ttf')
+  src: url('http://xikan.tech/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Light.ttf')
     format('truetype');
   font-weight: 300;
   font-style: normal;
@@ -20,7 +19,7 @@
 
 @font-face {
   font-family: 'HarmonyOS_Sans_SC';
-  src: url('http://xikan.tech/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf')
+  src: url('http://xikan.tech/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf')
     format('truetype');
   font-weight: 400;
   font-style: normal;
@@ -28,7 +27,7 @@
 
 @font-face {
   font-family: 'HarmonyOS_Sans_SC';
-  src: url('http://xikan.tech/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf')
+  src: url('http://xikan.tech/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf')
     format('truetype');
   font-weight: 500;
   font-style: normal;
@@ -36,15 +35,14 @@
 
 @font-face {
   font-family: 'HarmonyOS_Sans_SC';
-  src: url('http://xikan.tech/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Bold.ttf')
-    format('truetype');
+  src: url('http://xikan.tech/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Bold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'HarmonyOS_Sans_SC';
-  src: url('http://xikan.tech/fonts/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Black.ttf')
+  src: url('http://xikan.tech/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Black.ttf')
     format('truetype');
   font-weight: 800;
   font-style: normal;
@@ -59,7 +57,7 @@
 
 @font-face {
   font-family: 'Akrobat';
-  src: url('http://xikan.tech/fonts/Akrobat/Akrobat-Black.otf') format('opentype');
+  src: url('http://xikan.tech/font/Akrobat/Akrobat-Black.otf') format('opentype');
   font-weight: 800;
   font-style: normal;
 }

@@ -76,27 +76,29 @@ function AboutUs() {
   }, []);
 
   const [historyPage, sethistoryPage] = useState({
-    date: '2023.03',
-    desc: '落地北京华润⻓安九里 150000平米写字楼整体物业管理平台',
-    page: 6,
+    date: '2021.11',
+    desc: 'Hesta概念诞生',
+    page: 1,
   });
   const [historyArr, setHistoryArr] = useState([
+    { date: '2023.03', desc: '落地北京华润⻓安九里 150000平米写字楼整体物业管理平台', page: 6 },
+    { date: '2023.06', desc: '落地山东济南金控总部 100000平米写字楼整体楼宇管理平台', page: 7 },
+    { date: '2024.02', desc: 'Hesta 客户端APP上线发布', page: 8 },
+    { date: '2024.05', desc: '目标完成50000用户获取预计2500订阅用户的市场目标', page: 9 },
     { date: '2021.11', desc: 'Hesta概念诞生', page: 1 },
     { date: '2021.12', desc: '概念验证完成', page: 2 },
     { date: '2022.02', desc: '物业管理原型平台开发', page: 3 },
     { date: '2022.06', desc: '首个原型平台实地部署', page: 4 },
     { date: '2022.10', desc: '组建团队', page: 5 },
-    { date: '2023.03', desc: '落地北京华润⻓安九里 150000平米写字楼整体物业管理平台', page: 6 },
-    { date: '2023.06', desc: '落地山东济南金控总部 100000平米写字楼整体楼宇管理平台', page: 7 },
-    { date: '2024.02', desc: 'Hesta 客户端APP上线发布', page: 8 },
-    { date: '2024.05', desc: '目标完成50000用户获取预计2500订阅用户的市场目标', page: 9 },
   ]);
 
-  const [direction, setDirection] = useState<number>(1);
+  const [direction, setDirection] = useState<number>(0);
   const centerIndex = useRef(-1);
 
   useEffect(() => {
-    setHistoryArr((preArr) => updateArrayOnPageChange([...preArr], historyPage.page, direction));
+    if (direction !== 0) {
+      setHistoryArr((preArr) => updateArrayOnPageChange([...preArr], historyPage.page, direction));
+    }
   }, [historyPage, direction]);
 
   const gotoHis = (page: number) => {
