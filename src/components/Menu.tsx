@@ -133,7 +133,7 @@ const Menu = () => {
             </Link>
             <Link href="/contact_us" className="flex flex-col items-center">
               <span
-                className={`ml-2 text-[32px] font-bold sm-screen:text-[28px] ${current === 'cotact_us' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
+                className={`ml-2 text-[32px] font-bold sm-screen:text-[28px] ${current === 'contact_us' && 'text-[#383b4365]'} hover:text-[#383b4365]`}
               >
                 联系我们
               </span>

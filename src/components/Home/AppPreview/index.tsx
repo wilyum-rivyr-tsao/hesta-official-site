@@ -15,6 +15,7 @@ import { HomeContext } from '..';
 import Preview from './Preview';
 import { CDN } from '@/constants';
 import throttle from 'lodash/throttle';
+import Image from 'next/image';
 
 const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
   const { page: outerPage } = props;
@@ -198,6 +199,28 @@ const Index = forwardRef(function Index(props: any, ref: Ref<HTMLDivElement>) {
 
         <div style={containerStyle()}>
           <Preview page={page} />
+
+          <Image
+            alt=""
+            src={`${CDN}/imgs/bg_conduit.webp`}
+            style={{ objectFit: 'cover', display: 'none' }}
+            fill
+            priority
+          />
+          <Image
+            alt=""
+            src={`${CDN}/imgs/bg_computer.webp`}
+            style={{ objectFit: 'cover', display: 'none' }}
+            fill
+            priority
+          />
+          <Image
+            alt=""
+            src={`${CDN}/imgs/bg_colorlump.webp`}
+            style={{ objectFit: 'cover', display: 'none' }}
+            fill
+            priority
+          />
         </div>
       </div>
       <ReadMoreBtn className="absolute bottom-[43px] z-[999999]" href="/business_user" />

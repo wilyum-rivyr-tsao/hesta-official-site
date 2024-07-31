@@ -7,26 +7,13 @@ import Link from 'next/link';
 import BackgroundImage from '@/components/Basic/BackgroundImage';
 import RoundedPagination from '@/components/Basic/RoundedPagination';
 import './style.css';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import IncreaseNumberAnimation from '@/components/Basic/IncreaseNumberAnimation';
 import { motion, useInView } from 'framer-motion';
 import { CDN } from '@/constants';
 import SliderCard from '../../../components/Basic/SliderCard';
 import PreventScrollWrapper from '../../../components/Basic/PreventScrollWrapper';
 import '@/app/globals.css';
-
-function isCenterIndex(array: any[], index: number): boolean {
-  const length = array.length;
-
-  if (length === 0) {
-    return false; // Array is empty, no center index
-  }
-
-  const middleIndex1 = Math.floor((length - 1) / 2);
-  const middleIndex2 = Math.ceil((length - 1) / 2);
-
-  return index === middleIndex1 || index === middleIndex2;
-}
 
 function offsetCenterIndex(array: any[], index: number, offset: number): boolean {
   const length = array.length;
@@ -43,21 +30,22 @@ function offsetCenterIndex(array: any[], index: number, offset: number): boolean
 
 type Item = { date: string; desc: string; page: number };
 
-function updateArrayOnPageChange(arr: Item[], page: number, direction: 1 | -1): Item[] {
-  if (direction === 1) {
-    // Move the first item to the end
-    const firstItem = arr.shift();
-    if (firstItem !== undefined) {
-      arr.push(firstItem);
-    }
-  } else if (direction === -1) {
-    // Move the last item to the beginning
-    const lastItem = arr.pop();
-    if (lastItem !== undefined) {
-      arr.unshift(lastItem);
+function updateArrayOnPageChange(arr: Item[], page: number, direction: number): Item[] {
+  for (let index = 0; index < Math.abs(direction); index++) {
+    if (direction > 0) {
+      // Move the first item to the end
+      const firstItem = arr.shift();
+      if (firstItem !== undefined) {
+        arr.push(firstItem);
+      }
+    } else if (direction < 0) {
+      // Move the last item to the beginning
+      const lastItem = arr.pop();
+      if (lastItem !== undefined) {
+        arr.unshift(lastItem);
+      }
     }
   }
-
   return arr;
 }
 
@@ -68,6 +56,24 @@ function AboutUs() {
 
   const conceptRef = useRef(null);
   const isInViewConcept = useInView(conceptRef);
+
+  const isCenterIndex = useCallback((array: any[], index: number): boolean => {
+    const length = array.length;
+
+    if (length === 0) {
+      return false; // Array is empty, no center index
+    }
+
+    const middleIndex1 = Math.floor((length - 1) / 2);
+    const middleIndex2 = Math.ceil((length - 1) / 2);
+    if (index === middleIndex1 || index === middleIndex2) {
+      console.log('center index', index);
+      centerIndex.current = index;
+      return true;
+    }
+
+    return false;
+  }, []);
 
   const [historyPage, sethistoryPage] = useState({
     date: '2023.03',
@@ -86,13 +92,15 @@ function AboutUs() {
     { date: '2024.05', desc: '目标完成50000用户获取预计2500订阅用户的市场目标', page: 9 },
   ]);
 
-  const [direction, setDirection] = useState<1 | -1>(1);
+  const [direction, setDirection] = useState<number>(1);
+  const centerIndex = useRef(-1);
 
   useEffect(() => {
     setHistoryArr((preArr) => updateArrayOnPageChange([...preArr], historyPage.page, direction));
-  }, [historyPage]);
+  }, [historyPage, direction]);
 
   const gotoHis = (page: number) => {
+    console.log('page', page);
     const pageCur = historyArr.find((item) => {
       return item.page === page;
     });
@@ -114,12 +122,14 @@ function AboutUs() {
       const pageCur = historyArr.find((item) => {
         return item.page === page;
       });
+      setDirection(1);
       sethistoryPage(pageCur ?? ({} as Item));
     } else if (e.deltaY < 0) {
       const page = historyPage.page > 1 ? historyPage.page - 1 : historyArr.length;
       const pageCur = historyArr.find((item) => {
         return item.page === page;
       });
+      setDirection(-1);
       sethistoryPage(pageCur ?? ({} as Item));
     }
   };
@@ -131,6 +141,12 @@ function AboutUs() {
   const isInViewDiv1 = useInView(div1Ref);
   const div2Ref = useRef(null);
   const isInViewDiv2 = useInView(div2Ref);
+
+  const historyClick = (item: any, index: number) => {
+    console.log('item.page - historyPage.page', index, centerIndex);
+    setDirection(index - centerIndex.current);
+    gotoHis(item.page);
+  };
 
   return (
     <>
@@ -213,33 +229,26 @@ function AboutUs() {
         </div>
       </BackgroundImage>
       <div className="relative my-[5.9722vw] flex cursor-pointer select-none flex-col items-center">
-        <PreventScrollWrapper
-          className="relative z-20 flex h-[580px] w-full items-center justify-center overflow-hidden"
-          onWheel={scrollContent}
-        >
+        <div className="relative z-20 flex h-[580px] w-full items-center justify-center overflow-hidden">
           {/* <div className="absolute top-[15px] z-30 h-[30px] w-full bg-gradient-to-b from-[#E9ECF4] to-transparent font-akrobat"></div> */}
-          <div
-            className="flex w-[428px] flex-col items-center justify-center"
-            // onMouseEnter={(e) => (scrollDisabled.current = true)}
-            // onMouseLeave={(e) => (scrollDisabled.current = false)}
-            // onScroll={(e) => scrollDisabled.current && e.preventDefault()}
-          >
-            {historyArr.map((item, index) => {
-              return (
-                <motion.div
-                  className={`bg-gri bg-clip-text font-akrobat ${isCenterIndex(historyArr, index) ? 'text-[100px]' : 'text-[80px] text-[#DEE0E5]'} ${
-                    offsetCenterIndex(historyArr, index, -2) &&
-                    'bg-gradient-to-t from-[#DEE0E5] to-transparent text-transparent'
-                  } ${offsetCenterIndex(historyArr, index, 2) && 'bg-gradient-to-b from-[#DEE0E5] to-transparent text-transparent'} `}
-                  key={item.id}
-                  onClick={() => gotoHis(item.page)}
-                >
-                  {/* text-[#DEE0E5] */}
-                  {item.date}
-                </motion.div>
-              );
-            })}
-          </div>
+          <PreventScrollWrapper className="" onWheel={scrollContent}>
+            <div className="flex w-[428px] flex-col items-center justify-center">
+              {historyArr.map((item, index) => {
+                return (
+                  <motion.div
+                    className={`bg-gri bg-clip-text font-akrobat ${isCenterIndex(historyArr, index) ? 'text-[100px]' : 'text-[80px] text-[#DEE0E5]'} ${
+                      offsetCenterIndex(historyArr, index, -2) &&
+                      'bg-gradient-to-t from-[#DEE0E5] to-transparent text-transparent'
+                    } ${offsetCenterIndex(historyArr, index, 2) && 'bg-gradient-to-b from-[#DEE0E5] to-transparent text-transparent'} `}
+                    key={item.id}
+                    onClick={() => historyClick(item, index)}
+                  >
+                    {item.date}
+                  </motion.div>
+                );
+              })}
+            </div>
+          </PreventScrollWrapper>
           {/* <div className="absolute bottom-[15px] z-30 h-[40px] w-full bg-gradient-to-t from-[#E9ECF4] to-transparent font-akrobat"></div> */}
 
           <div className="absolute top-[53%] z-20 flex w-full justify-center">
@@ -259,7 +268,7 @@ function AboutUs() {
               limitRange={false}
             />
           </div>
-        </PreventScrollWrapper>
+        </div>
 
         <Image
           src={`${CDN}/imgs/about_us/fb.webp`}
